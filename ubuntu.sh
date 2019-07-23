@@ -1,4 +1,5 @@
 #!/bin/bash
+system="`lsb_release -sd`"
 arch="amd64"
 if [ "`uname -m`" != "x86_64" ]
 then
@@ -7,6 +8,7 @@ fi
 
 echo "PRODUCTION ENVIRONMENT SCRIPT - UBUNTU"
 echo "Author: Danilo Ancilotto"
+echo "System: $system"
 echo "Architecture: $arch"
 echo "Home: $HOME"
 echo "User: $USER"
