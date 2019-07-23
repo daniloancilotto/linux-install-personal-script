@@ -1,5 +1,6 @@
 #!/bin/bash
 system="`lsb_release -sd`"
+
 arch="amd64"
 if [ "`uname -m`" != "x86_64" ]
 then

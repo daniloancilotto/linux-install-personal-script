@@ -1,7 +1,7 @@
 # Production Environment Script
 
 ### Supported Systems
-* Ubuntu Derivatives
+* Ubuntu and Derivatives
   * [Ubuntu - 19.04](https://ubuntu.com/)
   * [Linux Mint - 19.1 ~ 19.2](https://linuxmint.com/)
 
@@ -62,7 +62,7 @@
 
 # Execution Examples
 
-### Ubuntu Derivatives
+### Ubuntu and Derivatives
 ```bash
 curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/production-environment-script/master/ubuntu.sh | bash
 ```
