@@ -49,6 +49,8 @@ printLine "App Hubs"
 sudo apt install snapd flatpak -y
 sudo systemctl enable --now snapd.socket
 sudo flatpak remote-add --if-not-exists flathub "https://dl.flathub.org/repo/flathub.flatpakrepo"
+desktop_dir="$HOME/.local/share/applications"
+mkdir -pv "$desktop_dir"
 portable_dir="$HOME/portable"
 mkdir -pv "$portable_dir"
 
@@ -88,10 +90,9 @@ else
   echo "$portable_name is already installed"
 fi
 
-file="$HOME/.local/share/applications/$portable_name.desktop"
+file="$desktop_dir/$portable_name.desktop"
 if [ ! -f "$file" ]
 then
-  mkdir -pv "$HOME/.local/share/applications"
   conf=$'[Desktop Entry]\n'
   conf+=$'Name=CPU-X\n'
   conf+=$'GenericName=CPU-X\n'
@@ -134,10 +135,9 @@ else
   echo "$portable_name is already installed"
 fi
 
-file="$HOME/.local/share/applications/$portable_name.desktop"
+file="$desktop_dir/$portable_name.desktop"
 if [ ! -f "$file" ]
 then
-  mkdir -pv "$HOME/.local/share/applications"
   conf=$'[Desktop Entry]\n'
   conf+=$'Name=FreeRapid Downloader\n'
   conf+=$'GenericName=FreeRapid Downloader\n'
