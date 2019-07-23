@@ -13,9 +13,7 @@
 
 ### Install Apps
 * Base Apps - Latest
-  * Curl
   * Wget
-  * Git
   * Unzip
   * Tar
   * Jq
@@ -60,7 +58,16 @@
 
 <br/>
 
-# Execution Examples
+# Preparing to Run the Script
+
+### Ubuntu and Derivatives
+```bash
+sudo apt install curl -y
+```
+
+<br/>
+
+# Running the Script
 
 ### Ubuntu and Derivatives
 ```bash
