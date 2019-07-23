@@ -48,7 +48,6 @@ printLine "App Hubs"
 sudo apt install snapd flatpak -y
 sudo systemctl enable --now snapd.socket
 sudo flatpak remote-add --if-not-exists flathub "https://dl.flathub.org/repo/flathub.flatpakrepo"
-
 portable_dir="$HOME/portable"
 mkdir -pv "$portable_dir"
 
@@ -203,3 +202,7 @@ sudo apt remove hexchat -y
 
 printLine "Thunderbird"
 sudo apt remove thunderbird -y
+
+printLine "Finished"
+echo "Done, please reboot your system."
+echo ""
