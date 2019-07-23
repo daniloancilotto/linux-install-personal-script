@@ -40,7 +40,7 @@ dpkgInstall() {
 
 printLine "Base Apps"
 sudo apt update
-sudo apt install curl wget git unzip tar jq neofetch htop dconf-cli -y
+sudo apt install curl wget git unzip tar jq neofetch htop -y
 
 printLine "App Hubs"
 sudo apt install snapd flatpak -y
