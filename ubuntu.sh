@@ -61,7 +61,7 @@ java_dir="/usr/lib/jvm/java-8-openjdk-$arch"
 printLine "4K Video Downloader"
 if [ ! -f "/usr/bin/4kvideodownloader" ]
 then
-  dpkgInstall "4kvideodownloader.deb" "https://dl.4kdownload.com/app/4kvideodownloader_4.8.0-1_$arch.deb"
+  dpkgInstall "4kvideodownloader.deb" "https://dl.4kdownload.com/app/4kvideodownloader_4.8.2-1_$arch.deb"
 else
   echo "4kvideodownloader is already installed"
 fi
