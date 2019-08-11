@@ -26,7 +26,7 @@
       * Flathub
 * OpenJDK - 8
 * [4K Video Downloader - 4.8.2 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
-* [Angry IP Scanner - 3.5.5 (Dpkg)](https://angryip.org/)
+* [Angry IP Scanner - 3.6.0 (Dpkg)](https://angryip.org/)
 * [CPU-X - 3.2.4 (Portable)](https://github.com/X0rg/CPU-X)
   * User Configurations
     * Desktop

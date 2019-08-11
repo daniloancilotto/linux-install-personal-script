@@ -69,7 +69,7 @@ fi
 printLine "Angry IP Scanner"
 if [ ! -f "/usr/bin/ipscan" ]
 then
-  dpkgInstall "angryipscanner.deb" "https://github.com/angryip/ipscan/releases/download/3.5.5/ipscan_3.5.5_$arch.deb"
+  dpkgInstall "angryipscanner.deb" "https://github.com/angryip/ipscan/releases/download/3.6.0/ipscan_3.6.0_$arch.deb"
 else
   echo "angryipscanner is already installed"
 fi
