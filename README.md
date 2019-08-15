@@ -28,13 +28,13 @@
 * [4K Video Downloader - 4.8.2 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
 * [Angry IP Scanner - 3.6.0 (Dpkg)](https://angryip.org/)
 * [CPU-X - 3.2.4 (Portable)](https://github.com/X0rg/CPU-X)
-  * User Configurations
+  * Configurations
     * Desktop
       * ~/.local/share/applications/cpu-x.desktop
 * [Discord - Latest (Snap)](https://snapcraft.io/discord)
 * [Dropbox - 2019.02.14 (Dpkg)](https://www.dropbox.com/install)
 * [FreeRapid Downloader - 0.9.4 (Portable)](http://wordrider.net/freerapid/)
-  * User Configurations
+  * Configurations
     * Desktop
       * ~/.local/share/applications/freerapiddownloader.desktop
 * Furius ISO Mount - Latest
