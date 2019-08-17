@@ -2,9 +2,11 @@
 system="`lsb_release -sd`"
 
 arch="amd64"
+arch2="x64"
 if [ "`uname -m`" != "x86_64" ]
 then
   arch="i386"
+  arch2="ia32"
 fi
 
 echo "PRODUCTION ENVIRONMENT SCRIPT - UBUNTU"
@@ -75,12 +77,37 @@ else
 fi
 
 printLine "Balena Etcher"
-if [ ! -f "/usr/local/bin/balena-etcher-electron" ]
+
+portable_name="balenaEtcher"
+portable_subdir="$portable_dir/$portable_name"
+if [ ! -d "$portable_subdir" ]
 then
-  dpkgInstall "balena-etcher.deb" "https://github.com/balena-io/etcher/releases/download/v1.5.53/balena-etcher-electron_1.5.53_$arch.deb"
+  file="$portable_dir/balenaEtcher.zip"
+  wget -O "$file" "https://github.com/balena-io/etcher/releases/download/v1.5.53/balena-etcher-electron-1.5.53-linux-$arch2.zip"
+  mkdir -pv "$portable_subdir"
+  unzip -q "$file" -d "$portable_dir"
+  ln -sv -T "$portable_subdir/balenaEtcher-1.5.53-$arch2.AppImage" "$portable_subdir/balenaEtcher.AppImage"
+  rm -fv "$file"
 else
-  echo "balena-etcher is already installed"
+  echo "$portable_name is already installed"
 fi
+
+file="$desktop_dir/$portable_name.desktop"
+if [ ! -f "$file" ]
+then
+  conf=$'[Desktop Entry]\n'
+  conf+=$'Name=balenaEtcher\n'
+  conf+=$'Comment=Flash OS images to SD cards and USB drives, safely and easily.\n'
+  conf+=$'Comment[pt_BR]=Gravar imagens de SO em cartões SD e drives USB, com segurança e facilidade.\n'
+  conf+=$'TryExec='$portable_subdir$'/balenaEtcher.AppImage\n'
+  conf+=$'Terminal=false\n'
+  conf+=$'Type=Application\n'
+  conf+=$'Icon=appimagekit-balena-etcher-electron\n'
+  conf+=$'Categories=Utility;\n'
+  echo "$conf" > "$file"
+fi
+
+echo "$portable_name have been configured"
 
 printLine "CPU-X"
 
@@ -106,7 +133,7 @@ then
   conf+=$'GenericName=CPU-X\n'
   conf+=$'Comment=CPU, motherboard and more information\n'
   conf+=$'Comment[pt_BR]=CPU, placa-mãe e mais informações\n'
-  conf+=$'Exec=sudo '$portable_subdir$'/cpu-x.linux\n'
+  conf+=$'TryExec=sudo '$portable_subdir$'/cpu-x.linux\n'
   conf+=$'Terminal=true\n'
   conf+=$'Type=Application\n'
   conf+=$'Icon=cpuinfo\n'
