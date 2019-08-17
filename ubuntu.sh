@@ -1,9 +1,10 @@
 #!/bin/bash
 system="`lsb_release -sd`"
+machine="`uname -m`"
 
 arch="amd64"
 arch2="x64"
-if [ "`uname -m`" != "x86_64" ]
+if [ "$machine" != "x86_64" ]
 then
   arch="i386"
   arch2="ia32"
@@ -117,12 +118,10 @@ portable_name="cpu-x"
 portable_subdir="$portable_dir/$portable_name"
 if [ ! -d "$portable_subdir" ]
 then
-  file="$portable_dir/cpu-x.tar.gz"
-  wget -O "$file" "https://github.com/X0rg/CPU-X/releases/download/v3.2.4/CPU-X_v3.2.4_portable.tar.gz"
   mkdir -pv "$portable_subdir"
-  tar -xf "$file" -C "$portable_subdir"
-  ln -sv -T "$portable_subdir/CPU-X_v3.2.4_portable.linux64" "$portable_subdir/cpu-x.linux"
-  rm -fv "$file"
+  file="$portable_subdir/CPU-X_v3.2.4_$machine.AppImage"
+  wget -O "$file" "https://github.com/X0rg/CPU-X/releases/download/v3.2.4/CPU-X_v3.2.4_$machine.AppImage"
+  ln -sv -T "$file" "$portable_subdir/cpu-x.AppImage"
 else
   echo "$portable_name is already installed"
 fi
@@ -135,10 +134,9 @@ then
   conf+=$'GenericName=CPU-X\n'
   conf+=$'Comment=CPU, motherboard and more information\n'
   conf+=$'Comment[pt_BR]=CPU, placa-mãe e mais informações\n'
-  conf+=$'TryExec=sudo '$portable_subdir$'/cpu-x.linux\n'
+  conf+=$'Exec=sudo '$portable_subdir$'/cpu-x.AppImage\n'
   conf+=$'Terminal=true\n'
   conf+=$'Type=Application\n'
-  conf+=$'Icon=cpuinfo\n'
   conf+=$'Categories=System;\n'
   echo "$conf" > "$file"
 fi

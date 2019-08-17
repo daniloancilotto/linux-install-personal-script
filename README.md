@@ -28,6 +28,9 @@
 * [4K Video Downloader - 4.8.2 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
 * [Angry IP Scanner - 3.6.0 (Dpkg)](https://angryip.org/)
 * [Balena Etcher - 1.5.53 (Portable)](https://www.balena.io/etcher/)
+  * Configurations
+    * Desktop
+      * ~/.local/share/applications/appimagekit-balena-etcher-electron.desktop
 * [CPU-X - 3.2.4 (Portable)](https://github.com/X0rg/CPU-X)
   * Configurations
     * Desktop
