@@ -121,7 +121,11 @@ then
   mkdir -pv "$portable_subdir"
   file="$portable_subdir/CPU-X_v3.2.4_$machine.AppImage"
   wget -O "$file" "https://github.com/X0rg/CPU-X/releases/download/v3.2.4/CPU-X_v3.2.4_$machine.AppImage"
+  chmod +x "$file"
   ln -sv -T "$file" "$portable_subdir/cpu-x.AppImage"
+  "$file" --appimage-extract
+  mv -fv "$portable_subdir/squashfs-root/cpu-x.png" "$portable_subdir/cpu-x.png"
+  rm -rfv "$portable_subdir/squashfs-root"
 else
   echo "$portable_name is already installed"
 fi
@@ -137,6 +141,7 @@ then
   conf+=$'Exec=sudo '$portable_subdir$'/cpu-x.AppImage\n'
   conf+=$'Terminal=true\n'
   conf+=$'Type=Application\n'
+  conf+=$'Icon='$portable_subdir$'/cpu-x.png\n'
   conf+=$'Categories=System;\n'
   echo "$conf" > "$file"
 fi
