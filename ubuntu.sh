@@ -85,7 +85,7 @@ then
   file="$portable_dir/balenaEtcher.zip"
   wget -O "$file" "https://github.com/balena-io/etcher/releases/download/v1.5.53/balena-etcher-electron-1.5.53-linux-$arch2.zip"
   mkdir -pv "$portable_subdir"
-  unzip -q "$file" -d "$portable_dir"
+  unzip -q "$file" -d "$portable_subdir"
   ln -sv -T "$portable_subdir/balenaEtcher-1.5.53-$arch2.AppImage" "$portable_subdir/balenaEtcher.AppImage"
   rm -fv "$file"
 else
