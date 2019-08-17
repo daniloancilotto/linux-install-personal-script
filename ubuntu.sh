@@ -123,7 +123,10 @@ then
   wget -O "$file" "https://github.com/X0rg/CPU-X/releases/download/v3.2.4/CPU-X_v3.2.4_$machine.AppImage"
   chmod +x "$file"
   ln -sv -T "$file" "$portable_subdir/cpu-x.AppImage"
+  current_dir="`pwd`"
+  cd "$portable_subdir"
   "$file" --appimage-extract
+  cd "$current_dir"
   mv -fv "$portable_subdir/squashfs-root/cpu-x.png" "$portable_subdir/cpu-x.png"
   rm -rfv "$portable_subdir/squashfs-root"
 else
