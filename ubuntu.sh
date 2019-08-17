@@ -78,11 +78,11 @@ fi
 
 printLine "Balena Etcher"
 
-portable_name="balenaEtcher"
+portable_name="balena-etcher"
 portable_subdir="$portable_dir/$portable_name"
 if [ ! -d "$portable_subdir" ]
 then
-  file="$portable_dir/balenaEtcher.zip"
+  file="$portable_dir/balena-etcher.zip"
   wget -O "$file" "https://github.com/balena-io/etcher/releases/download/v1.5.53/balena-etcher-electron-1.5.53-linux-$arch2.zip"
   mkdir -pv "$portable_subdir"
   unzip -q "$file" -d "$portable_subdir"
@@ -92,18 +92,20 @@ else
   echo "$portable_name is already installed"
 fi
 
-file="$desktop_dir/$portable_name.desktop"
+file="$desktop_dir/appimagekit-balena-etcher-electron.desktop"
 if [ ! -f "$file" ]
 then
-  conf=$'[Desktop Entry]\n'
+  conf+=$'[Desktop Entry]\n'
   conf+=$'Name=balenaEtcher\n'
   conf+=$'Comment=Flash OS images to SD cards and USB drives, safely and easily.\n'
   conf+=$'Comment[pt_BR]=Gravar imagens de SO em cartões SD e drives USB, com segurança e facilidade.\n'
-  conf+=$'TryExec='$portable_subdir$'/balenaEtcher.AppImage\n'
+  conf+=$'Exec="'$portable_subdir$'/balenaEtcher.AppImage" %U\n'
   conf+=$'Terminal=false\n'
   conf+=$'Type=Application\n'
   conf+=$'Icon=appimagekit-balena-etcher-electron\n'
+  conf+=$'StartupWMClass=balenaEtcher\n'
   conf+=$'Categories=Utility;\n'
+  conf+=$'TryExec='$portable_subdir$'/balenaEtcher.AppImage\n'
   echo "$conf" > "$file"
 fi
 
