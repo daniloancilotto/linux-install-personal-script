@@ -167,6 +167,14 @@ fi
 printLine "GParted"
 sudo apt install gparted -y
 
+printLine "Mint Stick"
+if [ ! -f "/usr/bin/mintstick" ]
+then
+  dpkgInstall "mintstick.deb" "http://packages.linuxmint.com/pool/main/m/mintstick/mintstick_1.4.0_all.deb"
+else
+  echo "mintstick is already installed"
+fi
+
 printLine "OBS Studio"
 sudo flatpak install flathub com.obsproject.Studio -y
 
