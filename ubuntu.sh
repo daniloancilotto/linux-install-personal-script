@@ -74,6 +74,14 @@ else
   echo "angryipscanner is already installed"
 fi
 
+printLine "Balena Etcher"
+if [ ! -f "/usr/local/bin/balena-etcher-electron" ]
+then
+  dpkgInstall "balena-etcher.deb" "https://github.com/balena-io/etcher/releases/download/v1.5.53/balena-etcher-electron_1.5.53_$arch.deb"
+else
+  echo "balena-etcher is already installed"
+fi
+
 printLine "CPU-X"
 
 portable_name="cpu-x"
