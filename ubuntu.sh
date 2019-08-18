@@ -128,7 +128,7 @@ then
   "$file" --appimage-extract
   cd "$current_dir"
   mv -fv "$portable_subdir/squashfs-root/cpu-x.png" "$portable_subdir/cpu-x.png"
-  rm -rfv "$portable_subdir/squashfs-root"
+  rm -rf "$portable_subdir/squashfs-root"
 else
   echo "$portable_name is already installed"
 fi
