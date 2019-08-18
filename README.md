@@ -42,6 +42,7 @@
     * Desktop
       * ~/.local/share/applications/freerapiddownloader.desktop
 * Furius ISO Mount - Latest
+* [GIMP - Latest (Flatpak)](https://flathub.org/apps/details/org.gimp.GIMP)
 * [Google Chrome - Latest (Dpkg)](https://www.google.com/chrome/)
 * GParted - Latest
 * [LibreOffice - Latest (Snap)](https://snapcraft.io/libreoffice)
@@ -56,10 +57,17 @@
     * VNC
 * [Spotify - Latest (Snap)](https://snapcraft.io/spotify)
 * Steam - Latest
+* Transmission - Latest
+* [VLC - Lastest (Snap)](https://snapcraft.io/vlc)
 
 ### Uninstall Apps
-* HexChat
-* Thunderbird
+* Old Apps
+  * GIMP
+  * HexChat
+  * LibreOffice
+  * Rhythmbox
+  * Thunderbird
+  * VLC
 
 <br/>
 

@@ -199,6 +199,9 @@ echo "$portable_name have been configured"
 printLine "Furius ISO Mount"
 sudo apt install furiusisomount -y
 
+printLine "GIMP"
+sudo flatpak install flathub org.gimp.GIMP -y
+
 printLine "Google Chrome"
 if [ -z "`google-chrome --version`" ]
 then
@@ -211,6 +214,7 @@ printLine "GParted"
 sudo apt install gparted -y
 
 printLine "LibreOffice"
+echo "Running snap, please wait..."
 sudo snap install libreoffice
 
 printLine "OBS Studio"
@@ -244,11 +248,15 @@ sudo snap install spotify
 printLine "Steam"
 sudo apt install steam -y
 
-printLine "HexChat"
-sudo apt remove hexchat -y
+printLine "Transmission"
+sudo apt install transmission -y
 
-printLine "Thunderbird"
-sudo apt remove thunderbird -y
+printLine "VLC"
+echo "Running snap, please wait..."
+sudo snap install vlc
+
+printLine "Old Apps"
+sudo apt remove gimp hexchat libreoffice libreoffice* rhythmbox thunderbird vlc -y
 
 printLine "Finished"
 echo "Done, please reboot your system."
