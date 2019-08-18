@@ -44,6 +44,7 @@
 * Furius ISO Mount - Latest
 * [Google Chrome - Latest (Dpkg)](https://www.google.com/chrome/)
 * GParted - Latest
+* [LibreOffice - Latest (Snap)](https://snapcraft.io/libreoffice)
 * [OBS Studio - Latest (Flatpak)](https://flathub.org/apps/details/com.obsproject.Studio)
 * [Oracle VM VirtualBox - 6.0.10 (Dpkg)](https://www.virtualbox.org/)
   * Extension Pack - 6.0.10

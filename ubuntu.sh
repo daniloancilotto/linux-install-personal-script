@@ -210,6 +210,9 @@ fi
 printLine "GParted"
 sudo apt install gparted -y
 
+printLine "LibreOffice"
+sudo snap install libreoffice
+
 printLine "OBS Studio"
 sudo flatpak install flathub com.obsproject.Studio -y
 
