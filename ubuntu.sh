@@ -69,6 +69,9 @@ else
   echo "4kvideodownloader is already installed"
 fi
 
+printLine "7-Zip"
+sudo apt install p7zip-full -y
+
 printLine "Angry IP Scanner"
 if [ ! -f "/usr/bin/ipscan" ]
 then
