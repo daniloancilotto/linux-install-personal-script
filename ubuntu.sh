@@ -64,7 +64,7 @@ java_dir="/usr/lib/jvm/java-8-openjdk-$arch"
 printLine "4K Video Downloader"
 if [ ! -f "/usr/bin/4kvideodownloader" ]
 then
-  dpkgInstall "4kvideodownloader.deb" "https://dl.4kdownload.com/app/4kvideodownloader_4.8.2-1_$arch.deb"
+  dpkgInstall "4kvideodownloader.deb" "https://dl.4kdownload.com/app/4kvideodownloader_4.9.0-1_$arch.deb"
 else
   echo "4kvideodownloader is already installed"
 fi
@@ -75,7 +75,7 @@ sudo apt install p7zip-full -y
 printLine "Angry IP Scanner"
 if [ ! -f "/usr/bin/ipscan" ]
 then
-  dpkgInstall "angryipscanner.deb" "https://github.com/angryip/ipscan/releases/download/3.6.0/ipscan_3.6.0_$arch.deb"
+  dpkgInstall "angryipscanner.deb" "https://github.com/angryip/ipscan/releases/download/3.6.1/ipscan_3.6.1_$arch.deb"
 else
   echo "angryipscanner is already installed"
 fi
@@ -87,10 +87,10 @@ portable_subdir="$portable_dir/$portable_name"
 if [ ! -d "$portable_subdir" ]
 then
   file="$portable_dir/balena-etcher.zip"
-  wget -O "$file" "https://github.com/balena-io/etcher/releases/download/v1.5.53/balena-etcher-electron-1.5.53-linux-$arch2.zip"
+  wget -O "$file" "https://github.com/balena-io/etcher/releases/download/v1.5.56/balena-etcher-electron-1.5.56-linux-$arch2.zip"
   mkdir -pv "$portable_subdir"
   unzip -q "$file" -d "$portable_subdir"
-  ln -sv -T "$portable_subdir/balenaEtcher-1.5.53-$arch2.AppImage" "$portable_subdir/balenaEtcher.AppImage"
+  ln -sv -T "$portable_subdir/balenaEtcher-1.5.56-$arch2.AppImage" "$portable_subdir/balenaEtcher.AppImage"
   rm -fv "$file"
 else
   echo "$portable_name is already installed"
@@ -226,14 +226,14 @@ sudo flatpak install flathub com.obsproject.Studio -y
 printLine "Oracle VM VirtualBox"
 if [ -z "`vboxmanage --version`" ]
 then
-  dpkgInstall "oracle-vm-virtualbox.deb" "https://download.virtualbox.org/virtualbox/6.0.10/virtualbox-6.0_6.0.10-132072~Ubuntu~bionic_$arch.deb"
+  dpkgInstall "oracle-vm-virtualbox.deb" "https://download.virtualbox.org/virtualbox/6.0.12/virtualbox-6.0_6.0.12-133076~Ubuntu~bionic_$arch.deb"
 else
   echo "vbox is already installed"
 fi
 if [ -z "`vboxmanage list extpacks | grep -i 'version'`" ]
 then
   file="$HOME/Oracle_VM_VirtualBox_Extension_Pack.vbox-extpack"
-  wget -O "$file" "https://download.virtualbox.org/virtualbox/6.0.10/Oracle_VM_VirtualBox_Extension_Pack-6.0.10.vbox-extpack"
+  wget -O "$file" "https://download.virtualbox.org/virtualbox/6.0.12/Oracle_VM_VirtualBox_Extension_Pack-6.0.12.vbox-extpack"
   echo y | sudo vboxmanage extpack install "$file"
   rm -fv "$file"
 else

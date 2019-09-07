@@ -25,10 +25,10 @@
     * Repositories
       * Flathub
 * OpenJDK - 8
-* [4K Video Downloader - 4.8.2 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
+* [4K Video Downloader - 4.9.0 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
 * 7-Zip - Latest
-* [Angry IP Scanner - 3.6.0 (Dpkg)](https://angryip.org/)
-* [Balena Etcher - 1.5.53 (Portable)](https://www.balena.io/etcher/)
+* [Angry IP Scanner - 3.6.1 (Dpkg)](https://angryip.org/)
+* [Balena Etcher - 1.5.56 (Portable)](https://www.balena.io/etcher/)
   * Configurations
     * Desktop
       * ~/.local/share/applications/appimagekit-balena-etcher-electron.desktop
@@ -48,8 +48,8 @@
 * GParted - Latest
 * [LibreOffice - Latest (Snap)](https://snapcraft.io/libreoffice)
 * [OBS Studio - Latest (Flatpak)](https://flathub.org/apps/details/com.obsproject.Studio)
-* [Oracle VM VirtualBox - 6.0.10 (Dpkg)](https://www.virtualbox.org/)
-  * Extension Pack - 6.0.10
+* [Oracle VM VirtualBox - 6.0.12 (Dpkg)](https://www.virtualbox.org/)
+  * Extension Pack - 6.0.12
   * User Groups
     * vboxusers
 * Remmina - Latest
