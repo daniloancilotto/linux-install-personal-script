@@ -99,7 +99,7 @@ fi
 file="$desktop_dir/appimagekit-balena-etcher-electron.desktop"
 if [ ! -f "$file" ]
 then
-  conf+=$'[Desktop Entry]\n'
+  conf=$'[Desktop Entry]\n'
   conf+=$'Name=balenaEtcher\n'
   conf+=$'Comment=Flash OS images to SD cards and USB drives, safely and easily.\n'
   conf+=$'Comment[pt_BR]=Gravar imagens de SO em cartões SD e drives USB, com segurança e facilidade.\n'
