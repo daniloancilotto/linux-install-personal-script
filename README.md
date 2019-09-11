@@ -65,7 +65,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     * Desktop
       * ~/.local/share/applications/freerapiddownloader.desktop
 * Furius ISO Mount - Latest
-* [GIMP - Latest (Flatpak)](https://flathub.org/apps/details/org.gimp.GIMP)
+* GIMP - Latest
 * [Google Chrome - Latest (Dpkg)](https://www.google.com/chrome/)
 * GParted - Latest
 * [LibreOffice - Latest (Snap)](https://snapcraft.io/libreoffice)
@@ -81,7 +81,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 * [Spotify - Latest (Snap)](https://snapcraft.io/spotify)
 * Steam - Latest
 * Transmission - Latest
-* [VLC - Lastest (Snap)](https://snapcraft.io/vlc)
+* VLC - Lastest
 
 <br/>
 
@@ -89,9 +89,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 
 ### Apps
 * Bloatwares
-  * GIMP
   * HexChat
-  * LibreOffice
   * Rhythmbox
   * Thunderbird
-  * VLC
+  * LibreOffice

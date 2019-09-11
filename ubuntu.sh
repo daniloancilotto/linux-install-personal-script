@@ -203,7 +203,7 @@ printLine "Furius ISO Mount"
 sudo apt install furiusisomount -y
 
 printLine "GIMP"
-sudo flatpak install flathub org.gimp.GIMP -y
+sudo apt install gimp -y
 
 printLine "Google Chrome"
 if [ -z "`google-chrome --version`" ]
@@ -256,10 +256,10 @@ sudo apt install transmission -y
 
 printLine "VLC"
 echo "Running snap, please wait..."
-sudo snap install vlc
+sudo apt install vlc -y
 
 printLine "Old Apps"
-sudo apt remove gimp hexchat libreoffice libreoffice* rhythmbox thunderbird vlc -y
+sudo apt remove hexchat rhythmbox thunderbird libreoffice libreoffice* -y
 
 printLine "Finished"
 echo "Done, please reboot your system."
