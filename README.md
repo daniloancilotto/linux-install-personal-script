@@ -11,7 +11,29 @@
 * 32-bit - Partially
   * i386
 
-### Install Apps
+<br/>
+
+# Preparing to Run the Script
+
+### Ubuntu and Derivatives
+```bash
+sudo apt install curl -y
+```
+
+<br/>
+
+# Running the Script
+
+### Ubuntu and Derivatives
+```bash
+curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/production-environment-script/master/ubuntu.sh | bash
+```
+
+<br/>
+
+# Installations and Configurations
+
+### Apps
 * Base Apps - Latest
   * Wget
   * Unzip
@@ -61,29 +83,15 @@
 * Transmission - Latest
 * [VLC - Lastest (Snap)](https://snapcraft.io/vlc)
 
-### Uninstall Apps
-* Old Apps
+<br/>
+
+# Uninstallations
+
+### Apps
+* Bloatwares
   * GIMP
   * HexChat
   * LibreOffice
   * Rhythmbox
   * Thunderbird
   * VLC
-
-<br/>
-
-# Preparing to Run the Script
-
-### Ubuntu and Derivatives
-```bash
-sudo apt install curl -y
-```
-
-<br/>
-
-# Running the Script
-
-### Ubuntu and Derivatives
-```bash
-curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/production-environment-script/master/ubuntu.sh | bash
-```
