@@ -90,7 +90,7 @@ then
   wget -O "$file" "https://github.com/balena-io/etcher/releases/download/v1.5.57/balena-etcher-electron-1.5.57-linux-$arch2.zip"
   mkdir -pv "$portable_subdir"
   unzip -q "$file" -d "$portable_subdir"
-  ln -sv -T "$portable_subdir/balenaEtcher-1.5.56-$arch2.AppImage" "$portable_subdir/balenaEtcher.AppImage"
+  ln -sv -T "$portable_subdir/balenaEtcher-1.5.57-$arch2.AppImage" "$portable_subdir/balenaEtcher.AppImage"
   rm -fv "$file"
 else
   echo "$portable_name is already installed"
