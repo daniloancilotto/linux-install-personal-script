@@ -75,7 +75,7 @@ sudo apt install p7zip-full -y
 printLine "Angry IP Scanner"
 if [ ! -f "/usr/bin/ipscan" ]
 then
-  dpkgInstall "angryipscanner.deb" "https://github.com/angryip/ipscan/releases/download/3.6.1/ipscan_3.6.1_$arch.deb"
+  dpkgInstall "angryipscanner.deb" "https://github.com/angryip/ipscan/releases/download/3.6.2/ipscan_3.6.2_$arch.deb"
 else
   echo "angryipscanner is already installed"
 fi
@@ -87,10 +87,10 @@ portable_subdir="$portable_dir/$portable_name"
 if [ ! -d "$portable_subdir" ]
 then
   file="$portable_dir/balena-etcher.zip"
-  wget -O "$file" "https://github.com/balena-io/etcher/releases/download/v1.5.57/balena-etcher-electron-1.5.57-linux-$arch2.zip"
+  wget -O "$file" "https://github.com/balena-io/etcher/releases/download/v1.5.59/balena-etcher-electron-1.5.59-linux-$arch2.zip"
   mkdir -pv "$portable_subdir"
   unzip -q "$file" -d "$portable_subdir"
-  ln -sv -T "$portable_subdir/balenaEtcher-1.5.57-$arch2.AppImage" "$portable_subdir/balenaEtcher.AppImage"
+  ln -sv -T "$portable_subdir/balenaEtcher-1.5.59-$arch2.AppImage" "$portable_subdir/balenaEtcher.AppImage"
   rm -fv "$file"
 else
   echo "$portable_name is already installed"
@@ -226,14 +226,14 @@ sudo flatpak install flathub com.obsproject.Studio -y
 printLine "Oracle VM VirtualBox"
 if [ -z "`vboxmanage --version`" ]
 then
-  dpkgInstall "oracle-vm-virtualbox.deb" "https://download.virtualbox.org/virtualbox/6.0.12/virtualbox-6.0_6.0.12-133076~Ubuntu~bionic_$arch.deb"
+  dpkgInstall "oracle-vm-virtualbox.deb" "https://download.virtualbox.org/virtualbox/6.0.14/virtualbox-6.0_6.0.14-133895~Ubuntu~bionic_$arch.deb"
 else
   echo "vbox is already installed"
 fi
 if [ -z "`vboxmanage list extpacks | grep -i 'version'`" ]
 then
   file="$HOME/Oracle_VM_VirtualBox_Extension_Pack.vbox-extpack"
-  wget -O "$file" "https://download.virtualbox.org/virtualbox/6.0.12/Oracle_VM_VirtualBox_Extension_Pack-6.0.12.vbox-extpack"
+  wget -O "$file" "https://download.virtualbox.org/virtualbox/6.0.14/Oracle_VM_VirtualBox_Extension_Pack-6.0.14.vbox-extpack"
   echo y | sudo vboxmanage extpack install "$file"
   rm -fv "$file"
 else
