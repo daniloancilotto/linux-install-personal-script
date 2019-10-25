@@ -225,12 +225,6 @@ sudo flatpak install flathub com.obsproject.Studio -y
 
 printLine "Oracle VM VirtualBox"
 sudo apt install virtualbox virtualbox-ext-pack -y
-if [ -z "`vboxmanage list extpacks | grep -i 'version'`" ]
-then
-  echo y | sudo vboxmanage setproperty vrdeextpack "Oracle VM VirtualBox Extension Pack"
-else
-  echo "vbox-extpack is already installed"
-fi
 sudo usermod -aG vboxusers $USER
 
 printLine "Remmina"
