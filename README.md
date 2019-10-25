@@ -72,12 +72,13 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 * [LibreOffice - Latest (Snap)](https://snapcraft.io/libreoffice)
 * [OBS Studio - Latest (Flatpak)](https://flathub.org/apps/details/com.obsproject.Studio)
 * Oracle VM VirtualBox - Latest
-  * Extensions - Latest
+  * Modules - Latest
     * Extension Pack
     * Guest Additions ISO
     * QT User Interface
-  * User Groups
-    * vboxusers
+  * Configurations
+    * User Groups
+      * vboxusers
 * Remmina - Latest
   * Plugins - Latest
     * RDP
