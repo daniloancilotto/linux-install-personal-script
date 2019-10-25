@@ -44,12 +44,11 @@ dpkgInstall() {
   sudo apt install -fy
 }
 
-printLine "Base Apps"
+printLine "Base"
+
 sudo apt update
 sudo apt install wget unzip tar jq neofetch htop -y
 
-printLine "App Hubs"
-sudo apt install snapd flatpak -y
 sudo systemctl enable --now snapd.socket
 sudo flatpak remote-add --if-not-exists flathub "https://dl.flathub.org/repo/flathub.flatpakrepo"
 desktop_dir="$HOME/.local/share/applications"

@@ -2,7 +2,7 @@
 
 ### Supported Systems
 * Ubuntu and Derivatives
-  * [Ubuntu - 18.04 ~ 19.04](https://ubuntu.com/)
+  * [Ubuntu - 18.04 ~ 19.10](https://ubuntu.com/)
   * [Linux Mint - 19.1 ~ 19.2](https://linuxmint.com/)
 
 ### Supported Architectures
@@ -17,7 +17,7 @@
 
 ### Ubuntu and Derivatives
 ```bash
-sudo apt install curl -y
+sudo apt install curl snapd flatpak -y
 ```
 
 <br/>
@@ -34,18 +34,19 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 # Installations and Configurations
 
 ### Apps
-* Base Apps - Latest
+* Base - Latest
   * Wget
   * Unzip
   * Tar
   * Jq
   * Neofetch
   * Htop
-* App Hubs - Latest
-  * [Snap](https://snapcraft.io/store)
-  * [Flatpak](https://flathub.org/home)
+  * Configurations
     * Repositories
-      * Flathub
+      * https://dl.flathub.org/repo/flathub.flatpakrepo
+    * Directories
+      * $HOME/.local/share/applications
+      * $HOME/portable
 * OpenJDK - 8
 * [4K Video Downloader - 4.9.2 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
 * 7-Zip - Latest
