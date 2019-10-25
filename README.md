@@ -45,8 +45,8 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     * Repositories
       * https://dl.flathub.org/repo/flathub.flatpakrepo
     * Directories
-      * $HOME/.local/share/applications
-      * $HOME/portable
+      * ~/.local/share/applications
+      * ~/portable
 * OpenJDK - 8
 * [4K Video Downloader - 4.9.2 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
 * 7-Zip - Latest

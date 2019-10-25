@@ -51,6 +51,7 @@ sudo apt install wget unzip tar jq neofetch htop -y
 
 sudo systemctl enable --now snapd.socket
 sudo flatpak remote-add --if-not-exists flathub "https://dl.flathub.org/repo/flathub.flatpakrepo"
+
 desktop_dir="$HOME/.local/share/applications"
 mkdir -pv "$desktop_dir"
 portable_dir="$HOME/portable"
@@ -249,7 +250,7 @@ printLine "VLC"
 echo "Running snap, please wait..."
 sudo apt install vlc -y
 
-printLine "Old Apps"
+printLine "Bloatwares"
 sudo apt remove hexchat rhythmbox thunderbird libreoffice libreoffice* -y
 
 printLine "Finished"
