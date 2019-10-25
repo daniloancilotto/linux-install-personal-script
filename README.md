@@ -71,8 +71,9 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 * GParted - Latest
 * [LibreOffice - Latest (Snap)](https://snapcraft.io/libreoffice)
 * [OBS Studio - Latest (Flatpak)](https://flathub.org/apps/details/com.obsproject.Studio)
-* [Oracle VM VirtualBox - 6.0.14 (Dpkg)](https://www.virtualbox.org/)
-  * Extension Pack - 6.0.14
+* Oracle VM VirtualBox - Latest
+  * Extensions - Latest
+    * Extension Pack
   * User Groups
     * vboxusers
 * Remmina - Latest

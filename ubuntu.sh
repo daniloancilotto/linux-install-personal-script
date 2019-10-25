@@ -223,18 +223,10 @@ printLine "OBS Studio"
 sudo flatpak install flathub com.obsproject.Studio -y
 
 printLine "Oracle VM VirtualBox"
-if [ -z "`vboxmanage --version`" ]
-then
-  dpkgInstall "oracle-vm-virtualbox.deb" "https://download.virtualbox.org/virtualbox/6.0.14/virtualbox-6.0_6.0.14-133895~Ubuntu~bionic_$arch.deb"
-else
-  echo "vbox is already installed"
-fi
+sudo apt install virtualbox virtualbox-ext-pack -y
 if [ -z "`vboxmanage list extpacks | grep -i 'version'`" ]
 then
-  file="$HOME/Oracle_VM_VirtualBox_Extension_Pack.vbox-extpack"
-  wget -O "$file" "https://download.virtualbox.org/virtualbox/6.0.14/Oracle_VM_VirtualBox_Extension_Pack-6.0.14.vbox-extpack"
-  echo y | sudo vboxmanage extpack install "$file"
-  rm -fv "$file"
+  sudo vboxmanage setproperty vrdeextpack "Oracle VM VirtualBox Extension Pack"
 else
   echo "vbox-extpack is already installed"
 fi
