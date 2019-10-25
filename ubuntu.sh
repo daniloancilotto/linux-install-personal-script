@@ -224,7 +224,7 @@ printLine "OBS Studio"
 sudo flatpak install flathub com.obsproject.Studio -y
 
 printLine "Oracle VM VirtualBox"
-sudo apt install virtualbox virtualbox-ext-pack virtualbox-qt -y
+sudo apt install virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso virtualbox-qt -y
 sudo usermod -aG vboxusers $USER
 
 printLine "Remmina"
