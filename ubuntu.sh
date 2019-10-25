@@ -226,7 +226,7 @@ printLine "Oracle VM VirtualBox"
 sudo apt install virtualbox virtualbox-ext-pack -y
 if [ -z "`vboxmanage list extpacks | grep -i 'version'`" ]
 then
-  sudo vboxmanage setproperty vrdeextpack "Oracle VM VirtualBox Extension Pack"
+  echo y | sudo vboxmanage setproperty vrdeextpack "Oracle VM VirtualBox Extension Pack"
 else
   echo "vbox-extpack is already installed"
 fi
