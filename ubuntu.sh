@@ -10,7 +10,7 @@ then
   arch2="ia32"
 fi
 
-echo "PRODUCTION ENVIRONMENT SCRIPT - UBUNTU"
+echo "PERSONAL ENVIRONMENT SCRIPT - UBUNTU"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $arch"

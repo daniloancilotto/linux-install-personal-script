@@ -1,4 +1,4 @@
-# Production Environment Script
+# Personal Environment Script
 
 ### Supported Systems
 * Ubuntu and Derivatives
@@ -26,7 +26,7 @@ sudo apt install curl snapd flatpak -y
 
 ### Ubuntu and Derivatives
 ```bash
-curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/production-environment-script/master/ubuntu.sh | bash
+curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/personal-environment-script/master/ubuntu.sh | bash
 ```
 
 <br/>
