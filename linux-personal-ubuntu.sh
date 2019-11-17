@@ -90,15 +90,58 @@ then
   mkdir -pv "$portable_subdir"
   tar -xJf "$file" -C "$portable_subdir"
   mv -fv "$portable_subdir/arduino-1.8.10" "$portable_subdir/default"
-  mkdir -pv "$portable_subdir/default/portable/sketchbook-original"
+  mkdir -pv "$portable_subdir/default/portable"
   cp -fr "$portable_subdir/default" "$portable_subdir/esp32"
-  ln -sfnv "$portable_subdir/default/portable/sketchbook-original" "$portable_subdir/default/portable/sketchbook"
-  ln -sfnv "$portable_subdir/esp32/portable/sketchbook-original" "$portable_subdir/esp32/portable/sketchbook"
-  echo $'boardsmanager.additional.urls=https://dl.espressif.com/dl/package_esp32_index.json\n' > "$portable_subdir/esp32/portable/preferences.txt"
   rm -fv "$file"
 else
   echo "$portable_name is already installed"
 fi
+
+conf=$'build.verbose=true\n'
+conf+=$'compiler.warning_level=default\n'
+conf+=$'editor.code_folding=true\n'
+conf+=$'editor.linenumbers=true\n'
+conf+=$'upload.verbose=true\n'
+file="$portable_subdir/default/portable/preferences.txt"
+if [ ! -f "$file" ]
+then
+  echo "$conf" > "$file"
+fi
+file="$portable_subdir/esp32/portable/preferences.txt"
+if [ ! -f "$file" ]
+then
+  conf+=$'boardsmanager.additional.urls=https://dl.espressif.com/dl/package_esp32_index.json\n'
+  echo "$conf" > "$file"
+fi
+
+conf=$'[Desktop Entry]\n'
+conf+=$'Comment=Open-source electronics prototyping platform\n'
+conf+=$'Comment[pt_BR]=Plataforma de prototipagem de eletrônicos de código aberto\n'
+conf+=$'Terminal=false\n'
+conf+=$'Type=Application\n'
+conf+=$'Icon=arduino-arduinoide\n'
+conf+=$'Categories=Development;IDE;Electronics;\n'
+conf+=$'MimeType=text/x-arduino;\n'
+conf+=$'Keywords=embedded electronics;electronics;avr;microcontroller;\n'
+conf+=$'StartupWMClass=processing-app-Base\n'
+file="$desktop_dir/arduino-arduinoide.desktop"
+if [ ! -f "$file" ]
+then
+  conf+=$'Name=Arduino IDE\n'
+  conf+=$'GenericName=Arduino IDE\n'
+  conf+=$'Exec='$portable_subdir$'/default/arduino\n'
+  echo "$conf" > "$file"
+fi
+file="$desktop_dir/arduino-arduinoide-esp32.desktop"
+if [ ! -f "$file" ]
+then
+  conf+=$'Name=Arduino IDE - ESP32\n'
+  conf+=$'GenericName=Arduino IDE - ESP32\n'
+  conf+=$'Exec='$portable_subdir$'/esp32/arduino\n'
+  echo "$conf" > "$file"
+fi
+
+echo "$portable_name have been configured"
 
 printLine "Balena Etcher"
 

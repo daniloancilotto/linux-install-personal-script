@@ -51,11 +51,15 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 * [4K Video Downloader - 4.9.3 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
 * [Angry IP Scanner - 3.6.2 (Dpkg)](https://angryip.org/)
 * [Arduino - 1.8.10 (Portable)](https://www.arduino.cc/)
+  * Modules - Latest
+    * Default
+    * ESP32
   * Configurations
-    * Directories
-      * ~/portable/arduino/default
-      * ~/portable/arduino/esp32
+    * Desktop
+      * ~/.local/share/applications/arduino-arduinoide.desktop
+      * ~/.local/share/applications/arduino-arduinoide-esp32.desktop
     * Txt
+      * ~/portable/arduino/default/portable/preferences.txt
       * ~/portable/arduino/esp32/portable/preferences.txt
 * [Balena Etcher - 1.5.63 (Portable)](https://www.balena.io/etcher/)
   * Configurations
