@@ -48,10 +48,9 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
       * ~/.local/share/applications
       * ~/portable
 * OpenJDK - 8
-* [4K Video Downloader - 4.9.2 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
-* 7-Zip - Latest
+* [4K Video Downloader - 4.9.3 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
 * [Angry IP Scanner - 3.6.2 (Dpkg)](https://angryip.org/)
-* [Balena Etcher - 1.5.59 (Portable)](https://www.balena.io/etcher/)
+* [Balena Etcher - 1.5.63 (Portable)](https://www.balena.io/etcher/)
   * Configurations
     * Desktop
       * ~/.local/share/applications/appimagekit-balena-etcher-electron.desktop
