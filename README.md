@@ -51,8 +51,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 * [4K Video Downloader - 4.9.3 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
 * [Angry IP Scanner - 3.6.2 (Dpkg)](https://angryip.org/)
 * [Arduino - 1.8.10 (Portable)](https://www.arduino.cc/)
-  * Modules - Latest
-    * Default
+  * Board Packages - Latest
     * ESP32
   * Configurations
     * Desktop

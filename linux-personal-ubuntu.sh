@@ -119,7 +119,6 @@ conf+=$'Comment=Open-source electronics prototyping platform\n'
 conf+=$'Comment[pt_BR]=Plataforma de prototipagem de eletrônicos de código aberto\n'
 conf+=$'Terminal=false\n'
 conf+=$'Type=Application\n'
-conf+=$'Icon=arduino-arduinoide\n'
 conf+=$'Categories=Development;IDE;Electronics;\n'
 conf+=$'MimeType=text/x-arduino;\n'
 conf+=$'Keywords=embedded electronics;electronics;avr;microcontroller;\n'
@@ -130,6 +129,7 @@ then
   conf+=$'Name=Arduino IDE\n'
   conf+=$'GenericName=Arduino IDE\n'
   conf+=$'Exec='$portable_subdir$'/default/arduino\n'
+  conf+=$'Icon='$portable_subdir$'/default/lib/arduino_icon.ico\n'
   echo "$conf" > "$file"
 fi
 file="$desktop_dir/arduino-arduinoide-esp32.desktop"
@@ -138,6 +138,7 @@ then
   conf+=$'Name=Arduino IDE - ESP32\n'
   conf+=$'GenericName=Arduino IDE - ESP32\n'
   conf+=$'Exec='$portable_subdir$'/esp32/arduino\n'
+  conf+=$'Icon='$portable_subdir$'/esp32/lib/arduino_icon.ico\n'
   echo "$conf" > "$file"
 fi
 
