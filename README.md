@@ -1,4 +1,4 @@
-# Personal Environment Script
+# Linux Personal Script
 
 ### Supported Systems
 * Ubuntu and Derivatives
@@ -26,7 +26,7 @@ sudo apt install curl snapd flatpak -y
 
 ### Ubuntu and Derivatives
 ```bash
-curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/personal-environment-script/master/ubuntu.sh | bash
+curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/linux-personal-script/master/ubuntu.sh | bash
 ```
 
 <br/>
@@ -50,6 +50,13 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 * OpenJDK - 8
 * [4K Video Downloader - 4.9.3 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
 * [Angry IP Scanner - 3.6.2 (Dpkg)](https://angryip.org/)
+* [Arduino - 1.8.10 (Portable)](https://www.arduino.cc/)
+  * Configurations
+    * Directories
+      * ~/portable/arduino/default
+      * ~/portable/arduino/esp32
+    * Txt
+      * ~/portable/arduino/esp32/portable/preferences.txt
 * [Balena Etcher - 1.5.63 (Portable)](https://www.balena.io/etcher/)
   * Configurations
     * Desktop

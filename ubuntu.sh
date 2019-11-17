@@ -4,13 +4,15 @@ machine="`uname -m`"
 
 arch="amd64"
 arch2="x64"
+arch3="64"
 if [ "$machine" != "x86_64" ]
 then
   arch="i386"
   arch2="ia32"
+  arch3="32"
 fi
 
-echo "PERSONAL ENVIRONMENT SCRIPT - UBUNTU"
+echo "LINUX PERSONAL SCRIPT - UBUNTU"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $arch"
@@ -75,6 +77,25 @@ then
   dpkgInstall "angryipscanner.deb" "https://github.com/angryip/ipscan/releases/download/3.6.2/ipscan_3.6.2_$arch.deb"
 else
   echo "angryipscanner is already installed"
+fi
+
+printLine "Arduino"
+
+portable_name="arduino"
+portable_subdir="$portable_dir/$portable_name"
+if [ ! -d "$portable_subdir" ]
+then
+  file="$portable_dir/arduino.tar.xz"
+  wget -O "$file" "https://downloads.arduino.cc/arduino-1.8.10-linux$arch3.tar.xz"
+  mkdir -pv "$portable_subdir"
+  tar -xJf "$file" -C "$portable_subdir"
+  mv -fv "$portable_subdir/arduino-1.8.10" "$portable_subdir/default"
+  mkdir -pv "$portable_subdir/default/portable"
+  cp -fr "$portable_subdir/default" "$portable_subdir/esp32"
+  echo $'boardsmanager.additional.urls=https://dl.espressif.com/dl/package_esp32_index.json\n' > "$portable_subdir/esp32/portable/preferences.txt"
+  rm -fv "$file"
+else
+  echo "$portable_name is already installed"
 fi
 
 printLine "Balena Etcher"
