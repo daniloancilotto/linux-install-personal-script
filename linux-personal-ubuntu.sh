@@ -12,7 +12,7 @@ then
   arch3="32"
 fi
 
-echo "LINUX PERSONAL SCRIPT - UBUNTU"
+echo "LINUX PERSONAL UBUNTU"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $arch"
