@@ -90,8 +90,10 @@ then
   mkdir -pv "$portable_subdir"
   tar -xJf "$file" -C "$portable_subdir"
   mv -fv "$portable_subdir/arduino-1.8.10" "$portable_subdir/default"
-  mkdir -pv "$portable_subdir/default/portable"
+  mkdir -pv "$portable_subdir/default/portable/sketchbook-original"
   cp -fr "$portable_subdir/default" "$portable_subdir/esp32"
+  ln -sfnv "$portable_subdir/default/portable/sketchbook-original" "$portable_subdir/default/portable/sketchbook"
+  ln -sfnv "$portable_subdir/esp32/portable/sketchbook-original" "$portable_subdir/esp32/portable/sketchbook"
   echo $'boardsmanager.additional.urls=https://dl.espressif.com/dl/package_esp32_index.json\n' > "$portable_subdir/esp32/portable/preferences.txt"
   rm -fv "$file"
 else
