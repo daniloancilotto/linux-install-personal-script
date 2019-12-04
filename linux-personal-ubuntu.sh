@@ -309,7 +309,7 @@ then
   conf+=$'Exec=snap run scrcpy\n'
   conf+=$'Terminal=true\n'
   conf+=$'Type=Application\n'
-  conf+=$'Icon=android\n'
+  conf+=$'Icon=application-vnd.android.package-archive\n'
   conf+=$'Categories=Utility;\n'
   echo "$conf" > "$file"
 fi
