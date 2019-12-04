@@ -92,6 +92,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * Plugins - Latest
     * RDP
     * VNC
+* [Scrcpy - Latest (Snap)](https://snapcraft.io/scrcpy)
 * [Spotify - Latest (Snap)](https://snapcraft.io/spotify)
 * Steam - Latest
 * Transmission - Latest

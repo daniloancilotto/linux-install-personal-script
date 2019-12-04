@@ -294,6 +294,28 @@ sudo usermod -aG vboxusers $USER
 printLine "Remmina"
 sudo apt install remmina remmina-plugin-rdp remmina-plugin-vnc -y
 
+printLine "Scrcpy"
+echo "Running snap, please wait..."
+sudo snap install scrcpy
+
+file="$desktop_dir/scrcpy.desktop"
+if [ ! -f "$file" ]
+then
+  conf=$'[Desktop Entry]\n'
+  conf+=$'Name=Scrcpy\n'
+  conf+=$'GenericName=Scrcpy\n'
+  conf+=$'Comment=Display and control of Android devices connected on USB\n'
+  conf+=$'Comment[pt_BR]=Exibição e controle de dispositivos Android conectados via USB\n'
+  conf+=$'Exec=snap run scrcpy\n'
+  conf+=$'Terminal=true\n'
+  conf+=$'Type=Application\n'
+  conf+=$'Icon=android\n'
+  conf+=$'Categories=Utility;\n'
+  echo "$conf" > "$file"
+fi
+
+echo "scrcpy have been configured"
+
 printLine "Spotify"
 echo "Running snap, please wait..."
 sudo snap install spotify
