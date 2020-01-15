@@ -48,7 +48,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
       * ~/.local/share/applications
       * ~/portable
 * OpenJDK - 8
-* [4K Video Downloader - 4.9.3 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
+* [4K Video Downloader - 4.10.1 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
 * [Angry IP Scanner - 3.6.2 (Dpkg)](https://angryip.org/)
 * [Arduino - 1.8.10 (Portable)](https://www.arduino.cc/)
   * Board Packages - Latest
@@ -60,7 +60,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     * Txt
       * ~/portable/arduino/default/portable/preferences.txt
       * ~/portable/arduino/esp32/portable/preferences.txt
-* [Balena Etcher - 1.5.63 (Portable)](https://www.balena.io/etcher/)
+* [Balena Etcher - 1.5.71 (Portable)](https://www.balena.io/etcher/)
   * Configurations
     * Desktop
       * ~/.local/share/applications/appimagekit-balena-etcher-electron.desktop
