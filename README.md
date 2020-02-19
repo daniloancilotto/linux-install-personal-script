@@ -3,7 +3,7 @@
 ### Supported Systems
 * Ubuntu and Derivatives
   * [Ubuntu - 18.04 ~ 19.10](https://ubuntu.com/)
-  * [Linux Mint - 19.1 ~ 19.2](https://linuxmint.com/)
+  * [Linux Mint - 19.1 ~ 19.3](https://linuxmint.com/)
 
 ### Supported Architectures
 * Fully
@@ -48,9 +48,9 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
       * ~/.local/share/applications
       * ~/portable
 * OpenJDK - 8
-* [4K Video Downloader - 4.10.1 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
+* [4K Video Downloader - 4.11.3 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
 * [Angry IP Scanner - 3.6.2 (Dpkg)](https://angryip.org/)
-* [Arduino - 1.8.10 (Portable)](https://www.arduino.cc/)
+* [Arduino - 1.8.12 (Portable)](https://www.arduino.cc/)
   * Board Packages - Latest
     * ESP32
   * Configurations
@@ -60,7 +60,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     * Txt
       * ~/portable/arduino/default/portable/preferences.txt
       * ~/portable/arduino/esp32/portable/preferences.txt
-* [Balena Etcher - 1.5.71 (Portable)](https://www.balena.io/etcher/)
+* [Balena Etcher - 1.5.78 (Portable)](https://www.balena.io/etcher/)
   * Configurations
     * Desktop
       * ~/.local/share/applications/appimagekit-balena-etcher-electron.desktop

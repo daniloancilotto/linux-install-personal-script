@@ -66,7 +66,7 @@ java_dir="/usr/lib/jvm/java-8-openjdk-$arch"
 printLine "4K Video Downloader"
 if [ ! -f "/usr/bin/4kvideodownloader" ]
 then
-  dpkgInstall "4kvideodownloader.deb" "https://dl.4kdownload.com/app/4kvideodownloader_4.10.1-1_$arch.deb"
+  dpkgInstall "4kvideodownloader.deb" "https://dl.4kdownload.com/app/4kvideodownloader_4.11.3-1_$arch.deb"
 else
   echo "4kvideodownloader is already installed"
 fi
@@ -86,10 +86,10 @@ portable_subdir="$portable_dir/$portable_name"
 if [ ! -d "$portable_subdir" ]
 then
   file="$portable_dir/arduino.tar.xz"
-  wget -O "$file" "https://downloads.arduino.cc/arduino-1.8.10-linux$arch3.tar.xz"
+  wget -O "$file" "https://downloads.arduino.cc/arduino-1.8.12-linux$arch3.tar.xz"
   mkdir -pv "$portable_subdir"
   tar -xJf "$file" -C "$portable_subdir"
-  mv -fv "$portable_subdir/arduino-1.8.10" "$portable_subdir/default"
+  mv -fv "$portable_subdir/arduino-1.8.12" "$portable_subdir/default"
   mkdir -pv "$portable_subdir/default/portable"
   cp -fr "$portable_subdir/default" "$portable_subdir/esp32"
   rm -fv "$file"
@@ -151,10 +151,10 @@ portable_subdir="$portable_dir/$portable_name"
 if [ ! -d "$portable_subdir" ]
 then
   file="$portable_dir/balena-etcher.zip"
-  wget -O "$file" "https://github.com/balena-io/etcher/releases/download/v1.5.71/balena-etcher-electron-1.5.71-linux-$arch2.zip"
+  wget -O "$file" "https://github.com/balena-io/etcher/releases/download/v1.5.78/balena-etcher-electron-1.5.78-linux-$arch2.zip"
   mkdir -pv "$portable_subdir"
   unzip -q "$file" -d "$portable_subdir"
-  ln -sv -T "$portable_subdir/balenaEtcher-1.5.71-$arch2.AppImage" "$portable_subdir/balenaEtcher.AppImage"
+  ln -sv -T "$portable_subdir/balenaEtcher-1.5.78-$arch2.AppImage" "$portable_subdir/balenaEtcher.AppImage"
   rm -fv "$file"
 else
   echo "$portable_name is already installed"
