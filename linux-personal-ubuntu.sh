@@ -142,6 +142,8 @@ then
   echo "$conf" > "$file"
 fi
 
+sudo usermod -aG dialout $USER
+
 echo "$portable_name have been configured"
 
 printLine "Balena Etcher"
@@ -151,10 +153,10 @@ portable_subdir="$portable_dir/$portable_name"
 if [ ! -d "$portable_subdir" ]
 then
   file="$portable_dir/balena-etcher.zip"
-  wget -O "$file" "https://github.com/balena-io/etcher/releases/download/v1.5.78/balena-etcher-electron-1.5.78-linux-$arch2.zip"
+  wget -O "$file" "https://github.com/balena-io/etcher/releases/download/v1.5.79/balena-etcher-electron-1.5.79-linux-$arch2.zip"
   mkdir -pv "$portable_subdir"
   unzip -q "$file" -d "$portable_subdir"
-  ln -sv -T "$portable_subdir/balenaEtcher-1.5.78-$arch2.AppImage" "$portable_subdir/balenaEtcher.AppImage"
+  ln -sv -T "$portable_subdir/balenaEtcher-1.5.79-$arch2.AppImage" "$portable_subdir/balenaEtcher.AppImage"
   rm -fv "$file"
 else
   echo "$portable_name is already installed"

@@ -60,7 +60,9 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     * Txt
       * ~/portable/arduino/default/portable/preferences.txt
       * ~/portable/arduino/esp32/portable/preferences.txt
-* [Balena Etcher - 1.5.78 (Portable)](https://www.balena.io/etcher/)
+    * User Groups
+      * dialout
+* [Balena Etcher - 1.5.79 (Portable)](https://www.balena.io/etcher/)
   * Configurations
     * Desktop
       * ~/.local/share/applications/appimagekit-balena-etcher-electron.desktop
