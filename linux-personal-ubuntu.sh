@@ -146,6 +146,9 @@ sudo usermod -aG dialout $USER
 
 echo "$portable_name have been configured"
 
+printLine "Audacity"
+sudo apt install audacity -y
+
 printLine "Balena Etcher"
 
 portable_name="balena-etcher"
@@ -292,6 +295,9 @@ sudo usermod -aG vboxusers $USER
 printLine "Remmina"
 sudo apt install remmina remmina-plugin-rdp remmina-plugin-vnc -y
 
+printLine "Rhythmbox"
+sudo apt install rhythmbox -y
+
 printLine "Scrcpy"
 echo "Running snap, please wait..."
 sudo snap install scrcpy
@@ -329,7 +335,7 @@ echo "Running snap, please wait..."
 sudo apt install vlc -y
 
 printLine "Bloatwares"
-sudo apt remove hexchat rhythmbox thunderbird libreoffice libreoffice* -y
+sudo apt remove hexchat thunderbird libreoffice libreoffice* -y
 
 printLine "Finished"
 echo "Done, please reboot your system."

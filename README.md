@@ -62,6 +62,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
       * ~/portable/arduino/esp32/portable/preferences.txt
     * User Groups
       * dialout
+* Audacity - Latest
 * [Balena Etcher - 1.5.80 (Portable)](https://www.balena.io/etcher/)
   * Configurations
     * Desktop
@@ -93,6 +94,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * Plugins - Latest
     * RDP
     * VNC
+* Rhythmbox - Latest
 * [Scrcpy - Latest (Snap)](https://snapcraft.io/scrcpy)
 * [Spotify - Latest (Snap)](https://snapcraft.io/spotify)
 * Steam - Latest
@@ -106,6 +108,5 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 ### Apps
 * Bloatwares
   * HexChat
-  * Rhythmbox
   * Thunderbird
   * LibreOffice
