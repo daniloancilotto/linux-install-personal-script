@@ -66,7 +66,7 @@ java_dir="/usr/lib/jvm/java-8-openjdk-$arch"
 printLine "4K Video Downloader"
 if [ ! -f "/usr/bin/4kvideodownloader" ]
 then
-  dpkgInstall "4kvideodownloader.deb" "https://dl.4kdownload.com/app/4kvideodownloader_4.11.3-1_$arch.deb"
+  dpkgInstall "4kvideodownloader.deb" "https://dl.4kdownload.com/app/4kvideodownloader_4.12.0-1_$arch.deb"
 else
   echo "4kvideodownloader is already installed"
 fi
@@ -74,7 +74,7 @@ fi
 printLine "Angry IP Scanner"
 if [ ! -f "/usr/bin/ipscan" ]
 then
-  dpkgInstall "angryipscanner.deb" "https://github.com/angryip/ipscan/releases/download/3.6.2/ipscan_3.6.2_$arch.deb"
+  dpkgInstall "angryipscanner.deb" "https://github.com/angryip/ipscan/releases/download/3.7.0/ipscan_3.7.0_$arch.deb"
 else
   echo "angryipscanner is already installed"
 fi
@@ -153,10 +153,10 @@ portable_subdir="$portable_dir/$portable_name"
 if [ ! -d "$portable_subdir" ]
 then
   file="$portable_dir/balena-etcher.zip"
-  wget -O "$file" "https://github.com/balena-io/etcher/releases/download/v1.5.79/balena-etcher-electron-1.5.79-linux-$arch2.zip"
+  wget -O "$file" "https://github.com/balena-io/etcher/releases/download/v1.5.80/balena-etcher-electron-1.5.80-linux-$arch2.zip"
   mkdir -pv "$portable_subdir"
   unzip -q "$file" -d "$portable_subdir"
-  ln -sv -T "$portable_subdir/balenaEtcher-1.5.79-$arch2.AppImage" "$portable_subdir/balenaEtcher.AppImage"
+  ln -sv -T "$portable_subdir/balenaEtcher-1.5.80-$arch2.AppImage" "$portable_subdir/balenaEtcher.AppImage"
   rm -fv "$file"
 else
   echo "$portable_name is already installed"
@@ -220,14 +220,10 @@ fi
 
 echo "$portable_name have been configured"
 
-printLine "Discord"
-echo "Running snap, please wait..."
-sudo snap install discord
-
 printLine "Dropbox"
 if [ ! -f "/usr/bin/dropbox" ]
 then
-  dpkgInstall "dropbox.deb" "https://linux.dropbox.com/packages/ubuntu/dropbox_2019.02.14_$arch.deb"
+  dpkgInstall "dropbox.deb" "https://linux.dropbox.com/packages/ubuntu/dropbox_2020.03.04_$arch.deb"
 else
   echo "dropbox is already installed"
 fi

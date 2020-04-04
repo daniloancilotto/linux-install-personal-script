@@ -2,7 +2,7 @@
 
 ### Supported Systems
 * Ubuntu and Derivatives
-  * [Ubuntu - 18.04 ~ 19.10](https://ubuntu.com/)
+  * [Ubuntu - 18.04 ~ 20.04](https://ubuntu.com/)
   * [Linux Mint - 19.1 ~ 19.3](https://linuxmint.com/)
 
 ### Supported Architectures
@@ -48,8 +48,8 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
       * ~/.local/share/applications
       * ~/portable
 * OpenJDK - 8
-* [4K Video Downloader - 4.11.3 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
-* [Angry IP Scanner - 3.6.2 (Dpkg)](https://angryip.org/)
+* [4K Video Downloader - 4.12.0 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
+* [Angry IP Scanner - 3.7.0 (Dpkg)](https://angryip.org/)
 * [Arduino - 1.8.12 (Portable)](https://www.arduino.cc/)
   * Board Packages - Latest
     * ESP32
@@ -62,7 +62,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
       * ~/portable/arduino/esp32/portable/preferences.txt
     * User Groups
       * dialout
-* [Balena Etcher - 1.5.79 (Portable)](https://www.balena.io/etcher/)
+* [Balena Etcher - 1.5.80 (Portable)](https://www.balena.io/etcher/)
   * Configurations
     * Desktop
       * ~/.local/share/applications/appimagekit-balena-etcher-electron.desktop
@@ -70,8 +70,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * Configurations
     * Desktop
       * ~/.local/share/applications/cpu-x.desktop
-* [Discord - Latest (Snap)](https://snapcraft.io/discord)
-* [Dropbox - 2019.02.14 (Dpkg)](https://www.dropbox.com/install)
+* [Dropbox - 2020.03.04 (Dpkg)](https://www.dropbox.com/install)
 * [FreeRapid Downloader - 0.9.4 (Portable)](http://wordrider.net/freerapid/)
   * Configurations
     * Desktop
