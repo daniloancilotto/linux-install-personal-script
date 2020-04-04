@@ -335,7 +335,7 @@ echo "Running snap, please wait..."
 sudo apt install vlc -y
 
 printLine "Bloatwares"
-sudo apt remove hexchat thunderbird libreoffice libreoffice* -y
+sudo apt remove libreoffice libreoffice* hexchat thunderbird -y
 
 printLine "Finished"
 echo "Done, please reboot your system."
