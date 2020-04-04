@@ -264,9 +264,6 @@ fi
 
 echo "$portable_name have been configured"
 
-printLine "Furius ISO Mount"
-sudo apt install furiusisomount -y
-
 printLine "GIMP"
 sudo apt install gimp -y
 
@@ -335,7 +332,10 @@ echo "Running snap, please wait..."
 sudo apt install vlc -y
 
 printLine "Bloatwares"
-sudo apt remove libreoffice libreoffice* hexchat thunderbird -y
+sudo apt remove hexchat -y
+sudo apt remove libreoffice -y
+sudo apt remove libreoffice* -y
+sudo apt remove thunderbird -y
 
 printLine "Finished"
 echo "Done, please reboot your system."

@@ -76,7 +76,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * Configurations
     * Desktop
       * ~/.local/share/applications/freerapiddownloader.desktop
-* Furius ISO Mount - Latest
 * GIMP - Latest
 * [Google Chrome - Latest (Dpkg)](https://www.google.com/chrome/)
 * GParted - Latest
@@ -108,5 +107,5 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 ### Apps
 * Bloatwares
   * HexChat
-  * Thunderbird
   * LibreOffice
+  * Thunderbird
