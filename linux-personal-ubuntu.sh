@@ -174,7 +174,7 @@ then
   conf+=$'Exec="'$portable_subdir$'/balenaEtcher.AppImage" %U\n'
   conf+=$'Terminal=false\n'
   conf+=$'Type=Application\n'
-  conf+=$'Icon=appimagekit-balena-etcher-electron\n'
+  conf+=$'Icon=usb-creator-gtk\n'
   conf+=$'StartupWMClass=balenaEtcher\n'
   conf+=$'Categories=Utility;\n'
   conf+=$'TryExec='$portable_subdir$'/balenaEtcher.AppImage\n'
@@ -310,7 +310,7 @@ then
   conf+=$'Exec=snap run scrcpy\n'
   conf+=$'Terminal=true\n'
   conf+=$'Type=Application\n'
-  conf+=$'Icon=application-vnd.android.package-archive\n'
+  conf+=$'Icon=phone\n'
   conf+=$'Categories=Utility;\n'
   echo "$conf" > "$file"
 fi
