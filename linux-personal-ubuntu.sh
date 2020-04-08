@@ -52,7 +52,6 @@ sudo apt update
 sudo apt install wget unzip tar jq neofetch htop -y
 
 sudo systemctl enable --now snapd.socket
-sudo flatpak remote-add --if-not-exists flathub "https://dl.flathub.org/repo/flathub.flatpakrepo"
 
 desktop_dir="$HOME/.local/share/applications"
 mkdir -pv "$desktop_dir"
@@ -283,7 +282,8 @@ echo "Running snap, please wait..."
 sudo snap install libreoffice
 
 printLine "OBS Studio"
-sudo flatpak install flathub com.obsproject.Studio -y
+echo "Running snap, please wait..."
+sudo snap install obs-studio
 
 printLine "Oracle VM VirtualBox"
 sudo apt install virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso virtualbox-qt -y

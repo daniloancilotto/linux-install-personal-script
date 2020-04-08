@@ -1,7 +1,7 @@
 # Linux Personal Script
 
 ### Supported Systems
-* [Ubuntu - 19.10 ~ 20.04](https://ubuntu.com/)
+* [Ubuntu - 20.04](https://ubuntu.com/)
 
 ### Supported Architectures
 * Fully
@@ -15,7 +15,7 @@
 
 ### Ubuntu
 ```bash
-sudo apt install curl snapd flatpak -y
+sudo apt install curl snapd -y
 ```
 
 <br/>
@@ -40,8 +40,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * Neofetch
   * Htop
   * Configurations
-    * Repositories
-      * https://dl.flathub.org/repo/flathub.flatpakrepo
     * Directories
       * ~/.local/share/applications
       * ~/portable
@@ -78,7 +76,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 * [Google Chrome - Latest (Dpkg)](https://www.google.com/chrome/)
 * GParted - Latest
 * [LibreOffice - Latest (Snap)](https://snapcraft.io/libreoffice)
-* [OBS Studio - Latest (Flatpak)](https://flathub.org/apps/details/com.obsproject.Studio)
+* [OBS Studio - Latest (Snap)](https://snapcraft.io/obs-studio)
 * Oracle VM VirtualBox - Latest
   * Modules - Latest
     * Extension Pack
