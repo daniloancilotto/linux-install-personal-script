@@ -197,6 +197,7 @@ then
   conf=$'#!/bin/bash\n'
   conf+=$'nohup "'$file$'" >/dev/null 2>&1 &'
   echo "$conf" > "$portable_subdir/cpu-x.sh"
+  chmod +x "$portable_subdir/cpu-x.sh"
 
   current_dir="`pwd`"
   cd "$portable_subdir"
