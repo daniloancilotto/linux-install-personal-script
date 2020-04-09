@@ -193,7 +193,11 @@ then
   file="$portable_subdir/CPU-X_v3.2.4_$machine.AppImage"
   wget -O "$file" "https://github.com/X0rg/CPU-X/releases/download/v3.2.4/CPU-X_v3.2.4_$machine.AppImage"
   chmod +x "$file"
-  ln -sv -T "$file" "$portable_subdir/cpu-x.AppImage"
+
+  conf=$'#!/bin/bash\n'
+  conf+=$'nohup "$file" >/dev/null 2>&1 &'
+  echo "$conf" > "$portable_subdir/cpu-x.sh"
+
   current_dir="`pwd`"
   cd "$portable_subdir"
   "$file" --appimage-extract
@@ -212,7 +216,7 @@ then
   conf+=$'GenericName=CPU-X\n'
   conf+=$'Comment=CPU, motherboard and more information\n'
   conf+=$'Comment[pt_BR]=CPU, placa-mãe e mais informações\n'
-  conf+=$'Exec=sudo '$portable_subdir$'/cpu-x.AppImage\n'
+  conf+=$'Exec=sudo '$portable_subdir$'/cpu-x.sh\n'
   conf+=$'Terminal=true\n'
   conf+=$'Type=Application\n'
   conf+=$'Icon='$portable_subdir$'/cpu-x.png\n'
