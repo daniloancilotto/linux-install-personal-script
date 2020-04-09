@@ -286,6 +286,7 @@ echo "Running snap, please wait..."
 sudo snap install obs-studio
 
 printLine "Oracle VM VirtualBox"
+echo virtualbox-ext-pack virtualbox-ext-pack/license select true | sudo debconf-set-selections
 sudo apt install virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso virtualbox-qt -y
 sudo usermod -aG vboxusers $USER
 
