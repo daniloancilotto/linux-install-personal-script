@@ -195,7 +195,8 @@ then
   chmod +x "$file"
 
   conf=$'#!/bin/bash\n'
-  conf+=$'nohup "'$file$'" >/dev/null 2>&1 &'
+  conf+=$'nohup "'$file$'" >/dev/null 2>&1 &\n'
+  conf+=$'sleep 1'
   echo "$conf" > "$portable_subdir/cpu-x.sh"
   chmod +x "$portable_subdir/cpu-x.sh"
 
