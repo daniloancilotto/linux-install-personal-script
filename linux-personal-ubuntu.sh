@@ -113,32 +113,32 @@ then
   echo "$conf" > "$file"
 fi
 
-conf=$'[Desktop Entry]\n'
-conf+=$'Comment=Open-source electronics prototyping platform\n'
-conf+=$'Comment[pt_BR]=Plataforma de prototipagem de eletrônicos de código aberto\n'
-conf+=$'Terminal=false\n'
-conf+=$'Type=Application\n'
-conf+=$'Categories=Development;IDE;Electronics;\n'
-conf+=$'MimeType=text/x-arduino;\n'
-conf+=$'Keywords=embedded electronics;electronics;avr;microcontroller;\n'
-conf+=$'StartupWMClass=processing-app-Base\n'
+desk=$'[Desktop Entry]\n'
+desk+=$'Comment=Open-source electronics prototyping platform\n'
+desk+=$'Comment[pt_BR]=Plataforma de prototipagem de eletrônicos de código aberto\n'
+desk+=$'Terminal=false\n'
+desk+=$'Type=Application\n'
+desk+=$'Categories=Development;IDE;Electronics;\n'
+desk+=$'MimeType=text/x-arduino;\n'
+desk+=$'Keywords=embedded electronics;electronics;avr;microcontroller;\n'
+desk+=$'StartupWMClass=processing-app-Base\n'
 file="$desktop_dir/arduino-arduinoide.desktop"
 if [ ! -f "$file" ]
 then
-  conf+=$'Name=Arduino IDE\n'
-  conf+=$'GenericName=Arduino IDE\n'
-  conf+=$'Exec='$portable_subdir$'/default/arduino\n'
-  conf+=$'Icon='$portable_subdir$'/default/lib/arduino_icon.ico\n'
-  echo "$conf" > "$file"
+  desk+=$'Name=Arduino IDE\n'
+  desk+=$'GenericName=Arduino IDE\n'
+  desk+=$'Exec='$portable_subdir$'/default/arduino\n'
+  desk+=$'Icon='$portable_subdir$'/default/lib/arduino_icon.ico\n'
+  echo "$desk" > "$file"
 fi
 file="$desktop_dir/arduino-arduinoide-esp32.desktop"
 if [ ! -f "$file" ]
 then
-  conf+=$'Name=Arduino IDE - ESP32\n'
-  conf+=$'GenericName=Arduino IDE - ESP32\n'
-  conf+=$'Exec='$portable_subdir$'/esp32/arduino\n'
-  conf+=$'Icon='$portable_subdir$'/esp32/lib/arduino_icon.ico\n'
-  echo "$conf" > "$file"
+  desk+=$'Name=Arduino IDE - ESP32\n'
+  desk+=$'GenericName=Arduino IDE - ESP32\n'
+  desk+=$'Exec='$portable_subdir$'/esp32/arduino\n'
+  desk+=$'Icon='$portable_subdir$'/esp32/lib/arduino_icon.ico\n'
+  echo "$desk" > "$file"
 fi
 
 sudo usermod -aG dialout $USER
@@ -167,18 +167,18 @@ fi
 file="$desktop_dir/appimagekit-balena-etcher-electron.desktop"
 if [ ! -f "$file" ]
 then
-  conf=$'[Desktop Entry]\n'
-  conf+=$'Name=balenaEtcher\n'
-  conf+=$'Comment=Flash OS images to SD cards and USB drives, safely and easily.\n'
-  conf+=$'Comment[pt_BR]=Gravar imagens de SO em cartões SD e drives USB, com segurança e facilidade.\n'
-  conf+=$'Exec="'$portable_subdir$'/balenaEtcher.AppImage" %U\n'
-  conf+=$'Terminal=false\n'
-  conf+=$'Type=Application\n'
-  conf+=$'Icon=usb-creator-gtk\n'
-  conf+=$'StartupWMClass=balenaEtcher\n'
-  conf+=$'Categories=Utility;\n'
-  conf+=$'TryExec='$portable_subdir$'/balenaEtcher.AppImage\n'
-  echo "$conf" > "$file"
+  desk=$'[Desktop Entry]\n'
+  desk+=$'Name=balenaEtcher\n'
+  desk+=$'Comment=Flash OS images to SD cards and USB drives, safely and easily.\n'
+  desk+=$'Comment[pt_BR]=Gravar imagens de SO em cartões SD e drives USB, com segurança e facilidade.\n'
+  desk+=$'Exec="'$portable_subdir$'/balenaEtcher.AppImage" %U\n'
+  desk+=$'Terminal=false\n'
+  desk+=$'Type=Application\n'
+  desk+=$'Icon=usb-creator-gtk\n'
+  desk+=$'StartupWMClass=balenaEtcher\n'
+  desk+=$'Categories=Utility;\n'
+  desk+=$'TryExec='$portable_subdir$'/balenaEtcher.AppImage\n'
+  echo "$desk" > "$file"
 fi
 
 echo "$portable_name have been configured"
@@ -194,10 +194,10 @@ then
   wget -O "$file" "https://github.com/X0rg/CPU-X/releases/download/v3.2.4/CPU-X_v3.2.4_$machine.AppImage"
   chmod +x "$file"
 
-  conf=$'#!/bin/bash\n'
-  conf+=$'nohup "'$file$'" >/dev/null 2>&1 &\n'
-  conf+=$'sleep 1'
-  echo "$conf" > "$portable_subdir/cpu-x.sh"
+  desk=$'#!/bin/bash\n'
+  desk+=$'nohup "'$file$'" >/dev/null 2>&1 &\n'
+  desk+=$'sleep 1\n'
+  echo "$desk" > "$portable_subdir/cpu-x.sh"
   chmod +x "$portable_subdir/cpu-x.sh"
 
   current_dir="`pwd`"
@@ -213,17 +213,17 @@ fi
 file="$desktop_dir/$portable_name.desktop"
 if [ ! -f "$file" ]
 then
-  conf=$'[Desktop Entry]\n'
-  conf+=$'Name=CPU-X\n'
-  conf+=$'GenericName=CPU-X\n'
-  conf+=$'Comment=CPU, motherboard and more information\n'
-  conf+=$'Comment[pt_BR]=CPU, placa-mãe e mais informações\n'
-  conf+=$'Exec=sudo '$portable_subdir$'/cpu-x.sh\n'
-  conf+=$'Terminal=true\n'
-  conf+=$'Type=Application\n'
-  conf+=$'Icon='$portable_subdir$'/cpu-x.png\n'
-  conf+=$'Categories=System;\n'
-  echo "$conf" > "$file"
+  desk=$'[Desktop Entry]\n'
+  desk+=$'Name=CPU-X\n'
+  desk+=$'GenericName=CPU-X\n'
+  desk+=$'Comment=CPU, motherboard and more information\n'
+  desk+=$'Comment[pt_BR]=CPU, placa-mãe e mais informações\n'
+  desk+=$'Exec=sudo '$portable_subdir$'/cpu-x.sh\n'
+  desk+=$'Terminal=true\n'
+  desk+=$'Type=Application\n'
+  desk+=$'Icon='$portable_subdir$'/cpu-x.png\n'
+  desk+=$'Categories=System;\n'
+  echo "$desk" > "$file"
 fi
 
 echo "$portable_name have been configured"
@@ -254,17 +254,17 @@ fi
 file="$desktop_dir/$portable_name.desktop"
 if [ ! -f "$file" ]
 then
-  conf=$'[Desktop Entry]\n'
-  conf+=$'Name=FreeRapid Downloader\n'
-  conf+=$'GenericName=FreeRapid Downloader\n'
-  conf+=$'Comment=Download from file-sharing services\n'
-  conf+=$'Comment[pt_BR]=Download de serviços de compartilhamento de arquivos\n'
-  conf+=$'Exec='$java_dir$'/bin/java -jar '$portable_subdir$'/frd.jar\n'
-  conf+=$'Terminal=false\n'
-  conf+=$'Type=Application\n'
-  conf+=$'Icon='$portable_subdir$'/frd.png\n'
-  conf+=$'Categories=Network;\n'
-  echo "$conf" > "$file"
+  desk=$'[Desktop Entry]\n'
+  desk+=$'Name=FreeRapid Downloader\n'
+  desk+=$'GenericName=FreeRapid Downloader\n'
+  desk+=$'Comment=Download from file-sharing services\n'
+  desk+=$'Comment[pt_BR]=Download de serviços de compartilhamento de arquivos\n'
+  desk+=$'Exec='$java_dir$'/bin/java -jar '$portable_subdir$'/frd.jar\n'
+  desk+=$'Terminal=false\n'
+  desk+=$'Type=Application\n'
+  desk+=$'Icon='$portable_subdir$'/frd.png\n'
+  desk+=$'Categories=Network;\n'
+  echo "$desk" > "$file"
 fi
 
 echo "$portable_name have been configured"
@@ -309,17 +309,17 @@ sudo snap install scrcpy
 file="$desktop_dir/scrcpy.desktop"
 if [ ! -f "$file" ]
 then
-  conf=$'[Desktop Entry]\n'
-  conf+=$'Name=Scrcpy\n'
-  conf+=$'GenericName=Scrcpy\n'
-  conf+=$'Comment=Display and control of Android devices connected on USB\n'
-  conf+=$'Comment[pt_BR]=Exibição e controle de dispositivos Android conectados via USB\n'
-  conf+=$'Exec=snap run scrcpy\n'
-  conf+=$'Terminal=true\n'
-  conf+=$'Type=Application\n'
-  conf+=$'Icon=phone\n'
-  conf+=$'Categories=Utility;\n'
-  echo "$conf" > "$file"
+  desk=$'[Desktop Entry]\n'
+  desk+=$'Name=Scrcpy\n'
+  desk+=$'GenericName=Scrcpy\n'
+  desk+=$'Comment=Display and control of Android devices connected on USB\n'
+  desk+=$'Comment[pt_BR]=Exibição e controle de dispositivos Android conectados via USB\n'
+  desk+=$'Exec=snap run scrcpy\n'
+  desk+=$'Terminal=true\n'
+  desk+=$'Type=Application\n'
+  desk+=$'Icon=phone\n'
+  desk+=$'Categories=Utility;\n'
+  echo "$desk" > "$file"
 fi
 
 echo "scrcpy have been configured"
@@ -341,7 +341,6 @@ sudo apt install vlc -y
 printLine "Bloatwares"
 sudo apt remove hexchat -y
 sudo apt remove libreoffice -y
-sudo apt remove libreoffice* -y
 sudo apt remove thunderbird -y
 
 printLine "Finished"
