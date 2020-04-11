@@ -358,9 +358,6 @@ printLine "Spotify"
 echo "Running snap, please wait..."
 sudo snap install spotify
 
-printLine "Steam"
-sudo apt install steam -y
-
 printLine "Transmission"
 sudo apt install transmission -y
 
