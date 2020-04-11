@@ -95,13 +95,3 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 * Steam - Latest
 * Transmission - Latest
 * VLC - Lastest
-
-<br/>
-
-# Uninstallations
-
-### Apps
-* Bloatwares
-  * HexChat
-  * LibreOffice
-  * Thunderbird

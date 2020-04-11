@@ -88,10 +88,11 @@ then
   wget -O "$file" "https://downloads.arduino.cc/arduino-1.8.12-linux$arch3.tar.xz"
   mkdir -pv "$portable_subdir"
   tar -xJf "$file" -C "$portable_subdir"
+  rm -fv "$file"
+
   mv -fv "$portable_subdir/arduino-1.8.12" "$portable_subdir/default"
   mkdir -pv "$portable_subdir/default/portable"
   cp -fr "$portable_subdir/default" "$portable_subdir/esp32"
-  rm -fv "$file"
 else
   echo "$portable_name is already installed"
 fi
@@ -158,8 +159,18 @@ then
   wget -O "$file" "https://github.com/balena-io/etcher/releases/download/v1.5.80/balena-etcher-electron-1.5.80-linux-$arch2.zip"
   mkdir -pv "$portable_subdir"
   unzip -q "$file" -d "$portable_subdir"
-  ln -sv -T "$portable_subdir/balenaEtcher-1.5.80-$arch2.AppImage" "$portable_subdir/balenaEtcher.AppImage"
   rm -fv "$file"
+
+  file="$portable_subdir/balenaEtcher-1.5.80-$arch2.AppImage"
+  ln -sv -T "$file" "$portable_subdir/balena-etcher.AppImage"
+  chmod +x "$file"
+
+  current_dir="`pwd`"
+  cd "$portable_subdir"
+  "$file" --appimage-extract
+  cd "$current_dir"
+  cp -fv "$portable_subdir/squashfs-root/balena-etcher-electron.png" "$portable_subdir/balena-etcher.png"
+  rm -rf "$portable_subdir/squashfs-root"
 else
   echo "$portable_name is already installed"
 fi
@@ -169,15 +180,15 @@ if [ ! -f "$file" ]
 then
   desk=$'[Desktop Entry]\n'
   desk+=$'Name=balenaEtcher\n'
+  desk+=$'GenericName=balenaEtcher\n'
   desk+=$'Comment=Flash OS images to SD cards and USB drives, safely and easily.\n'
   desk+=$'Comment[pt_BR]=Gravar imagens de SO em cartões SD e drives USB, com segurança e facilidade.\n'
-  desk+=$'Exec="'$portable_subdir$'/balenaEtcher.AppImage" %U\n'
+  desk+=$'Exec="'$portable_subdir$'/balena-etcher.AppImage" %U\n'
   desk+=$'Terminal=false\n'
   desk+=$'Type=Application\n'
-  desk+=$'Icon=usb-creator-gtk\n'
+  desk+=$'Icon='$portable_subdir$'/balena-etcher.png\n'
   desk+=$'StartupWMClass=balenaEtcher\n'
   desk+=$'Categories=Utility;\n'
-  desk+=$'TryExec='$portable_subdir$'/balenaEtcher.AppImage\n'
   echo "$desk" > "$file"
 fi
 
@@ -204,7 +215,7 @@ then
   cd "$portable_subdir"
   "$file" --appimage-extract
   cd "$current_dir"
-  mv -fv "$portable_subdir/squashfs-root/cpu-x.png" "$portable_subdir/cpu-x.png"
+  cp -fv "$portable_subdir/squashfs-root/cpu-x.png" "$portable_subdir/cpu-x.png"
   rm -rf "$portable_subdir/squashfs-root"
 else
   echo "$portable_name is already installed"
@@ -245,8 +256,9 @@ then
   file="$portable_dir/freerapiddownloader.zip"
   wget -O "$file" "https://www.dropbox.com/s/swyleflcmtqxpch/FreeRapid-0.9u4.zip"
   unzip -q "$file" -d "$portable_dir"
-  mv -fv "$portable_dir/FreeRapid-0.9u4" "$portable_subdir"
   rm -fv "$file"
+
+  mv -fv "$portable_dir/FreeRapid-0.9u4" "$portable_subdir"
 else
   echo "$portable_name is already installed"
 fi
@@ -262,7 +274,7 @@ then
   desk+=$'Exec='$java_dir$'/bin/java -jar '$portable_subdir$'/frd.jar\n'
   desk+=$'Terminal=false\n'
   desk+=$'Type=Application\n'
-  desk+=$'Icon='$portable_subdir$'/frd.png\n'
+  desk+=$'Icon='$portable_subdir$'/frd.ico\n'
   desk+=$'Categories=Network;\n'
   echo "$desk" > "$file"
 fi
@@ -337,11 +349,6 @@ sudo apt install transmission -y
 printLine "VLC"
 echo "Running snap, please wait..."
 sudo apt install vlc -y
-
-printLine "Bloatwares"
-sudo apt remove hexchat -y
-sudo apt remove libreoffice -y
-sudo apt remove thunderbird -y
 
 printLine "Finished"
 echo "Done, please reboot your system."
