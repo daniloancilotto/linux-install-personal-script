@@ -105,13 +105,15 @@ conf+=$'upload.verbose=true\n'
 file="$portable_subdir/default/portable/preferences.txt"
 if [ ! -f "$file" ]
 then
-  echo "$conf" > "$file"
+  conf_default="$conf"
+  echo "$conf_default" > "$file"
 fi
 file="$portable_subdir/esp32/portable/preferences.txt"
 if [ ! -f "$file" ]
 then
-  conf+=$'boardsmanager.additional.urls=https://dl.espressif.com/dl/package_esp32_index.json\n'
-  echo "$conf" > "$file"
+  conf_esp32="$conf"
+  conf_esp32+=$'boardsmanager.additional.urls=https://dl.espressif.com/dl/package_esp32_index.json\n'
+  echo "$conf_esp32" > "$file"
 fi
 
 desk=$'[Desktop Entry]\n'
@@ -126,20 +128,22 @@ desk+=$'StartupWMClass=processing-app-Base\n'
 file="$desktop_dir/arduino-arduinoide.desktop"
 if [ ! -f "$file" ]
 then
-  desk+=$'Name=Arduino IDE\n'
-  desk+=$'GenericName=Arduino IDE\n'
-  desk+=$'Exec='$portable_subdir$'/default/arduino\n'
-  desk+=$'Icon='$portable_subdir$'/default/lib/arduino_icon.ico\n'
-  echo "$desk" > "$file"
+  desk_default="$desk"
+  desk_default+=$'Name=Arduino IDE\n'
+  desk_default+=$'GenericName=Arduino IDE\n'
+  desk_default+=$'Exec='$portable_subdir$'/default/arduino\n'
+  desk_default+=$'Icon='$portable_subdir$'/default/lib/arduino_icon.ico\n'
+  echo "$desk_default" > "$file"
 fi
 file="$desktop_dir/arduino-arduinoide-esp32.desktop"
 if [ ! -f "$file" ]
 then
-  desk+=$'Name=Arduino IDE - ESP32\n'
-  desk+=$'GenericName=Arduino IDE - ESP32\n'
-  desk+=$'Exec='$portable_subdir$'/esp32/arduino\n'
-  desk+=$'Icon='$portable_subdir$'/esp32/lib/arduino_icon.ico\n'
-  echo "$desk" > "$file"
+  desk_esp32="$desk"
+  desk_esp32+=$'Name=Arduino IDE - ESP32\n'
+  desk_esp32+=$'GenericName=Arduino IDE - ESP32\n'
+  desk_esp32+=$'Exec='$portable_subdir$'/esp32/arduino\n'
+  desk_esp32+=$'Icon='$portable_subdir$'/esp32/lib/arduino_icon.ico\n'
+  echo "$desk_esp32" > "$file"
 fi
 
 sudo usermod -aG dialout $USER
@@ -315,6 +319,7 @@ printLine "Rhythmbox"
 sudo apt install rhythmbox -y
 
 printLine "Scrcpy"
+
 echo "Running snap, please wait..."
 sudo snap install scrcpy
 
@@ -323,11 +328,12 @@ if [ ! -d "$portable_subdir" ]
 then
   mkdir -pv "$portable_subdir"
 
+  file="$portable_subdir/scrcpy.sh"
   desk=$'#!/bin/bash\n'
   desk+=$'nohup "scrcpy" >/dev/null 2>&1 &\n'
   desk+=$'sleep 1\n'
-  echo "$desk" > "$portable_subdir/scrcpy.sh"
-  chmod +x "$portable_subdir/scrcpy.sh"
+  echo "$desk" > "$file"
+  chmod +x "$file"
 fi
 
 file="$desktop_dir/scrcpy.desktop"
