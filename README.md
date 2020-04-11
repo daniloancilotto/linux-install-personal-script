@@ -43,15 +43,13 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 * [4K Video Downloader - 4.12.0 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
 * [Angry IP Scanner - 3.7.0 (Dpkg)](https://angryip.org/)
 * [Arduino - 1.8.12 (Portable)](https://www.arduino.cc/)
-  * Board Packages - Latest
-    * ESP32
   * Configurations
-    * Desktop
-      * ~/.local/share/applications/arduino-arduinoide.desktop
-      * ~/.local/share/applications/arduino-arduinoide-esp32.desktop
     * Txt
       * ~/portable/arduino/default/portable/preferences.txt
       * ~/portable/arduino/esp32/portable/preferences.txt
+    * Desktop
+      * ~/.local/share/applications/arduino-arduinoide.desktop
+      * ~/.local/share/applications/arduino-arduinoide-esp32.desktop
     * User Groups
       * dialout
 * Audacity - Latest
@@ -61,6 +59,8 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
       * ~/.local/share/applications/appimagekit-balena-etcher-electron.desktop
 * [CPU-X - 3.2.4 (Portable)](https://github.com/X0rg/CPU-X)
   * Configurations
+    * Script
+      * ~/portable/cpu-x/cpu-x.sh
     * Desktop
       * ~/.local/share/applications/cpu-x.desktop
 * [Dropbox - 2020.03.04 (Dpkg)](https://www.dropbox.com/install)
@@ -87,6 +87,11 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     * VNC
 * Rhythmbox - Latest
 * [Scrcpy - Latest (Snap)](https://snapcraft.io/scrcpy)
+  * Configurations
+    * Script
+      * ~/portable/scrcpy/scrcpy.sh
+    * Desktop
+      * ~/.local/share/applications/scrcpy.desktop
 * [Spotify - Latest (Snap)](https://snapcraft.io/spotify)
 * Transmission - Latest
 * VLC - Lastest
