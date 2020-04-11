@@ -15,7 +15,7 @@
 
 ### Ubuntu
 ```bash
-sudo apt install curl snapd -y
+sudo apt install curl -y
 ```
 
 <br/>
@@ -39,6 +39,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * Jq
   * Neofetch
   * Htop
+  * Snap
 * OpenJDK - 8
 * [4K Video Downloader - 4.12.0 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
 * [Angry IP Scanner - 3.7.0 (Dpkg)](https://angryip.org/)
