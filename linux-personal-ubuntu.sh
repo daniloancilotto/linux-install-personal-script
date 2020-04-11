@@ -318,6 +318,18 @@ printLine "Scrcpy"
 echo "Running snap, please wait..."
 sudo snap install scrcpy
 
+portable_subdir="$portable_dir/scrcpy"
+if [ ! -d "$portable_subdir" ]
+then
+  mkdir -pv "$portable_subdir"
+
+  desk=$'#!/bin/bash\n'
+  desk+=$'nohup "scrcpy" >/dev/null 2>&1 &\n'
+  desk+=$'sleep 1\n'
+  echo "$desk" > "$portable_subdir/scrcpy.sh"
+  chmod +x "$portable_subdir/scrcpy.sh"
+fi
+
 file="$desktop_dir/scrcpy.desktop"
 if [ ! -f "$file" ]
 then
@@ -326,11 +338,17 @@ then
   desk+=$'GenericName=Scrcpy\n'
   desk+=$'Comment=Display and control of Android devices connected on USB\n'
   desk+=$'Comment[pt_BR]=Exibição e controle de dispositivos Android conectados via USB\n'
-  desk+=$'Exec=snap run scrcpy\n'
+  desk+=$'Exec='$portable_subdir$'/scrcpy.sh\n'
   desk+=$'Terminal=true\n'
   desk+=$'Type=Application\n'
   desk+=$'Icon=phone\n'
   desk+=$'Categories=Utility;\n'
+  desk+=$'Actions=Debug;\n'
+  desk+=$'\n'
+  desk+=$'[Desktop Action Debug]\n'
+  desk+=$'Name=Debug\n'
+  desk+=$'GenericName=Debug\n'
+  desk+=$'Exec=scrcpy\n'
   echo "$desk" > "$file"
 fi
 
