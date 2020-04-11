@@ -44,13 +44,13 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 * [Angry IP Scanner - 3.7.0 (Dpkg)](https://angryip.org/)
 * [Arduino - 1.8.12 (Portable)](https://www.arduino.cc/)
   * Configurations
-    * Txt
+    * Preferences
       * ~/portable/arduino/default/portable/preferences.txt
       * ~/portable/arduino/esp32/portable/preferences.txt
     * Desktop
       * ~/.local/share/applications/arduino-arduinoide.desktop
       * ~/.local/share/applications/arduino-arduinoide-esp32.desktop
-    * User Groups
+    * User Group
       * dialout
 * Audacity - Latest
 * [Balena Etcher - 1.5.80 (Portable)](https://www.balena.io/etcher/)
@@ -79,7 +79,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     * Guest Additions ISO
     * QT User Interface
   * Configurations
-    * User Groups
+    * User Group
       * vboxusers
 * Remmina - Latest
   * Plugins - Latest
