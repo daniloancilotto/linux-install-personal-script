@@ -275,7 +275,7 @@ echo "Running snap, please wait..."
 sudo snap install libreoffice
 
 printLine "OBS Studio"
-sudo apt install obs-studio
+sudo apt install obs-studio -y
 
 printLine "Oracle VM VirtualBox"
 echo virtualbox-ext-pack virtualbox-ext-pack/license select true | sudo debconf-set-selections
@@ -290,7 +290,7 @@ sudo apt install rhythmbox -y
 
 printLine "Scrcpy"
 
-sudo apt install scrcpy
+sudo apt install scrcpy -y
 
 portable_subdir="$portable_dir/scrcpy"
 if [ ! -d "$portable_subdir" ]
