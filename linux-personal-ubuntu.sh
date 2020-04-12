@@ -199,45 +199,17 @@ echo "$portable_name have been configured"
 
 printLine "CPU-X"
 
-portable_name="cpu-x"
-portable_subdir="$portable_dir/$portable_name"
-if [ ! -d "$portable_subdir" ]
+sudo apt install cpu-x -y
+
+file="/usr/share/applications/cpu-x.desktop"
+if [ -f "$file" ]
 then
-  mkdir -pv "$portable_subdir"
-  file="$portable_subdir/CPU-X_v3.2.4_$machine.AppImage"
-  wget -O "$file" "https://github.com/X0rg/CPU-X/releases/download/v3.2.4/CPU-X_v3.2.4_$machine.AppImage"
-  chmod +x "$file"
-
-  desk=$'#!/bin/bash\n'
-  desk+=$'nohup "'$file$'" >/dev/null 2>&1 &\n'
-  desk+=$'sleep 1\n'
-  echo "$desk" > "$portable_subdir/cpu-x.sh"
-  chmod +x "$portable_subdir/cpu-x.sh"
-
-  current_dir="`pwd`"
-  cd "$portable_subdir"
-  "$file" --appimage-extract
-  cd "$current_dir"
-  cp -fv "$portable_subdir/squashfs-root/cpu-x.png" "$portable_subdir/cpu-x.png"
-  rm -rf "$portable_subdir/squashfs-root"
-else
-  echo "$portable_name is already installed"
+  sudo sed -i '/^Exec=/{h;s/=.*/=\/usr\/bin\/cpu-x_polkit/};${x;/^$/{s//Exec=\/usr\/bin\/cpu-x_polkit/;H};x}' "$file"
 fi
-
-file="$desktop_dir/$portable_name.desktop"
-if [ ! -f "$file" ]
+file="/usr/share/applications/cpu-x-root.desktop"
+if [ -f "$file" ]
 then
-  desk=$'[Desktop Entry]\n'
-  desk+=$'Name=CPU-X\n'
-  desk+=$'GenericName=CPU-X\n'
-  desk+=$'Comment=CPU, motherboard and more information\n'
-  desk+=$'Comment[pt_BR]=CPU, placa-mãe e mais informações\n'
-  desk+=$'Exec=sudo '$portable_subdir$'/cpu-x.sh\n'
-  desk+=$'Terminal=true\n'
-  desk+=$'Type=Application\n'
-  desk+=$'Icon='$portable_subdir$'/cpu-x.png\n'
-  desk+=$'Categories=System;\n'
-  echo "$desk" > "$file"
+  sudo sed -i '/^NoDisplay=/{h;s/=.*/=true/};${x;/^$/{s//NoDisplay=true/;H};x}' "$file"
 fi
 
 echo "$portable_name have been configured"
