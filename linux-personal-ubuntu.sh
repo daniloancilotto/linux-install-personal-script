@@ -275,8 +275,7 @@ echo "Running snap, please wait..."
 sudo snap install libreoffice
 
 printLine "OBS Studio"
-echo "Running snap, please wait..."
-sudo snap install obs-studio
+sudo apt install obs-studio
 
 printLine "Oracle VM VirtualBox"
 echo virtualbox-ext-pack virtualbox-ext-pack/license select true | sudo debconf-set-selections

@@ -72,7 +72,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 * [Google Chrome - Latest (Dpkg)](https://www.google.com/chrome/)
 * GParted - Latest
 * [LibreOffice - Latest (Snap)](https://snapcraft.io/libreoffice)
-* [OBS Studio - Latest (Snap)](https://snapcraft.io/obs-studio)
+* OBS Studio - Latest
 * Oracle VM VirtualBox - Latest
   * Modules - Latest
     * Extension Pack
