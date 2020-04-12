@@ -290,8 +290,7 @@ sudo apt install rhythmbox -y
 
 printLine "Scrcpy"
 
-echo "Running snap, please wait..."
-sudo snap install scrcpy
+sudo apt install scrcpy
 
 portable_subdir="$portable_dir/scrcpy"
 if [ ! -d "$portable_subdir" ]
@@ -319,11 +318,13 @@ then
   desk+=$'Type=Application\n'
   desk+=$'Icon=phone\n'
   desk+=$'Categories=Utility;\n'
-  desk+=$'Actions=Debug;\n'
+  desk+=$'Actions=Terminal;\n'
   desk+=$'\n'
-  desk+=$'[Desktop Action Debug]\n'
-  desk+=$'Name=Debug\n'
-  desk+=$'GenericName=Debug\n'
+  desk+=$'[Desktop Action Terminal]\n'
+  desk+=$'Name=Open with Terminal\n'
+  desk+=$'Name[pt_BR]=Abrir com Terminal\n'
+  desk+=$'GenericName=Open with Terminal\n'
+  desk+=$'GenericName[pt_BR]=Abrir com Terminal\n'
   desk+=$'Exec=scrcpy\n'
   echo "$desk" > "$file"
 fi

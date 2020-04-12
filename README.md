@@ -86,7 +86,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     * RDP
     * VNC
 * Rhythmbox - Latest
-* [Scrcpy - Latest (Snap)](https://snapcraft.io/scrcpy)
+* Scrcpy - Latest
   * Configurations
     * Script
       * ~/portable/scrcpy/scrcpy.sh
