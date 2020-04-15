@@ -201,15 +201,28 @@ printLine "CPU-X"
 
 sudo apt install cpu-x -y
 
-file="/usr/share/applications/cpu-x.desktop"
-if [ -f "$file" ]
+file="cpu-x.desktop"
+origin_file="/usr/share/applications/$file"
+target_file="$desktop_dir/$file"
+if [ -f "$origin_file" ] && [ ! -f "$target_file" ]
 then
-  sudo sed -i '/^Exec=/{h;s/=.*/=\/usr\/bin\/cpu-x_polkit/};${x;/^$/{s//Exec=\/usr\/bin\/cpu-x_polkit/;H};x}' "$file"
+  cp "$origin_file" "$target_file"
 fi
-file="/usr/share/applications/cpu-x-root.desktop"
-if [ -f "$file" ]
+if [ -f "$target_file" ]
 then
-  sudo sed -i '/^NoDisplay=/{h;s/=.*/=true/};${x;/^$/{s//NoDisplay=true/;H};x}' "$file"
+  sed -i '/^Exec=/{h;s/=.*/=\/usr\/bin\/cpu-x_polkit/};${x;/^$/{s//Exec=\/usr\/bin\/cpu-x_polkit/;H};x}' "$target_file"
+fi
+
+file="cpu-x-root.desktop"
+origin_file="/usr/share/applications/$file"
+target_file="$desktop_dir/$file"
+if [ -f "$origin_file" ] && [ ! -f "$target_file" ]
+then
+  cp "$origin_file" "$target_file"
+fi
+if [ -f "$target_file" ]
+then
+  sed -i '/^NoDisplay=/{h;s/=.*/=true/};${x;/^$/{s//NoDisplay=true/;H};x}' "$target_file"
 fi
 
 echo "$portable_name have been configured"
