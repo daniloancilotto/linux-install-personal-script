@@ -4,10 +4,7 @@
 * [Ubuntu - 20.04](https://ubuntu.com/)
 
 ### Supported Architectures
-* Fully
-  * amd64 (64-bit)
-* Partially
-  * i386 (32-bit)
+* x86_64 (amd64)
 
 <br/>
 

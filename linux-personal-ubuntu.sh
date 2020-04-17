@@ -1,21 +1,11 @@
 #!/bin/bash
 system="`lsb_release -sd`"
-machine="`uname -m`"
-
-arch="amd64"
-arch2="x64"
-arch3="64"
-if [ "$machine" != "x86_64" ]
-then
-  arch="i386"
-  arch2="ia32"
-  arch3="32"
-fi
+architecture="`uname -m`"
 
 echo "LINUX PERSONAL UBUNTU"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
-echo "Architecture: $arch"
+echo "Architecture: $architecture"
 echo "Home: $HOME"
 echo "User: $USER"
 
@@ -59,12 +49,12 @@ mkdir -pv "$portable_dir"
 
 printLine "OpenJDK"
 sudo apt install openjdk-8-jdk -y
-java_dir="/usr/lib/jvm/java-8-openjdk-$arch"
+java_dir="/usr/lib/jvm/java-8-openjdk-amd64"
 
 printLine "4K Video Downloader"
 if [ ! -f "/usr/bin/4kvideodownloader" ]
 then
-  dpkgInstall "4kvideodownloader.deb" "https://dl.4kdownload.com/app/4kvideodownloader_4.12.0-1_$arch.deb"
+  dpkgInstall "4kvideodownloader.deb" "https://dl.4kdownload.com/app/4kvideodownloader_4.12.0-1_amd64.deb"
 else
   echo "4kvideodownloader is already installed"
 fi
@@ -72,7 +62,7 @@ fi
 printLine "Angry IP Scanner"
 if [ ! -f "/usr/bin/ipscan" ]
 then
-  dpkgInstall "angryipscanner.deb" "https://github.com/angryip/ipscan/releases/download/3.7.0/ipscan_3.7.0_$arch.deb"
+  dpkgInstall "angryipscanner.deb" "https://github.com/angryip/ipscan/releases/download/3.7.0/ipscan_3.7.0_amd64.deb"
 else
   echo "angryipscanner is already installed"
 fi
@@ -84,7 +74,7 @@ portable_subdir="$portable_dir/$portable_name"
 if [ ! -d "$portable_subdir" ]
 then
   file="$portable_dir/arduino.tar.xz"
-  wget -O "$file" "https://downloads.arduino.cc/arduino-1.8.12-linux$arch3.tar.xz"
+  wget -O "$file" "https://downloads.arduino.cc/arduino-1.8.12-linux64.tar.xz"
   mkdir -pv "$portable_subdir"
   tar -xJf "$file" -C "$portable_subdir"
   rm -fv "$file"
@@ -159,12 +149,12 @@ portable_subdir="$portable_dir/$portable_name"
 if [ ! -d "$portable_subdir" ]
 then
   file="$portable_dir/balena-etcher.zip"
-  wget -O "$file" "https://github.com/balena-io/etcher/releases/download/v1.5.80/balena-etcher-electron-1.5.80-linux-$arch2.zip"
+  wget -O "$file" "https://github.com/balena-io/etcher/releases/download/v1.5.80/balena-etcher-electron-1.5.80-linux-x64.zip"
   mkdir -pv "$portable_subdir"
   unzip -q "$file" -d "$portable_subdir"
   rm -fv "$file"
 
-  file="$portable_subdir/balenaEtcher-1.5.80-$arch2.AppImage"
+  file="$portable_subdir/balenaEtcher-1.5.80-x64.AppImage"
   ln -sv -T "$file" "$portable_subdir/balena-etcher.AppImage"
   chmod +x "$file"
 
@@ -230,7 +220,7 @@ echo "$portable_name have been configured"
 printLine "Dropbox"
 if [ ! -f "/usr/bin/dropbox" ]
 then
-  dpkgInstall "dropbox.deb" "https://linux.dropbox.com/packages/ubuntu/dropbox_2020.03.04_$arch.deb"
+  dpkgInstall "dropbox.deb" "https://linux.dropbox.com/packages/ubuntu/dropbox_2020.03.04_amd64.deb"
 else
   echo "dropbox is already installed"
 fi
@@ -275,7 +265,7 @@ sudo apt install gimp -y
 printLine "Google Chrome"
 if [ -z "`google-chrome --version`" ]
 then
-  dpkgInstall "google-chrome.deb" "https://dl.google.com/linux/direct/google-chrome-stable_current_$arch.deb"
+  dpkgInstall "google-chrome.deb" "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 else
   echo "google-chrome is already installed"
 fi
