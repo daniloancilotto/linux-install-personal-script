@@ -149,12 +149,12 @@ portable_subdir="$portable_dir/$portable_name"
 if [ ! -d "$portable_subdir" ]
 then
   file="$portable_dir/balena-etcher.zip"
-  wget -O "$file" "https://github.com/balena-io/etcher/releases/download/v1.5.80/balena-etcher-electron-1.5.80-linux-x64.zip"
+  wget -O "$file" "https://github.com/balena-io/etcher/releases/download/v1.5.81/balena-etcher-electron-1.5.81-linux-x64.zip"
   mkdir -pv "$portable_subdir"
   unzip -q "$file" -d "$portable_subdir"
   rm -fv "$file"
 
-  file="$portable_subdir/balenaEtcher-1.5.80-x64.AppImage"
+  file="$portable_subdir/balenaEtcher-1.5.81-x64.AppImage"
   ln -sv -T "$file" "$portable_subdir/balena-etcher.AppImage"
   chmod +x "$file"
 
