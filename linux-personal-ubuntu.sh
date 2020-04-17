@@ -49,7 +49,7 @@ mkdir -pv "$portable_dir"
 
 printLine "OpenJDK"
 sudo apt install openjdk-8-jdk -y
-java_dir="/usr/lib/jvm/java-8-openjdk-amd64"
+java8_dir="/usr/lib/jvm/java-8-openjdk-amd64"
 
 printLine "4K Video Downloader"
 if [ ! -f "/usr/bin/4kvideodownloader" ]
@@ -249,7 +249,7 @@ then
   desk+=$'GenericName=FreeRapid Downloader\n'
   desk+=$'Comment=Download from file-sharing services\n'
   desk+=$'Comment[pt_BR]=Download de serviços de compartilhamento de arquivos\n'
-  desk+=$'Exec='$java_dir$'/bin/java -jar '$portable_subdir$'/frd.jar\n'
+  desk+=$'Exec='$java8_dir$'/bin/java -jar '$portable_subdir$'/frd.jar\n'
   desk+=$'Terminal=false\n'
   desk+=$'Type=Application\n'
   desk+=$'Icon='$portable_subdir$'/frd.ico\n'
