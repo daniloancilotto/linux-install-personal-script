@@ -47,7 +47,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
       * ~/portable/arduino/esp32/portable/preferences.txt
     * Desktop
       * ~/.local/share/applications/arduino-arduinoide.desktop
-      * ~/.local/share/applications/arduino-arduinoide-esp32.desktop
     * User Group
       * dialout
 * Audacity - Latest

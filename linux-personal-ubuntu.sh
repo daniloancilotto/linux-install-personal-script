@@ -105,34 +105,29 @@ then
   echo "$conf_esp32" > "$file"
 fi
 
-desk=$'[Desktop Entry]\n'
-desk+=$'Comment=Open-source electronics prototyping platform\n'
-desk+=$'Comment[pt_BR]=Plataforma de prototipagem de eletrônicos de código aberto\n'
-desk+=$'Terminal=false\n'
-desk+=$'Type=Application\n'
-desk+=$'Categories=Development;IDE;Electronics;\n'
-desk+=$'MimeType=text/x-arduino;\n'
-desk+=$'Keywords=embedded electronics;electronics;avr;microcontroller;\n'
-desk+=$'StartupWMClass=processing-app-Base\n'
 file="$desktop_dir/arduino-arduinoide.desktop"
 if [ ! -f "$file" ]
 then
-  desk_default="$desk"
-  desk_default+=$'Name=Arduino IDE\n'
-  desk_default+=$'GenericName=Arduino IDE\n'
-  desk_default+=$'Exec='$portable_subdir$'/default/arduino\n'
-  desk_default+=$'Icon='$portable_subdir$'/default/lib/arduino_icon.ico\n'
-  echo "$desk_default" > "$file"
-fi
-file="$desktop_dir/arduino-arduinoide-esp32.desktop"
-if [ ! -f "$file" ]
-then
-  desk_esp32="$desk"
-  desk_esp32+=$'Name=Arduino IDE - ESP32\n'
-  desk_esp32+=$'GenericName=Arduino IDE - ESP32\n'
-  desk_esp32+=$'Exec='$portable_subdir$'/esp32/arduino\n'
-  desk_esp32+=$'Icon='$portable_subdir$'/esp32/lib/arduino_icon.ico\n'
-  echo "$desk_esp32" > "$file"
+  desk=$'[Desktop Entry]\n'
+  desk+=$'Name=Arduino IDE\n'
+  desk+=$'GenericName=Arduino IDE\n'
+  desk+=$'Comment=Open-source electronics prototyping platform\n'
+  desk+=$'Comment[pt_BR]=Plataforma de prototipagem de eletrônicos de código aberto\n'
+  desk+=$'Exec='$portable_subdir$'/default/arduino\n'
+  desk+=$'Terminal=false\n'
+  desk+=$'Type=Application\n'
+  desk+=$'Icon='$portable_subdir$'/default/lib/arduino_icon.ico\n'
+  desk+=$'Categories=Development;IDE;Electronics;\n'
+  desk+=$'MimeType=text/x-arduino;\n'
+  desk+=$'Keywords=embedded electronics;electronics;avr;microcontroller;\n'
+  desk+=$'StartupWMClass=processing-app-Base\n'
+  desk+=$'Actions=ESP32;\n'
+  desk+=$'\n'
+  desk+=$'[Desktop Action ESP32]\n'
+  desk+=$'Name=ESP32\n'
+  desk+=$'GenericName=ESP32\n'
+  desk+=$'Exec='$portable_subdir$'/esp32/arduino\n'
+  echo "$desk" > "$file"
 fi
 
 sudo usermod -aG dialout $USER
