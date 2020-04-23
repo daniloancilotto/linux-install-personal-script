@@ -54,7 +54,7 @@ java8_dir="/usr/lib/jvm/java-8-openjdk-amd64"
 printLine "4K Video Downloader"
 if [ ! -f "/usr/bin/4kvideodownloader" ]
 then
-  dpkgInstall "4kvideodownloader.deb" "https://dl.4kdownload.com/app/4kvideodownloader_4.12.0-1_amd64.deb"
+  dpkgInstall "4kvideodownloader.deb" "https://dl.4kdownload.com/app/4kvideodownloader_4.12.1-1_amd64.deb"
 else
   echo "4kvideodownloader is already installed"
 fi
