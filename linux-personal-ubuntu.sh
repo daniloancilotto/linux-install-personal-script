@@ -36,16 +36,33 @@ dpkgInstall() {
   sudo apt install -fy
 }
 
-printLine "Base"
-
-sudo apt update
-sudo apt install wget unzip tar jq neofetch htop snapd -y
-sudo systemctl enable --now snapd.socket
-
 desktop_dir="$HOME/.local/share/applications"
 mkdir -pv "$desktop_dir"
+
 portable_dir="$HOME/portable"
 mkdir -pv "$portable_dir"
+
+printLine "Update"
+sudo apt update
+
+printLine "Wget"
+sudo apt install wget -y
+
+printLine "Unzip"
+sudo apt install unzip -y
+
+printLine "Tar"
+sudo apt install tar -y
+
+printLine "Htop"
+sudo apt install htop -y
+
+printLine "Neofetch"
+sudo apt install neofetch -y
+
+printLine "Snap"
+sudo apt install snapd -y
+sudo systemctl enable --now snapd.socket
 
 printLine "OpenJDK"
 sudo apt install openjdk-8-jdk -y
@@ -279,6 +296,9 @@ printLine "Oracle VM VirtualBox"
 echo virtualbox-ext-pack virtualbox-ext-pack/license select true | sudo debconf-set-selections
 sudo apt install virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso virtualbox-qt -y
 sudo usermod -aG vboxusers $USER
+
+printLine "Qt5 Settings"
+sudo apt install qt5ct -y
 
 printLine "Remmina"
 sudo apt install remmina remmina-plugin-rdp remmina-plugin-vnc -y
