@@ -35,14 +35,14 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 * Rar - Latest
 * 7-Zip - Latest
 * FFmpeg - Latest
-* Neofetch - Latest
-* Htop - Latest
-  * Desktop
-    * ~/.local/share/applications/htop.desktop
 * Snap - Latest
 * OpenJDK - 8
   * Desktop
     * ~/.local/share/applications/openjdk-8-policytool.desktop
+* Neofetch - Latest
+* Htop - Latest
+  * Desktop
+    * ~/.local/share/applications/htop.desktop
 * [4K Video Downloader - 4.12.1 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
 * [Angry IP Scanner - 3.7.0 (Dpkg)](https://angryip.org/)
 * [Arduino - 1.8.12 (Portable)](https://www.arduino.cc/)

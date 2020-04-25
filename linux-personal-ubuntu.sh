@@ -76,14 +76,6 @@ sudo apt install p7zip-full -y
 printLine "FFmpeg"
 sudo apt install ffmpeg -y
 
-printLine "Neofetch"
-sudo apt install neofetch -y
-
-printLine "Htop"
-sudo apt install htop -y
-desktopHide "$desktop_dir" "htop.desktop"
-echo "htop have been configured"
-
 printLine "Snap"
 sudo apt install snapd -y
 sudo systemctl enable --now snapd.socket
@@ -94,6 +86,14 @@ desktopHide "$desktop_dir" "openjdk-8-policytool.desktop"
 echo "openjdk have been configured"
 
 java8_dir="/usr/lib/jvm/java-8-openjdk-amd64"
+
+printLine "Neofetch"
+sudo apt install neofetch -y
+
+printLine "Htop"
+sudo apt install htop -y
+desktopHide "$desktop_dir" "htop.desktop"
+echo "htop have been configured"
 
 printLine "4K Video Downloader"
 if [ ! -f "/usr/bin/4kvideodownloader" ]
