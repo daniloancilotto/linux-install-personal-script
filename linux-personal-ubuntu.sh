@@ -237,7 +237,7 @@ then
 fi
 if [ -f "$target_file" ]
 then
-  sed -i '/^Name=/{h;s/=.*/=CPU-X};${x;/^$/{s//Name=CPU-X;H};x}' "$target_file"
+  sed -i '/^Name=/{h;s/=.*/=CPU-X/};${x;/^$/{s//Name=CPU-X/;H};x}' "$target_file"
 fi
 
 echo "cpu-x have been configured"
