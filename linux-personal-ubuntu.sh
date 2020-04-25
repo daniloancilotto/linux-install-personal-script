@@ -73,6 +73,9 @@ sudo apt install zip unzip -y
 printLine "7-Zip"
 sudo apt install p7zip-full -y
 
+printLine "FFmpeg"
+sudo apt install ffmpeg -y
+
 printLine "Neofetch"
 sudo apt install neofetch -y
 

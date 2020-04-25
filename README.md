@@ -34,6 +34,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 * Rar - Latest
 * Zip - Latest
 * 7-Zip - Latest
+* FFmpeg - Latest
 * Neofetch - Latest
 * Htop - Latest
   * Desktop
