@@ -2,7 +2,7 @@
 system="`lsb_release -sd`"
 architecture="`uname -m`"
 
-echo "LINUX PERSONAL UBUNTU"
+echo "LINUX PERSONAL (UBUNTU)"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $architecture"
@@ -48,11 +48,17 @@ sudo apt update
 printLine "Wget"
 sudo apt install wget -y
 
-printLine "Unzip"
-sudo apt install unzip -y
-
 printLine "Tar"
 sudo apt install tar -y
+
+printLine "Rar"
+sudo apt install rar unrar -y
+
+printLine "Zip"
+sudo apt install zip unzip -y
+
+printLine "7-Zip"
+sudo apt install p7zip-full -y
 
 printLine "Htop"
 sudo apt install htop -y
@@ -296,9 +302,6 @@ printLine "Oracle VM VirtualBox"
 echo virtualbox-ext-pack virtualbox-ext-pack/license select true | sudo debconf-set-selections
 sudo apt install virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso virtualbox-qt -y
 sudo usermod -aG vboxusers $USER
-
-printLine "Qt5 Settings"
-sudo apt install qt5ct -y
 
 printLine "Remmina"
 sudo apt install remmina remmina-plugin-rdp remmina-plugin-vnc -y

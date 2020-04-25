@@ -30,8 +30,10 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 
 ### Apps
 * Wget - Latest
-* Unzip - Latest
 * Tar - Latest
+* Rar - Latest
+* Zip - Latest
+* 7-Zip - Latest
 * Htop - Latest
 * Neofetch - Latest
 * Snap - Latest
@@ -67,10 +69,9 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * Modules - Latest
     * Extension Pack
     * Guest Additions ISO
-    * QT User Interface
+    * Qt User Interface
   * User Group
     * vboxusers
-* Qt5 Settings - Latest
 * Remmina - Latest
   * Plugins - Latest
     * RDP
