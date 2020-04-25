@@ -36,7 +36,7 @@ dpkgInstall() {
   sudo apt install -fy
 }
 
-desktopHide() {
+desktopConf() {
   source_file="/usr/share/applications/$2"
   target_file="$1/$2"
   if [ -f "$source_file" ] && [ ! -f "$target_file" ]
@@ -45,7 +45,7 @@ desktopHide() {
   fi
   if [ -f "$target_file" ]
   then
-    sed -i '/^NoDisplay=/{h;s/=.*/=true/};${x;/^$/{s//NoDisplay=true/;H};x}' "$target_file"
+    crudini --set "$target_file" "Desktop Entry" "$3" "$4"
   fi
 }
 
@@ -73,6 +73,9 @@ sudo apt install rar unrar -y
 printLine "7-Zip"
 sudo apt install p7zip-full -y
 
+printLine "Crudini"
+sudo apt install crudini -y
+
 printLine "FFmpeg"
 sudo apt install ffmpeg -y
 
@@ -82,7 +85,7 @@ sudo systemctl enable --now snapd.socket
 
 printLine "OpenJDK"
 sudo apt install openjdk-8-jdk -y
-desktopHide "$desktop_dir" "openjdk-8-policytool.desktop"
+desktopConf "$desktop_dir" "openjdk-8-policytool.desktop" "NoDisplay" "true"
 echo "openjdk have been configured"
 
 java8_dir="/usr/lib/jvm/java-8-openjdk-amd64"
@@ -92,7 +95,7 @@ sudo apt install neofetch -y
 
 printLine "Htop"
 sudo apt install htop -y
-desktopHide "$desktop_dir" "htop.desktop"
+desktopConf "$desktop_dir" "htop.desktop" "NoDisplay" "true"
 echo "htop have been configured"
 
 printLine "4K Video Downloader"
@@ -227,22 +230,9 @@ fi
 echo "$portable_name have been configured"
 
 printLine "CPU-X"
-
 sudo apt install cpu-x -y
-desktopHide "$desktop_dir" "cpu-x.desktop"
-
-file="cpu-x-root.desktop"
-source_file="/usr/share/applications/$file"
-target_file="$desktop_dir/$file"
-if [ -f "$source_file" ] && [ ! -f "$target_file" ]
-then
-  cp "$source_file" "$target_file"
-fi
-if [ -f "$target_file" ]
-then
-  sed -i '/^Name=/{h;s/=.*/=CPU-X/};${x;/^$/{s//Name=CPU-X/;H};x}' "$target_file"
-fi
-
+desktopConf "$desktop_dir" "cpu-x.desktop" "NoDisplay" "true"
+desktopConf "$desktop_dir" "cpu-x-root.desktop" "Name" "CPU-X"
 echo "cpu-x have been configured"
 
 printLine "Dropbox"
