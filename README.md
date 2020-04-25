@@ -28,7 +28,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 
 # Installations and Configurations
 
-### Apps
+### Ubuntu
 * Wget - Latest
 * Tar - Latest
 * Rar - Latest
@@ -46,7 +46,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     * ~/portable/arduino/esp32/portable/preferences.txt
   * Desktop
     * ~/.local/share/applications/arduino-arduinoide.desktop
-  * User Group
+  * User Groups
     * dialout
 * Audacity - Latest
 * [Balena Etcher - 1.5.81 (AppImage)](https://www.balena.io/etcher/)
@@ -70,7 +70,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     * Extension Pack
     * Guest Additions ISO
     * Qt User Interface
-  * User Group
+  * User Groups
     * vboxusers
 * Remmina - Latest
   * Plugins - Latest
@@ -78,7 +78,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     * VNC
 * Rhythmbox - Latest
 * Scrcpy - Latest
-  * Script
+  * Scripts
     * ~/portable/scrcpy/scrcpy.sh
   * Desktop
     * ~/.local/share/applications/scrcpy.desktop
