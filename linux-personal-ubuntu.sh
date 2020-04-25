@@ -64,11 +64,11 @@ sudo apt install wget -y
 printLine "Tar"
 sudo apt install tar -y
 
-printLine "Rar"
-sudo apt install rar unrar -y
-
 printLine "Zip"
 sudo apt install zip unzip -y
+
+printLine "Rar"
+sudo apt install rar unrar -y
 
 printLine "7-Zip"
 sudo apt install p7zip-full -y
@@ -375,5 +375,6 @@ echo "Running snap, please wait..."
 sudo apt install vlc -y
 
 printLine "Finished"
+notify-send "Done, please reboot your system."
 echo "Done, please reboot your system."
 echo ""

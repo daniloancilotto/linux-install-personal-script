@@ -31,8 +31,8 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 ### Ubuntu
 * Wget - Latest
 * Tar - Latest
-* Rar - Latest
 * Zip - Latest
+* Rar - Latest
 * 7-Zip - Latest
 * FFmpeg - Latest
 * Neofetch - Latest
