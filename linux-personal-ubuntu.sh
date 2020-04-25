@@ -36,14 +36,27 @@ dpkgInstall() {
   sudo apt install -fy
 }
 
+desktopHide() {
+  source_file="/usr/share/applications/$2"
+  target_file="$1/$2"
+  if [ -f "$source_file" ] && [ ! -f "$target_file" ]
+  then
+    cp "$source_file" "$target_file"
+  fi
+  if [ -f "$target_file" ]
+  then
+    sed -i '/^NoDisplay=/{h;s/=.*/=true/};${x;/^$/{s//NoDisplay=true/;H};x}' "$target_file"
+  fi
+}
+
+printLine "Update"
+sudo apt update
+
 desktop_dir="$HOME/.local/share/applications"
 mkdir -pv "$desktop_dir"
 
 portable_dir="$HOME/portable"
 mkdir -pv "$portable_dir"
-
-printLine "Update"
-sudo apt update
 
 printLine "Wget"
 sudo apt install wget -y
@@ -60,11 +73,13 @@ sudo apt install zip unzip -y
 printLine "7-Zip"
 sudo apt install p7zip-full -y
 
-printLine "Htop"
-sudo apt install htop -y
-
 printLine "Neofetch"
 sudo apt install neofetch -y
+
+printLine "Htop"
+sudo apt install htop -y
+desktopHide "$desktop_dir" "htop.desktop"
+echo "htop have been configured"
 
 printLine "Snap"
 sudo apt install snapd -y
@@ -72,6 +87,9 @@ sudo systemctl enable --now snapd.socket
 
 printLine "OpenJDK"
 sudo apt install openjdk-8-jdk -y
+desktopHide "$desktop_dir" "openjdk-8-policytool.desktop"
+echo "openjdk have been configured"
+
 java8_dir="/usr/lib/jvm/java-8-openjdk-amd64"
 
 printLine "4K Video Downloader"
@@ -208,18 +226,8 @@ echo "$portable_name have been configured"
 printLine "CPU-X"
 
 sudo apt install cpu-x -y
+desktopHide "$desktop_dir" "cpu-x.desktop"
 
-file="cpu-x.desktop"
-source_file="/usr/share/applications/$file"
-target_file="$desktop_dir/$file"
-if [ -f "$source_file" ] && [ ! -f "$target_file" ]
-then
-  cp "$source_file" "$target_file"
-fi
-if [ -f "$target_file" ]
-then
-  sed -i '/^Exec=/{h;s/=.*/=\/usr\/bin\/cpu-x_polkit/};${x;/^$/{s//Exec=\/usr\/bin\/cpu-x_polkit/;H};x}' "$target_file"
-fi
 file="cpu-x-root.desktop"
 source_file="/usr/share/applications/$file"
 target_file="$desktop_dir/$file"
@@ -229,10 +237,10 @@ then
 fi
 if [ -f "$target_file" ]
 then
-  sed -i '/^NoDisplay=/{h;s/=.*/=true/};${x;/^$/{s//NoDisplay=true/;H};x}' "$target_file"
+  sed -i '/^Name=/{h;s/=.*/=CPU-X};${x;/^$/{s//Name=CPU-X;H};x}' "$target_file"
 fi
 
-echo "$portable_name have been configured"
+echo "cpu-x have been configured"
 
 printLine "Dropbox"
 if [ ! -f "/usr/bin/dropbox" ]
@@ -312,7 +320,8 @@ printLine "Scrcpy"
 
 sudo apt install scrcpy -y
 
-portable_subdir="$portable_dir/scrcpy"
+portable_name="scrcpy"
+portable_subdir="$portable_dir/$portable_name"
 if [ ! -d "$portable_subdir" ]
 then
   mkdir -pv "$portable_subdir"
@@ -349,7 +358,7 @@ then
   echo "$desk" > "$file"
 fi
 
-echo "scrcpy have been configured"
+echo "$portable_name have been configured"
 
 printLine "Spotify"
 echo "Running snap, please wait..."
