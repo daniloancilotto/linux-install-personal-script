@@ -2,7 +2,7 @@
 system="`lsb_release -sd`"
 architecture="`uname -m`"
 
-echo "LINUX PERSONAL (UBUNTU)"
+echo "LINUX PERSONAL SCRIPT (UBUNTU)"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $architecture"
@@ -365,6 +365,7 @@ echo "Running snap, please wait..."
 sudo apt install vlc -y
 
 printLine "Finished"
-notify-send "Done, please reboot your system."
-echo "Done, please reboot your system."
+echo "Please reboot your system."
 echo ""
+
+notify-send "LINUX PERSONAL SCRIPT (UBUNTU)" "[Finished] Please reboot your system."
