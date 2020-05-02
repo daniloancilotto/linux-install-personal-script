@@ -361,7 +361,6 @@ printLine "Transmission"
 sudo apt install transmission -y
 
 printLine "VLC"
-echo "Running snap, please wait..."
 sudo apt install vlc -y
 
 printLine "Finished"
