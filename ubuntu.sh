@@ -79,9 +79,6 @@ sudo apt install crudini -y
 printLine "FFmpeg"
 sudo apt install ffmpeg -y
 
-printLine "Samba"
-sudo apt install samba -y
-
 printLine "Snap"
 sudo apt install snapd -y
 sudo systemctl enable --now snapd.socket
@@ -311,6 +308,9 @@ sudo apt install remmina remmina-plugin-rdp remmina-plugin-vnc -y
 
 printLine "Rhythmbox"
 sudo apt install rhythmbox -y
+
+printLine "Samba"
+sudo apt install samba -y
 
 printLine "Scrcpy"
 
