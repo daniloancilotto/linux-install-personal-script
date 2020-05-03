@@ -36,6 +36,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 * 7-Zip - Latest
 * Crudini - Latest
 * FFmpeg - Latest
+* Samba - Latest
 * Snap - Latest
 * OpenJDK - 8
   * Desktop
