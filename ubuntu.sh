@@ -316,20 +316,6 @@ printLine "Scrcpy"
 
 sudo apt install scrcpy -y
 
-portable_name="scrcpy"
-portable_subdir="$portable_dir/$portable_name"
-if [ ! -d "$portable_subdir" ]
-then
-  mkdir -pv "$portable_subdir"
-
-  file="$portable_subdir/scrcpy.sh"
-  desk=$'#!/bin/bash\n'
-  desk+=$'nohup "scrcpy" >/dev/null 2>&1 &\n'
-  desk+=$'sleep 1\n'
-  echo "$desk" > "$file"
-  chmod +x "$file"
-fi
-
 file="$desktop_dir/scrcpy.desktop"
 if [ ! -f "$file" ]
 then
@@ -338,23 +324,15 @@ then
   desk+=$'GenericName=Scrcpy\n'
   desk+=$'Comment=Display and control of Android devices connected on USB\n'
   desk+=$'Comment[pt_BR]=Exibição e controle de dispositivos Android conectados via USB\n'
-  desk+=$'Exec='$portable_subdir$'/scrcpy.sh\n'
+  desk+=$'Exec=scrcpy\n'
   desk+=$'Terminal=true\n'
   desk+=$'Type=Application\n'
   desk+=$'Icon=phone\n'
   desk+=$'Categories=Utility;\n'
-  desk+=$'Actions=Terminal;\n'
-  desk+=$'\n'
-  desk+=$'[Desktop Action Terminal]\n'
-  desk+=$'Name=Open with Terminal\n'
-  desk+=$'Name[pt_BR]=Abrir com Terminal\n'
-  desk+=$'GenericName=Open with Terminal\n'
-  desk+=$'GenericName[pt_BR]=Abrir com Terminal\n'
-  desk+=$'Exec=scrcpy\n'
   echo "$desk" > "$file"
 fi
 
-echo "$portable_name have been configured"
+echo "scrcpy have been configured"
 
 printLine "Spotify"
 echo "Running snap, please wait..."

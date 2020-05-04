@@ -85,8 +85,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 * Rhythmbox - Latest
 * Samba - Latest
 * Scrcpy - Latest
-  * Scripts
-    * ~/portable/scrcpy/scrcpy.sh
   * Desktop
     * ~/.local/share/applications/scrcpy.desktop
 * [Spotify - Latest (Snap)](https://snapcraft.io/spotify)
