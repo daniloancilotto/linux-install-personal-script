@@ -99,17 +99,47 @@ desktopConf "$desktop_dir" "htop.desktop" "NoDisplay" "true"
 echo "htop have been configured"
 
 printLine "4K Video Downloader"
+
+portable_name="4kvideodownloader"
+portable_version="4.12.2"
+portable_subdir="$portable_dir/$portable_name"
+
+if [ "`cat "$portable_subdir/version.txt"`" != "$portable_version"] 
+then
+  rm -rf "$portable_subdir"
+
+  sudo apt remove 4kvideodownloader
+fi
+
 if [ ! -f "/usr/bin/4kvideodownloader" ]
 then
-  dpkgInstall "4kvideodownloader.deb" "https://dl.4kdownload.com/app/4kvideodownloader_4.12.1-1_amd64.deb"
+  dpkgInstall "4kvideodownloader.deb" "https://dl.4kdownload.com/app/4kvideodownloader_$portable_version-1_amd64.deb"
+
+  mkdir -pv "$portable_subdir"
+  echo "$portable_version" > "$portable_subdir/version.txt"
 else
   echo "4kvideodownloader is already installed"
 fi
 
 printLine "Angry IP Scanner"
+
+portable_name="angryipscanner"
+portable_version="3.7.0"
+portable_subdir="$portable_dir/$portable_name"
+
+if [ "`cat "$portable_subdir/version.txt"`" != "$portable_version"] 
+then
+  rm -rf "$portable_subdir"
+
+  sudo apt remove ipscan
+fi
+
 if [ ! -f "/usr/bin/ipscan" ]
 then
-  dpkgInstall "angryipscanner.deb" "https://github.com/angryip/ipscan/releases/download/3.7.0/ipscan_3.7.0_amd64.deb"
+  dpkgInstall "angryipscanner.deb" $'https://github.com/angryip/ipscan/releases/download/'$portable_version$'/ipscan_'$portable_version$'_amd64.deb'
+
+  mkdir -pv "$portable_subdir"
+  echo "$portable_version" > "$portable_subdir/version.txt"
 else
   echo "angryipscanner is already installed"
 fi
@@ -187,16 +217,23 @@ sudo apt install audacity -y
 printLine "Balena Etcher"
 
 portable_name="balena-etcher"
+portable_version="1.5.86"
 portable_subdir="$portable_dir/$portable_name"
+
+if [ "`cat "$portable_subdir/version.txt"`" != "$portable_version"] 
+then
+  rm -rf "$portable_subdir"
+fi
+
 if [ ! -d "$portable_subdir" ]
 then
   file="$portable_dir/balena-etcher.zip"
-  wget -O "$file" "https://github.com/balena-io/etcher/releases/download/v1.5.81/balena-etcher-electron-1.5.81-linux-x64.zip"
+  wget -O "$file" "https://github.com/balena-io/etcher/releases/download/v$portable_version/balena-etcher-electron-$portable_version-linux-x64.zip"
   mkdir -pv "$portable_subdir"
   unzip -q "$file" -d "$portable_subdir"
   rm -fv "$file"
 
-  file="$portable_subdir/balenaEtcher-1.5.81-x64.AppImage"
+  file="$portable_subdir/balenaEtcher-$portable_version-x64.AppImage"
   ln -sv -T "$file" "$portable_subdir/balena-etcher.AppImage"
   chmod +x "$file"
 
@@ -206,6 +243,8 @@ then
   cd "$current_dir"
   cp -fv "$portable_subdir/squashfs-root/balena-etcher-electron.png" "$portable_subdir/balena-etcher.png"
   rm -rf "$portable_subdir/squashfs-root"
+
+  echo "$portable_version" > "$portable_subdir/version.txt"
 else
   echo "$portable_name is already installed"
 fi
