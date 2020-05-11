@@ -302,6 +302,11 @@ portable_subdir="$portable_dir/$portable_name"
 portable_cversion="`cat "$portable_subdir/version.txt"`"
 portable_version="0.9u4"
 
+if [ "$portable_cversion" != "$portable_version" ]
+then
+  rm -rf "$portable_subdir"
+fi
+
 if [ ! -d "$portable_subdir" ]
 then
   file="$portable_dir/freerapiddownloader.zip"
