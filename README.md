@@ -63,7 +63,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     * ~/.local/share/applications/cpu-x.desktop
     * ~/.local/share/applications/cpu-x-root.desktop
 * [Dropbox - 2020.03.04 (Dpkg)](https://www.dropbox.com/install)
-* [FreeRapid Downloader - 0.9.4 (Portable)](http://wordrider.net/freerapid/)
+* [FreeRapid Downloader - 0.9u4 (Portable)](http://wordrider.net/freerapid/)
   * Desktop
     * ~/.local/share/applications/freerapiddownloader.desktop
 * GIMP - Latest

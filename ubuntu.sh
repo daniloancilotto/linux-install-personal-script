@@ -150,17 +150,27 @@ printLine "Arduino"
 
 portable_name="arduino"
 portable_subdir="$portable_dir/$portable_name"
+portable_cversion="`cat "$portable_subdir/version.txt"`"
+portable_version="1.8.12"
+
+if [ "$portable_cversion" != "$portable_version" ]
+then
+  rm -rf "$portable_subdir"
+fi
+
 if [ ! -d "$portable_subdir" ]
 then
   file="$portable_dir/arduino.tar.xz"
-  wget -O "$file" "https://downloads.arduino.cc/arduino-1.8.12-linux64.tar.xz"
+  wget -O "$file" "https://downloads.arduino.cc/arduino-$portable_version-linux64.tar.xz"
   mkdir -pv "$portable_subdir"
   tar -xJf "$file" -C "$portable_subdir"
   rm -fv "$file"
 
-  mv -fv "$portable_subdir/arduino-1.8.12" "$portable_subdir/default"
+  mv -fv "$portable_subdir/arduino-$portable_version" "$portable_subdir/default"
   mkdir -pv "$portable_subdir/default/portable"
   cp -fr "$portable_subdir/default" "$portable_subdir/esp32"
+
+  echo "$portable_version" > "$portable_subdir/version.txt"
 else
   echo "$portable_name is already installed"
 fi
@@ -289,14 +299,19 @@ printLine "FreeRapid Downloader"
 
 portable_name="freerapiddownloader"
 portable_subdir="$portable_dir/$portable_name"
+portable_cversion="`cat "$portable_subdir/version.txt"`"
+portable_version="0.9u4"
+
 if [ ! -d "$portable_subdir" ]
 then
   file="$portable_dir/freerapiddownloader.zip"
-  wget -O "$file" "https://www.dropbox.com/s/swyleflcmtqxpch/FreeRapid-0.9u4.zip"
+  wget -O "$file" "https://www.dropbox.com/s/swyleflcmtqxpch/FreeRapid-$portable_version.zip"
   unzip -q "$file" -d "$portable_dir"
   rm -fv "$file"
 
-  mv -fv "$portable_dir/FreeRapid-0.9u4" "$portable_subdir"
+  mv -fv "$portable_dir/FreeRapid-$portable_version" "$portable_subdir"
+
+  echo "$portable_version" > "$portable_subdir/version.txt"
 else
   echo "$portable_name is already installed"
 fi
