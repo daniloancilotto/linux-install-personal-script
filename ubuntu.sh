@@ -104,7 +104,7 @@ portable_name="4kvideodownloader"
 portable_version="4.12.2"
 portable_subdir="$portable_dir/$portable_name"
 
-if [ "`cat "$portable_subdir/version.txt"`" != "$portable_version"] 
+if [ "`cat "$portable_subdir/version.txt"`" != "$portable_version" ] 
 then
   rm -rf "$portable_subdir"
 
@@ -127,7 +127,7 @@ portable_name="angryipscanner"
 portable_version="3.7.0"
 portable_subdir="$portable_dir/$portable_name"
 
-if [ "`cat "$portable_subdir/version.txt"`" != "$portable_version"] 
+if [ "`cat "$portable_subdir/version.txt"`" != "$portable_version" ] 
 then
   rm -rf "$portable_subdir"
 
@@ -220,7 +220,7 @@ portable_name="balena-etcher"
 portable_version="1.5.86"
 portable_subdir="$portable_dir/$portable_name"
 
-if [ "`cat "$portable_subdir/version.txt"`" != "$portable_version"] 
+if [ "`cat "$portable_subdir/version.txt"`" != "$portable_version" ] 
 then
   rm -rf "$portable_subdir"
 fi
