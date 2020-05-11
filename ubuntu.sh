@@ -101,14 +101,15 @@ echo "htop have been configured"
 printLine "4K Video Downloader"
 
 portable_name="4kvideodownloader"
-portable_version="4.12.2"
 portable_subdir="$portable_dir/$portable_name"
+portable_cversion="`cat "$portable_subdir/version.txt"`"
+portable_version="4.12.2"
 
-if [ "`cat "$portable_subdir/version.txt"`" != "$portable_version" ] 
+if [ "$portable_cversion" != "$portable_version" ]
 then
   rm -rf "$portable_subdir"
 
-  sudo apt remove 4kvideodownloader
+  sudo apt remove 4kvideodownloader -y
 fi
 
 if [ ! -f "/usr/bin/4kvideodownloader" ]
@@ -124,14 +125,15 @@ fi
 printLine "Angry IP Scanner"
 
 portable_name="angryipscanner"
-portable_version="3.7.0"
 portable_subdir="$portable_dir/$portable_name"
+portable_cversion="`cat "$portable_subdir/version.txt"`"
+portable_version="3.7.0"
 
-if [ "`cat "$portable_subdir/version.txt"`" != "$portable_version" ] 
+if [ "$portable_cversion" != "$portable_version" ]
 then
   rm -rf "$portable_subdir"
 
-  sudo apt remove ipscan
+  sudo apt remove ipscan -y
 fi
 
 if [ ! -f "/usr/bin/ipscan" ]
@@ -217,10 +219,11 @@ sudo apt install audacity -y
 printLine "Balena Etcher"
 
 portable_name="balena-etcher"
-portable_version="1.5.86"
 portable_subdir="$portable_dir/$portable_name"
+portable_cversion="`cat "$portable_subdir/version.txt"`"
+portable_version="1.5.86"
 
-if [ "`cat "$portable_subdir/version.txt"`" != "$portable_version" ] 
+if [ "$portable_cversion" != "$portable_version" ]
 then
   rm -rf "$portable_subdir"
 fi
