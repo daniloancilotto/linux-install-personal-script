@@ -127,7 +127,7 @@ printLine "Angry IP Scanner"
 portable_name="angryipscanner"
 portable_subdir="$portable_dir/$portable_name"
 portable_cversion="`cat "$portable_subdir/version.txt"`"
-portable_version="3.7.0"
+portable_version="3.7.1"
 
 if [ "$portable_cversion" != "$portable_version" ]
 then
@@ -231,7 +231,7 @@ printLine "Balena Etcher"
 portable_name="balena-etcher"
 portable_subdir="$portable_dir/$portable_name"
 portable_cversion="`cat "$portable_subdir/version.txt"`"
-portable_version="1.5.86"
+portable_version="1.5.89"
 
 if [ "$portable_cversion" != "$portable_version" ]
 then
