@@ -103,7 +103,7 @@ printLine "4K Video Downloader"
 portable_name="4kvideodownloader"
 portable_subdir="$portable_dir/$portable_name"
 portable_cversion="`cat "$portable_subdir/version.txt"`"
-portable_version="4.12.3"
+portable_version="4.12.4"
 
 if [ "$portable_cversion" != "$portable_version" ]
 then
@@ -127,7 +127,7 @@ printLine "Angry IP Scanner"
 portable_name="angryipscanner"
 portable_subdir="$portable_dir/$portable_name"
 portable_cversion="`cat "$portable_subdir/version.txt"`"
-portable_version="3.7.1"
+portable_version="3.7.2"
 
 if [ "$portable_cversion" != "$portable_version" ]
 then
@@ -231,7 +231,7 @@ printLine "Balena Etcher"
 portable_name="balena-etcher"
 portable_subdir="$portable_dir/$portable_name"
 portable_cversion="`cat "$portable_subdir/version.txt"`"
-portable_version="1.5.93"
+portable_version="1.5.97"
 
 if [ "$portable_cversion" != "$portable_version" ]
 then
