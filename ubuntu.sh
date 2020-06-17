@@ -151,7 +151,7 @@ printLine "Arduino"
 portable_name="arduino"
 portable_subdir="$portable_dir/$portable_name"
 portable_cversion="`cat "$portable_subdir/version.txt"`"
-portable_version="1.8.12"
+portable_version="1.8.13"
 
 if [ "$portable_cversion" != "$portable_version" ]
 then
@@ -231,7 +231,7 @@ printLine "Balena Etcher"
 portable_name="balena-etcher"
 portable_subdir="$portable_dir/$portable_name"
 portable_cversion="`cat "$portable_subdir/version.txt"`"
-portable_version="1.5.97"
+portable_version="1.5.99"
 
 if [ "$portable_cversion" != "$portable_version" ]
 then
