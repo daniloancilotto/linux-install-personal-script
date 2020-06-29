@@ -103,7 +103,7 @@ printLine "4K Video Downloader"
 portable_name="4kvideodownloader"
 portable_subdir="$portable_dir/$portable_name"
 portable_cversion="`cat "$portable_subdir/version.txt"`"
-portable_version="4.12.4"
+portable_version="4.12.5"
 
 if [ "$portable_cversion" != "$portable_version" ]
 then
@@ -231,7 +231,7 @@ printLine "Balena Etcher"
 portable_name="balena-etcher"
 portable_subdir="$portable_dir/$portable_name"
 portable_cversion="`cat "$portable_subdir/version.txt"`"
-portable_version="1.5.99"
+portable_version="1.5.100"
 
 if [ "$portable_cversion" != "$portable_version" ]
 then
