@@ -55,7 +55,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * User Groups
     * dialout
 * Audacity - Latest
-* [Balena Etcher - 1.5.100 (AppImage)](https://www.balena.io/etcher/)
+* [Balena Etcher - 1.5.102 (AppImage)](https://www.balena.io/etcher/)
   * Desktop
     * ~/.local/share/applications/appimagekit-balena-etcher-electron.desktop
 * CPU-X - Latest
