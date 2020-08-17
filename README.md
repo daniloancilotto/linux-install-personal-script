@@ -44,7 +44,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - Htop - Latest
   - Desktop
     - ~/.local/share/applications/htop.desktop
-- [4K Video Downloader - 4.12.5 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
+- [4K Video Downloader - 4.13.0 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
 - [Angry IP Scanner - 3.7.2 (Dpkg)](https://angryip.org/)
 - [Arduino - 1.8.13 (Portable)](https://www.arduino.cc/)
   - Preferences
