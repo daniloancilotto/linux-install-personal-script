@@ -82,6 +82,7 @@ sudo apt install ffmpeg -y
 printLine "Snap"
 sudo apt install snapd -y
 sudo systemctl enable --now snapd.socket
+sudo snap set system refresh.timer=mon,04:00
 
 printLine "OpenJDK"
 sudo apt install openjdk-8-jdk -y
@@ -231,7 +232,7 @@ printLine "Balena Etcher"
 portable_name="balena-etcher"
 portable_subdir="$portable_dir/$portable_name"
 portable_cversion="`cat "$portable_subdir/version.txt"`"
-portable_version="1.5.102"
+portable_version="1.5.104"
 
 if [ "$portable_cversion" != "$portable_version" ]
 then

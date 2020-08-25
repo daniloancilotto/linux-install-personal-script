@@ -55,7 +55,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   - User Groups
     - dialout
 - Audacity - Latest
-- [Balena Etcher - 1.5.102 (AppImage)](https://www.balena.io/etcher/)
+- [Balena Etcher - 1.5.104 (AppImage)](https://www.balena.io/etcher/)
   - Desktop
     - ~/.local/share/applications/appimagekit-balena-etcher-electron.desktop
 - CPU-X - Latest
@@ -72,14 +72,14 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - [LibreOffice - Latest (Snap)](https://snapcraft.io/libreoffice)
 - OBS Studio - Latest
 - Oracle VM VirtualBox - Latest
-  - Modules - Latest
+  - Modules
     - Extension Pack
     - Guest Additions ISO
     - Qt User Interface
   - User Groups
     - vboxusers
 - Remmina - Latest
-  - Plugins - Latest
+  - Plugins
     - RDP
     - VNC
 - Rhythmbox - Latest
