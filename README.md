@@ -45,11 +45,10 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   - Desktop
     - ~/.local/share/applications/htop.desktop
 - [4K Video Downloader - 4.13.0 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
-- [Angry IP Scanner - 3.7.2 (Dpkg)](https://angryip.org/)
 - [Arduino - 1.8.13 (Portable)](https://www.arduino.cc/)
   - Preferences
-    - ~/portable/arduino/default/portable/preferences.txt
-    - ~/portable/arduino/esp32/portable/preferences.txt
+    - ~/Applications/arduino/default/portable/preferences.txt
+    - ~/Applications/arduino/esp32/portable/preferences.txt
   - Desktop
     - ~/.local/share/applications/arduino-arduinoide.desktop
   - User Groups
@@ -58,18 +57,12 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - [Balena Etcher - 1.5.104 (AppImage)](https://www.balena.io/etcher/)
   - Desktop
     - ~/.local/share/applications/appimagekit-balena-etcher-electron.desktop
-- CPU-X - Latest
-  - Desktop
-    - ~/.local/share/applications/cpu-x.desktop
-    - ~/.local/share/applications/cpu-x-root.desktop
 - [Dropbox - 2020.03.04 (Dpkg)](https://www.dropbox.com/install)
 - [FreeRapid Downloader - 0.9u4 (Portable)](http://wordrider.net/freerapid/)
   - Desktop
     - ~/.local/share/applications/freerapiddownloader.desktop
 - GIMP - Latest
 - [Google Chrome - Latest (Dpkg)](https://www.google.com/chrome/)
-- GParted - Latest
-- [LibreOffice - Latest (Snap)](https://snapcraft.io/libreoffice)
 - OBS Studio - Latest
 - Oracle VM VirtualBox - Latest
   - Modules
@@ -78,15 +71,9 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - Qt User Interface
   - User Groups
     - vboxusers
-- Remmina - Latest
-  - Plugins
-    - RDP
-    - VNC
-- Rhythmbox - Latest
 - Samba - Latest
 - Scrcpy - Latest
   - Desktop
     - ~/.local/share/applications/scrcpy.desktop
 - [Spotify - Latest (Snap)](https://snapcraft.io/spotify)
-- Transmission - Latest
 - VLC - Lastest

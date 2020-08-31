@@ -55,7 +55,7 @@ sudo apt update
 desktop_dir="$HOME/.local/share/applications"
 mkdir -pv "$desktop_dir"
 
-portable_dir="$HOME/portable"
+portable_dir="$HOME/Applications"
 mkdir -pv "$portable_dir"
 
 printLine "Wget"
@@ -121,30 +121,6 @@ then
   echo "$portable_version" > "$portable_subdir/version.txt"
 else
   echo "4kvideodownloader is already installed"
-fi
-
-printLine "Angry IP Scanner"
-
-portable_name="angryipscanner"
-portable_subdir="$portable_dir/$portable_name"
-portable_cversion="`cat "$portable_subdir/version.txt"`"
-portable_version="3.7.2"
-
-if [ "$portable_cversion" != "$portable_version" ]
-then
-  rm -rf "$portable_subdir"
-
-  sudo apt remove ipscan -y
-fi
-
-if [ ! -f "/usr/bin/ipscan" ]
-then
-  dpkgInstall "angryipscanner.deb" $'https://github.com/angryip/ipscan/releases/download/'$portable_version$'/ipscan_'$portable_version$'_amd64.deb'
-
-  mkdir -pv "$portable_subdir"
-  echo "$portable_version" > "$portable_subdir/version.txt"
-else
-  echo "angryipscanner is already installed"
 fi
 
 printLine "Arduino"
@@ -282,12 +258,6 @@ fi
 
 echo "$portable_name have been configured"
 
-printLine "CPU-X"
-sudo apt install cpu-x -y
-desktopConf "$desktop_dir" "cpu-x.desktop" "NoDisplay" "true"
-desktopConf "$desktop_dir" "cpu-x-root.desktop" "Name" "CPU-X"
-echo "cpu-x have been configured"
-
 printLine "Dropbox"
 if [ ! -f "/usr/bin/dropbox" ]
 then
@@ -351,13 +321,6 @@ else
   echo "google-chrome is already installed"
 fi
 
-printLine "GParted"
-sudo apt install gparted -y
-
-printLine "LibreOffice"
-echo "Running snap, please wait..."
-sudo snap install libreoffice
-
 printLine "OBS Studio"
 sudo apt install obs-studio -y
 
@@ -365,12 +328,6 @@ printLine "Oracle VM VirtualBox"
 echo virtualbox-ext-pack virtualbox-ext-pack/license select true | sudo debconf-set-selections
 sudo apt install virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso virtualbox-qt -y
 sudo usermod -aG vboxusers $USER
-
-printLine "Remmina"
-sudo apt install remmina remmina-plugin-rdp remmina-plugin-vnc -y
-
-printLine "Rhythmbox"
-sudo apt install rhythmbox -y
 
 printLine "Samba"
 sudo apt install samba -y
@@ -400,9 +357,6 @@ echo "scrcpy have been configured"
 printLine "Spotify"
 echo "Running snap, please wait..."
 sudo snap install spotify
-
-printLine "Transmission"
-sudo apt install transmission -y
 
 printLine "VLC"
 sudo apt install vlc -y
