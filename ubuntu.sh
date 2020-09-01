@@ -123,6 +123,30 @@ else
   echo "4kvideodownloader is already installed"
 fi
 
+printLine "Angry IP Scanner"
+
+portable_name="angryipscanner"
+portable_subdir="$portable_dir/$portable_name"
+portable_cversion="`cat "$portable_subdir/version.txt"`"
+portable_version="3.7.2"
+
+if [ "$portable_cversion" != "$portable_version" ]
+then
+  rm -rf "$portable_subdir"
+
+  sudo apt remove ipscan -y
+fi
+
+if [ ! -f "/usr/bin/ipscan" ]
+then
+  dpkgInstall "angryipscanner.deb" $'https://github.com/angryip/ipscan/releases/download/'$portable_version$'/ipscan_'$portable_version$'_amd64.deb'
+
+  mkdir -pv "$portable_subdir"
+  echo "$portable_version" > "$portable_subdir/version.txt"
+else
+  echo "angryipscanner is already installed"
+fi
+
 printLine "Arduino"
 
 portable_name="arduino"
@@ -328,6 +352,9 @@ printLine "Oracle VM VirtualBox"
 echo virtualbox-ext-pack virtualbox-ext-pack/license select true | sudo debconf-set-selections
 sudo apt install virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso virtualbox-qt -y
 sudo usermod -aG vboxusers $USER
+
+printLine "Remmina"
+sudo apt install remmina remmina-plugin-rdp remmina-plugin-vnc -y
 
 printLine "Samba"
 sudo apt install samba -y
