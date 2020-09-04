@@ -29,6 +29,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 # Installations and Configurations
 
 ### Ubuntu
+- Snap - Latest
 - Wget - Latest
 - Tar - Latest
 - Zip - Latest
@@ -36,7 +37,11 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - 7-Zip - Latest
 - Crudini - Latest
 - FFmpeg - Latest
-- Snap - Latest
+- Seahorse - Latest
+- Kssh Askpass - Latest
+  - Autostart Scripts
+    - ~/.config/autostart-scripts/ssh-askpass.sh
+- Samba - Latest
 - OpenJDK - 8
   - Desktop
     - ~/.local/share/applications/openjdk-8-policytool.desktop
@@ -76,7 +81,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   - Plugins
     - RDP
     - VNC    
-- Samba - Latest
 - Scrcpy - Latest
   - Desktop
     - ~/.local/share/applications/scrcpy.desktop

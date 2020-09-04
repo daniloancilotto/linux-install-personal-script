@@ -55,8 +55,16 @@ sudo apt update
 desktop_dir="$HOME/.local/share/applications"
 mkdir -pv "$desktop_dir"
 
+autostart_scripts_dir="$HOME/.config/autostart-scripts"
+mkdir -pv "$autostart_scripts_dir"
+
 portable_dir="$HOME/Applications"
 mkdir -pv "$portable_dir"
+
+printLine "Snap"
+sudo apt install snapd -y
+sudo systemctl enable --now snapd.socket
+sudo snap set system refresh.timer=mon,04:00
 
 printLine "Wget"
 sudo apt install wget -y
@@ -79,10 +87,27 @@ sudo apt install crudini -y
 printLine "FFmpeg"
 sudo apt install ffmpeg -y
 
-printLine "Snap"
-sudo apt install snapd -y
-sudo systemctl enable --now snapd.socket
-sudo snap set system refresh.timer=mon,04:00
+printLine "Seahorse"
+sudo apt install seahorse -y
+
+printLine "Kssh Askpass"
+
+sudo apt install ksshaskpass -y
+
+file="$autostart_scripts_dir/ssh-askpass.sh"
+if [ ! -f "$file" ]
+then
+  conf=$'#!/bin/bash\n'
+  conf+=$'export SSH_ASKPASS=/usr/bin/ksshaskpass\n'
+  conf+=$'/usr/bin/ssh-add </dev/null\n'
+  echo "$conf" | sudo tee "$file"
+  sudo chmod +x "$file"
+fi
+
+echo "ksshaskpass have been configured"
+
+printLine "Samba"
+sudo apt install samba -y
 
 printLine "OpenJDK"
 sudo apt install openjdk-8-jdk -y
@@ -355,9 +380,6 @@ sudo usermod -aG vboxusers $USER
 
 printLine "Remmina"
 sudo apt install remmina remmina-plugin-rdp remmina-plugin-vnc -y
-
-printLine "Samba"
-sudo apt install samba -y
 
 printLine "Scrcpy"
 
