@@ -362,6 +362,9 @@ echo "$portable_name have been configured"
 printLine "GIMP"
 sudo apt install gimp -y
 
+printLine "GNOME Calculator"
+sudo apt install gnome-calculator -y
+
 printLine "Google Chrome"
 if [ -z "`google-chrome --version`" ]
 then

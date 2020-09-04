@@ -68,6 +68,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   - Desktop
     - ~/.local/share/applications/freerapiddownloader.desktop
 - GIMP - Latest
+- GNOME Calculator - Latest
 - [Google Chrome - Latest (Dpkg)](https://www.google.com/chrome/)
 - OBS Studio - Latest
 - Oracle VM VirtualBox - Latest
