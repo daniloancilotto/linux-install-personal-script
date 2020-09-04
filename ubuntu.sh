@@ -416,8 +416,3 @@ sudo apt install vlc -y
 printLine "Finished"
 echo "Please reboot your system."
 echo ""
-
-if [ ! -z "`notify-send --version`" ]
-then
-  notify-send "LINUX PERSONAL SCRIPT (UBUNTU)" "Please reboot your system."
-fi
