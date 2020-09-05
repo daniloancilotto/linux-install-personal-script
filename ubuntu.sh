@@ -410,6 +410,9 @@ printLine "Spotify"
 echo "Running snap, please wait..."
 sudo snap install spotify
 
+printLine "Transmission"
+sudo apt install transmission -y
+
 printLine "VLC"
 sudo apt install vlc -y
 

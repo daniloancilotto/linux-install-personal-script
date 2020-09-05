@@ -86,4 +86,5 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   - Desktop
     - ~/.local/share/applications/scrcpy.desktop
 - [Spotify - Latest (Snap)](https://snapcraft.io/spotify)
+- Transmission - Latest
 - VLC - Lastest
