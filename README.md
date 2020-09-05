@@ -29,7 +29,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 # Installations and Configurations
 
 ### Ubuntu
-- Language Pack
+- Language Pack - Latest
   - pt
 - Snap - Latest
 - Wget - Latest
