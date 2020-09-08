@@ -62,7 +62,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   - User Groups
     - dialout
 - Audacity - Latest
-- [Balena Etcher - 1.5.106 (AppImage)](https://www.balena.io/etcher/)
+- [Balena Etcher - 1.5.107 (AppImage)](https://www.balena.io/etcher/)
   - Desktop
     - ~/.local/share/applications/appimagekit-balena-etcher-electron.desktop
 - [Dropbox - 2020.03.04 (Dpkg)](https://www.dropbox.com/install)
@@ -72,6 +72,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - GIMP - Latest
 - GNOME Calculator - Latest
 - [Google Chrome - Latest (Dpkg)](https://www.google.com/chrome/)
+- [Kdenlive - Latest (Snap)](https://snapcraft.io/kdenlive)
 - OBS Studio - Latest
 - Oracle VM VirtualBox - Latest
   - Modules
@@ -88,5 +89,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   - Desktop
     - ~/.local/share/applications/scrcpy.desktop
 - [Spotify - Latest (Snap)](https://snapcraft.io/spotify)
+- [Sosumi - Edge (Snap)](https://snapcraft.io/sosumi)
 - Transmission - Latest
 - VLC - Lastest

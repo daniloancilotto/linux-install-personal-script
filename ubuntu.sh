@@ -260,7 +260,7 @@ printLine "Balena Etcher"
 portable_name="balena-etcher"
 portable_subdir="$portable_dir/$portable_name"
 portable_cversion="`cat "$portable_subdir/version.txt"`"
-portable_version="1.5.106"
+portable_version="1.5.107"
 
 if [ "$portable_cversion" != "$portable_version" ]
 then
@@ -376,6 +376,10 @@ else
   echo "google-chrome is already installed"
 fi
 
+printLine "Kdenlive"
+echo "Running snap, please wait..."
+sudo snap install kdenlive
+
 printLine "OBS Studio"
 sudo apt install obs-studio -y
 
@@ -412,6 +416,10 @@ echo "scrcpy have been configured"
 printLine "Spotify"
 echo "Running snap, please wait..."
 sudo snap install spotify
+
+printLine "Sosumi"
+echo "Running snap, please wait..."
+sudo snap install sosumi --edge
 
 printLine "Transmission"
 sudo apt install transmission -y
