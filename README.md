@@ -72,7 +72,9 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - GIMP - Latest
 - GNOME Calculator - Latest
 - [Google Chrome - Latest (Dpkg)](https://www.google.com/chrome/)
-- [Kdenlive - Latest (Snap)](https://snapcraft.io/kdenlive)
+- [Kdenlive - 20.08.0 (AppImage)](https://kdenlive.org/en/download/)
+  - Desktop
+    - ~/.local/share/applications/kdenlive.desktop
 - OBS Studio - Latest
 - Oracle VM VirtualBox - Latest
   - Modules

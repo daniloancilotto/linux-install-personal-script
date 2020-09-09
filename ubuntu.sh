@@ -377,8 +377,51 @@ else
 fi
 
 printLine "Kdenlive"
-echo "Running snap, please wait..."
-sudo snap install kdenlive
+
+portable_name="kdenlive"
+portable_subdir="$portable_dir/$portable_name"
+portable_cversion="`cat "$portable_subdir/version.txt"`"
+portable_version="20.08.0"
+
+if [ "$portable_cversion" != "$portable_version" ]
+then
+  rm -rf "$portable_subdir"
+fi
+
+if [ ! -d "$portable_subdir" ]
+then
+  mkdir -pv "$portable_subdir"
+
+  file="$portable_subdir/kdenlive-$portable_version-x86_64.appimage"
+  wget -O "$file" "https://files.kde.org/kdenlive/release/kdenlive-$portable_version-x86_64.appimage"
+
+  ln -sv -T "$file" "$portable_subdir/kdenlive.appimage"
+  chmod +x "$file"
+
+  echo "$portable_version" > "$portable_subdir/version.txt"
+else
+  echo "$portable_name is already installed"
+fi
+
+file="$desktop_dir/kdenlive.desktop"
+if [ ! -f "$file" ]
+then
+  desk=$'[Desktop Entry]\n'
+  desk+=$'Name=balenaEtcher\n'
+  desk+=$'GenericName=Video Editor\n'
+  desk+=$'GenericName[pt_BR]=Editor de Vídeo\n'
+  desk+=$'Comment=Nonlinear video editor by KDE\n'
+  desk+=$'Comment[pt_BR]=Editor de vídeo não-linear do KDE\n'
+  desk+=$'Exec="'$portable_subdir$'/kdenlive.appimage" %U\n'
+  desk+=$'Terminal=false\n'
+  desk+=$'Type=Application\n'
+  desk+=$'MimeType=application/x-kdenlive;\n'
+  desk+=$'Icon=kdenlive\n'
+  desk+=$'Categories=Qt;KDE;AudioVideo;AudioVideoEditing;\n'
+  echo "$desk" > "$file"
+fi
+
+echo "$portable_name have been configured"
 
 printLine "OBS Studio"
 sudo apt install obs-studio -y
