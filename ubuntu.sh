@@ -407,7 +407,7 @@ file="$desktop_dir/kdenlive.desktop"
 if [ ! -f "$file" ]
 then
   desk=$'[Desktop Entry]\n'
-  desk+=$'Name=balenaEtcher\n'
+  desk+=$'Name=Kdenlive\n'
   desk+=$'GenericName=Video Editor\n'
   desk+=$'GenericName[pt_BR]=Editor de Vídeo\n'
   desk+=$'Comment=Nonlinear video editor by KDE\n'
