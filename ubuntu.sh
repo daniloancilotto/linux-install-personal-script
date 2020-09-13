@@ -260,7 +260,7 @@ printLine "Balena Etcher"
 portable_name="balena-etcher"
 portable_subdir="$portable_dir/$portable_name"
 portable_cversion="`cat "$portable_subdir/version.txt"`"
-portable_version="1.5.107"
+portable_version="1.5.108"
 
 if [ "$portable_cversion" != "$portable_version" ]
 then
@@ -381,7 +381,7 @@ printLine "Kdenlive"
 portable_name="kdenlive"
 portable_subdir="$portable_dir/$portable_name"
 portable_cversion="`cat "$portable_subdir/version.txt"`"
-portable_version="20.08.0"
+portable_version="20.08.1"
 
 if [ "$portable_cversion" != "$portable_version" ]
 then
