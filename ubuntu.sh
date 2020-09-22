@@ -55,11 +55,19 @@ sudo apt update
 desktop_dir="$HOME/.local/share/applications"
 mkdir -pv "$desktop_dir"
 
+autostart_dir="$HOME/.config/autostart"
+mkdir -pv "$autostart_dir"
+
 autostart_scripts_dir="$HOME/.config/autostart-scripts"
 mkdir -pv "$autostart_scripts_dir"
 
 portable_dir="$HOME/Applications"
 mkdir -pv "$portable_dir"
+
+printLine "Hide Icons"
+desktopConf "$desktop_dir" "info.desktop" "NoDisplay" "true"
+desktopConf "$desktop_dir" "org.kde.kdeconnect_open.desktop" "NoDisplay" "true"
+desktopConf "$desktop_dir" "org.kde.kdeconnect.sms.desktop" "NoDisplay" "true"
 
 printLine "Language Pack Pt"
 sudo apt install language-pack-pt language-pack-gnome-pt -y
@@ -101,7 +109,29 @@ printLine "FFmpeg"
 sudo apt install ffmpeg -y
 
 printLine "Seahorse"
+
 sudo apt install seahorse -y
+
+file="$autostart_dir/gnome-keyring-pkcs11.desktop"
+if [ ! -f "$file" ]
+then
+  cp "/etc/xdg/autostart/gnome-keyring-pkcs11.desktop" "$autostart_dir"
+  sed -i '/^OnlyShowIn.*$/d' "$file"
+fi
+file="$autostart_dir/gnome-keyring-secrets.desktop"
+if [ ! -f "$file" ]
+then
+  cp "/etc/xdg/autostart/gnome-keyring-secrets.desktop" "$autostart_dir"
+  sed -i '/^OnlyShowIn.*$/d' "$file"
+fi
+file="$autostart_dir/gnome-keyring-ssh.desktop"
+if [ ! -f "$file" ]
+then
+  cp "/etc/xdg/autostart/gnome-keyring-ssh.desktop" "$autostart_dir"
+  sed -i '/^OnlyShowIn.*$/d' "$file"
+fi
+
+echo "seahorse have been configured"
 
 printLine "Kssh Askpass"
 
@@ -129,13 +159,13 @@ echo "openjdk have been configured"
 
 java8_dir="/usr/lib/jvm/java-8-openjdk-amd64"
 
-printLine "Neofetch"
-sudo apt install neofetch -y
-
 printLine "Htop"
 sudo apt install htop -y
 desktopConf "$desktop_dir" "htop.desktop" "NoDisplay" "true"
 echo "htop have been configured"
+
+printLine "Neofetch"
+sudo apt install neofetch -y
 
 printLine "4K Video Downloader"
 
@@ -327,6 +357,9 @@ then
 else
   echo "dropbox is already installed"
 fi
+
+printLine "Flameshot"
+sudo apt install flameshot -y
 
 printLine "FreeRapid Downloader"
 
