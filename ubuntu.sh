@@ -64,7 +64,6 @@ mkdir -pv "$autostart_scripts_dir"
 portable_dir="$HOME/Applications"
 mkdir -pv "$portable_dir"
 
-printLine "Hide Icons"
 desktopConf "$desktop_dir" "info.desktop" "NoDisplay" "true"
 desktopConf "$desktop_dir" "org.kde.kdeconnect_open.desktop" "NoDisplay" "true"
 desktopConf "$desktop_dir" "org.kde.kdeconnect.sms.desktop" "NoDisplay" "true"
