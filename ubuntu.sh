@@ -64,10 +64,6 @@ mkdir -pv "$autostart_scripts_dir"
 portable_dir="$HOME/Applications"
 mkdir -pv "$portable_dir"
 
-desktopConf "$desktop_dir" "info.desktop" "NoDisplay" "true"
-desktopConf "$desktop_dir" "org.kde.kdeconnect_open.desktop" "NoDisplay" "true"
-desktopConf "$desktop_dir" "org.kde.kdeconnect.sms.desktop" "NoDisplay" "true"
-
 printLine "Language Pack Pt"
 sudo apt install language-pack-pt language-pack-gnome-pt -y
 
@@ -511,6 +507,10 @@ sudo apt install transmission -y
 
 printLine "VLC"
 sudo apt install vlc -y
+
+desktopConf "$desktop_dir" "info.desktop" "NoDisplay" "true"
+desktopConf "$desktop_dir" "org.kde.kdeconnect_open.desktop" "NoDisplay" "true"
+desktopConf "$desktop_dir" "org.kde.kdeconnect.sms.desktop" "NoDisplay" "true"
 
 printLine "Finished"
 echo "Please reboot your system."
