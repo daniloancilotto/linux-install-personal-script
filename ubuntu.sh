@@ -419,6 +419,7 @@ printLine "Kdenlive"
 portable_name="kdenlive"
 portable_subdir="$portable_dir/$portable_name"
 portable_cversion="`cat "$portable_subdir/version.txt"`"
+portable_rversion="20.08"
 portable_version="20.08.2"
 
 if [ "$portable_cversion" != "$portable_version" ]
@@ -431,7 +432,7 @@ then
   mkdir -pv "$portable_subdir"
 
   file="$portable_subdir/kdenlive-$portable_version-x86_64.appimage"
-  wget -O "$file" "https://files.kde.org/kdenlive/release/kdenlive-$portable_version-x86_64.appimage"
+  wget -O "$file" "https://download.kde.org/stable/kdenlive/$portable_rversion/linux/kdenlive-$portable_version-x86_64.appimage"
 
   ln -sv -T "$file" "$portable_subdir/kdenlive.appimage"
   chmod +x "$file"
