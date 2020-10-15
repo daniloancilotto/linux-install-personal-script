@@ -54,7 +54,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   - Desktop
     - ~/.local/share/applications/htop.desktop
 - Neofetch - Latest (Repository)
-- [4K Video Downloader - 4.13.1 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
+- [4K Video Downloader - 4.13.2 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
 - [Angry IP Scanner - 3.7.2 (Dpkg)](https://angryip.org/download/)
 - [Arduino - 1.8.13 (Portable)](https://www.arduino.cc/en/Main/Software)
   - Preferences
@@ -76,7 +76,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - GIMP - Latest (Repository)
 - GNOME Calculator - Latest (Repository)
 - [Google Chrome - Latest (Dpkg)](https://www.google.com/chrome/)
-- [Kdenlive - 20.08.1 (AppImage)](https://kdenlive.org/en/download/)
+- [Kdenlive - 20.08.2 (AppImage)](https://kdenlive.org/en/download/)
   - Desktop
     - ~/.local/share/applications/kdenlive.desktop
 - OBS Studio - Latest (Repository)
