@@ -54,8 +54,8 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   - Desktop
     - ~/.local/share/applications/htop.desktop
 - Neofetch - Latest (Repository)
-- [4K Video Downloader - 4.13.2 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
-- [Angry IP Scanner - 3.7.2 (Dpkg)](https://angryip.org/download/)
+- [4K Video Downloader - 4.13.3 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
+- [Angry IP Scanner - 3.7.3 (Dpkg)](https://angryip.org/download/)
 - [Arduino - 1.8.13 (Portable)](https://www.arduino.cc/en/Main/Software)
   - Preferences
     - ~/Applications/arduino/default/portable/preferences.txt
