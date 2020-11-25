@@ -54,7 +54,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   - Desktop
     - ~/.local/share/applications/htop.desktop
 - Neofetch - Latest (Repository)
-- [4K Video Downloader - 4.13.3 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
+- [4K Video Downloader - 4.13.4 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
 - [Angry IP Scanner - 3.7.3 (Dpkg)](https://angryip.org/download/)
 - [Arduino - 1.8.13 (Portable)](https://www.arduino.cc/en/Main/Software)
   - Preferences
@@ -65,7 +65,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   - User Groups
     - dialout
 - Audacity - Latest (Repository)
-- [Balena Etcher - 1.5.110 (AppImage)](https://www.balena.io/etcher/)
+- [Balena Etcher - 1.5.111 (AppImage)](https://www.balena.io/etcher/)
   - Desktop
     - ~/.local/share/applications/appimagekit-balena-etcher-electron.desktop
 - [Dropbox - 2020.03.04 (Dpkg)](https://www.dropbox.com/install)
@@ -76,7 +76,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - GIMP - Latest (Repository)
 - GNOME Calculator - Latest (Repository)
 - [Google Chrome - Latest (Dpkg)](https://www.google.com/chrome/)
-- [Kdenlive - 20.08.2 (AppImage)](https://kdenlive.org/en/download/)
+- [Kdenlive - 20.08.3 (AppImage)](https://kdenlive.org/en/download/)
   - Desktop
     - ~/.local/share/applications/kdenlive.desktop
 - OBS Studio - Latest (Repository)
