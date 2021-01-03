@@ -167,7 +167,7 @@ printLine "4K Video Downloader"
 portable_name="4kvideodownloader"
 portable_subdir="$portable_dir/$portable_name"
 portable_cversion="`cat "$portable_subdir/version.txt"`"
-portable_version="4.13.5"
+portable_version="4.14.1"
 
 if [ "$portable_cversion" != "$portable_version" ]
 then
@@ -295,7 +295,7 @@ printLine "Balena Etcher"
 portable_name="balena-etcher"
 portable_subdir="$portable_dir/$portable_name"
 portable_cversion="`cat "$portable_subdir/version.txt"`"
-portable_version="1.5.112"
+portable_version="1.5.113"
 
 if [ "$portable_cversion" != "$portable_version" ]
 then
@@ -419,8 +419,8 @@ printLine "Kdenlive"
 portable_name="kdenlive"
 portable_subdir="$portable_dir/$portable_name"
 portable_cversion="`cat "$portable_subdir/version.txt"`"
-portable_rversion="20.08"
-portable_version="20.08.3"
+portable_rversion="20.12"
+portable_version="20.12.0"
 
 if [ "$portable_cversion" != "$portable_version" ]
 then
