@@ -499,10 +499,6 @@ printLine "Spotify"
 echo "Running snap, please wait..."
 sudo snap install spotify
 
-printLine "Sosumi"
-echo "Running snap, please wait..."
-sudo snap install sosumi --edge
-
 printLine "Transmission"
 sudo apt install transmission -y
 
