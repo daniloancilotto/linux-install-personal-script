@@ -167,7 +167,7 @@ printLine "4K Video Downloader"
 portable_name="4kvideodownloader"
 portable_subdir="$portable_dir/$portable_name"
 portable_cversion="`cat "$portable_subdir/version.txt"`"
-portable_version="4.14.2"
+portable_version="4.15.0"
 
 if [ "$portable_cversion" != "$portable_version" ]
 then
@@ -191,7 +191,7 @@ printLine "Angry IP Scanner"
 portable_name="angryipscanner"
 portable_subdir="$portable_dir/$portable_name"
 portable_cversion="`cat "$portable_subdir/version.txt"`"
-portable_version="3.7.5"
+portable_version="3.7.6"
 
 if [ "$portable_cversion" != "$portable_version" ]
 then
@@ -361,6 +361,7 @@ printLine "FreeRapid Downloader"
 portable_name="freerapiddownloader"
 portable_subdir="$portable_dir/$portable_name"
 portable_cversion="`cat "$portable_subdir/version.txt"`"
+portable_dropbox_path="swyleflcmtqxpch"
 portable_version="0.9u4"
 
 if [ "$portable_cversion" != "$portable_version" ]
@@ -371,7 +372,7 @@ fi
 if [ ! -d "$portable_subdir" ]
 then
   file="$portable_dir/freerapiddownloader.zip"
-  wget -O "$file" "https://www.dropbox.com/s/swyleflcmtqxpch/FreeRapid-$portable_version.zip"
+  wget -O "$file" "https://www.dropbox.com/s/$portable_dropbox_path/FreeRapid-$portable_version.zip"
   unzip -q "$file" -d "$portable_dir"
   rm -fv "$file"
 
