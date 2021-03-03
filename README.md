@@ -53,10 +53,10 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - ~/.config/autostart-scripts/ssh-askpass.sh
 - Samba - Latest (Repository)
 - OpenJDK - 8 (Repository)
-  - Desktop
+  - Menu
     - ~/.local/share/applications/openjdk-8-policytool.desktop
 - Htop - Latest (Repository)
-  - Desktop
+  - Menu
     - ~/.local/share/applications/htop.desktop
 - Neofetch - Latest (Repository)
 - [4K Video Downloader - 4.15.0 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
@@ -65,24 +65,24 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   - Preferences
     - ~/Applications/arduino/default/portable/preferences.txt
     - ~/Applications/arduino/esp32/portable/preferences.txt
-  - Desktop
+  - Menu
     - ~/.local/share/applications/arduino-arduinoide.desktop
   - User Groups
     - dialout
 - Audacity - Latest (Repository)
 - [Balena Etcher - 1.5.116 (AppImage)](https://www.balena.io/etcher/)
-  - Desktop
+  - Menu
     - ~/.local/share/applications/appimagekit-balena-etcher-electron.desktop
 - [Dropbox - 2020.03.04 (Dpkg)](https://www.dropbox.com/install)
 - Flameshot - Latest (Repository)
 - [FreeRapid Downloader - 0.9u4 (Portable)](http://wordrider.net/freerapid/download.htm)
-  - Desktop
+  - Menu
     - ~/.local/share/applications/freerapiddownloader.desktop
 - GIMP - Latest (Repository)
 - GNOME Calculator - Latest (Repository)
 - [Google Chrome - Latest (Dpkg)](https://www.google.com/chrome/)
 - [Kdenlive - 20.12.2 (AppImage)](https://kdenlive.org/en/download/)
-  - Desktop
+  - Menu
     - ~/.local/share/applications/kdenlive.desktop
 - OBS Studio - Latest (Repository)
 - Oracle VM VirtualBox - Latest (Repository)
@@ -97,7 +97,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - RDP
     - VNC    
 - Scrcpy - Latest (Repository)
-  - Desktop
+  - Menu
     - ~/.local/share/applications/scrcpy.desktop
 - [Spotify - Latest (Snap)](https://snapcraft.io/spotify)
 - Transmission - Latest (Repository)

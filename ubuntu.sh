@@ -36,7 +36,7 @@ dpkgInstall() {
   sudo apt install -fy
 }
 
-desktopConf() {
+menuConf() {
   source_file="/usr/share/applications/$2"
   target_file="$1/$2"
   if [ -f "$source_file" ] && [ ! -f "$target_file" ]
@@ -49,11 +49,10 @@ desktopConf() {
   fi
 }
 
-printLine "Update"
-sudo apt update
+java8_dir="/usr/lib/jvm/java-8-openjdk-amd64"
 
-desktop_dir="$HOME/.local/share/applications"
-mkdir -pv "$desktop_dir"
+menu_dir="$HOME/.local/share/applications"
+mkdir -pv "$menu_dir"
 
 autostart_dir="$HOME/.config/autostart"
 mkdir -pv "$autostart_dir"
@@ -63,6 +62,9 @@ mkdir -pv "$autostart_scripts_dir"
 
 portable_dir="$HOME/Applications"
 mkdir -pv "$portable_dir"
+
+printLine "Update"
+sudo apt update
 
 printLine "Kernel"
 
@@ -98,8 +100,8 @@ sudo apt install language-pack-pt language-pack-gnome-pt -y
 printLine "Snap"
 
 sudo apt install snapd -y
-
 sudo systemctl enable --now snapd.socket
+
 sudo snap set system refresh.timer=mon,04:00
 
 snap_cronjob="@reboot /usr/bin/sudo /usr/bin/snap refresh"
@@ -176,15 +178,17 @@ printLine "Samba"
 sudo apt install samba -y
 
 printLine "OpenJDK"
+
 sudo apt install openjdk-8-jdk -y
-desktopConf "$desktop_dir" "openjdk-8-policytool.desktop" "NoDisplay" "true"
+menuConf "$menu_dir" "openjdk-8-policytool.desktop" "NoDisplay" "true"
+
 echo "openjdk have been configured"
 
-java8_dir="/usr/lib/jvm/java-8-openjdk-amd64"
-
 printLine "Htop"
+
 sudo apt install htop -y
-desktopConf "$desktop_dir" "htop.desktop" "NoDisplay" "true"
+menuConf "$menu_dir" "htop.desktop" "NoDisplay" "true"
+
 echo "htop have been configured"
 
 printLine "Neofetch"
@@ -286,7 +290,7 @@ then
   echo "$conf_esp32" > "$file"
 fi
 
-file="$desktop_dir/arduino-arduinoide.desktop"
+file="$menu_dir/arduino-arduinoide.desktop"
 if [ ! -f "$file" ]
 then
   desk=$'[Desktop Entry]\n'
@@ -354,7 +358,7 @@ else
   echo "$portable_name is already installed"
 fi
 
-file="$desktop_dir/appimagekit-balena-etcher-electron.desktop"
+file="$menu_dir/appimagekit-balena-etcher-electron.desktop"
 if [ ! -f "$file" ]
 then
   desk=$'[Desktop Entry]\n'
@@ -411,7 +415,7 @@ else
   echo "$portable_name is already installed"
 fi
 
-file="$desktop_dir/$portable_name.desktop"
+file="$menu_dir/$portable_name.desktop"
 if [ ! -f "$file" ]
 then
   desk=$'[Desktop Entry]\n'
@@ -471,7 +475,7 @@ else
   echo "$portable_name is already installed"
 fi
 
-file="$desktop_dir/kdenlive.desktop"
+file="$menu_dir/kdenlive.desktop"
 if [ ! -f "$file" ]
 then
   desk=$'[Desktop Entry]\n'
@@ -495,9 +499,13 @@ printLine "OBS Studio"
 sudo apt install obs-studio -y
 
 printLine "Oracle VM VirtualBox"
+
 echo virtualbox-ext-pack virtualbox-ext-pack/license select true | sudo debconf-set-selections
 sudo apt install virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso virtualbox-qt -y
+
 sudo usermod -aG vboxusers $USER
+
+echo "virtualbox have been configured"
 
 printLine "Remmina"
 sudo apt install remmina remmina-plugin-rdp remmina-plugin-vnc -y
@@ -506,7 +514,7 @@ printLine "Scrcpy"
 
 sudo apt install scrcpy -y
 
-file="$desktop_dir/scrcpy.desktop"
+file="$menu_dir/scrcpy.desktop"
 if [ ! -f "$file" ]
 then
   desk=$'[Desktop Entry]\n'
@@ -533,10 +541,6 @@ sudo apt install transmission -y
 
 printLine "VLC"
 sudo apt install vlc -y
-
-desktopConf "$desktop_dir" "info.desktop" "NoDisplay" "true"
-desktopConf "$desktop_dir" "org.kde.kdeconnect_open.desktop" "NoDisplay" "true"
-desktopConf "$desktop_dir" "org.kde.kdeconnect.sms.desktop" "NoDisplay" "true"
 
 printLine "Finished"
 echo "Please reboot your system."
