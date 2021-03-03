@@ -69,22 +69,25 @@ printLine "Kernel"
 swappiness="10"
 if [ "`cat /proc/sys/vm/swappiness`" != "$swappiness" ]
 then
-  echo "vm.swappiness=$swappiness" | sudo tee "/etc/sysctl.d/60-swappiness.conf"
-  sudo sysctl -p
+  file="/etc/sysctl.d/60-swappiness.conf"
+  echo "vm.swappiness=$swappiness" | sudo tee "$file"
+  sudo sysctl -p "$file"
 fi
 
 cache_pressure="50"
 if [ "`cat /proc/sys/vm/vfs_cache_pressure`" != "$cache_pressure" ]
 then
-  echo "vm.vfs_cache_pressure=$cache_pressure" | sudo tee "/etc/sysctl.d/60-cache-pressure.conf"
-  sudo sysctl -p
+  file="/etc/sysctl.d/60-cache-pressure.conf"
+  echo "vm.vfs_cache_pressure=$cache_pressure" | sudo tee "$file"
+  sudo sysctl -p "$file"
 fi
 
 inotify_watches="524288"
 if [ "`cat /proc/sys/fs/inotify/max_user_watches`" != "$inotify_watches" ]
 then
-  echo "fs.inotify.max_user_watches=$inotify_watches" | sudo tee "/etc/sysctl.d/60-inotify-watches.conf"
-  sudo sysctl -p
+  file="/etc/sysctl.d/60-inotify-watches.conf"
+  echo "fs.inotify.max_user_watches=$inotify_watches" | sudo tee "$file"
+  sudo sysctl -p "$file"
 fi
 
 echo "kernel have been configured"
