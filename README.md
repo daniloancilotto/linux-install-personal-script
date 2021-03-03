@@ -29,6 +29,11 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 # Installations and Configurations
 
 ### Ubuntu
+- Kernel
+  - Parameters
+    - /etc/sysctl.d/60-swappiness.conf
+    - /etc/sysctl.d/60-cache-pressure.conf
+    - /etc/sysctl.d/60-inotify-watches.conf
 - Language Pack Pt - Latest (Repository)
 - Snap - Latest (Repository)
 - Wget - Latest (Repository)
