@@ -496,6 +496,9 @@ fi
 
 echo "$portable_name have been configured"
 
+printLine "LibreOffice"
+sudo apt install libreoffice-writer libreoffice-calc libreoffice-impress libreoffice-help-pt-br -y
+
 printLine "OBS Studio"
 sudo apt install obs-studio -y
 

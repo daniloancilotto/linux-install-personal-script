@@ -84,6 +84,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - [Kdenlive - 20.12.2 (AppImage)](https://kdenlive.org/en/download/)
   - Menu
     - ~/.local/share/applications/kdenlive.desktop
+- LibreOffice - Latest (Repository)
 - OBS Studio - Latest (Repository)
 - Oracle VM VirtualBox - Latest (Repository)
   - Modules
