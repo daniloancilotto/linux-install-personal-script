@@ -81,18 +81,11 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - GIMP - Latest (Repository)
 - GNOME Calculator - Latest (Repository)
 - [Google Chrome - Latest (Dpkg)](https://www.google.com/chrome/)
-- [Kdenlive - 20.12.2 (AppImage)](https://kdenlive.org/en/download/)
+- [Kdenlive - 20.12.3 (AppImage)](https://kdenlive.org/en/download/)
   - Menu
     - ~/.local/share/applications/kdenlive.desktop
 - LibreOffice - Latest (Repository)
 - OBS Studio - Latest (Repository)
-- Oracle VM VirtualBox - Latest (Repository)
-  - Modules
-    - Extension Pack
-    - Guest Additions ISO
-    - Qt User Interface
-  - User Groups
-    - vboxusers
 - Remmina - Latest (Repository)
   - Plugins
     - RDP
@@ -102,4 +95,5 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - ~/.local/share/applications/scrcpy.desktop
 - [Spotify - Latest (Snap)](https://snapcraft.io/spotify)
 - Transmission - Latest (Repository)
+- Virt-Manager - Latest (Repository)
 - VLC - Lastest (Repository)

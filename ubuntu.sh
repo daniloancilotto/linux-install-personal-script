@@ -454,7 +454,7 @@ portable_name="kdenlive"
 portable_subdir="$portable_dir/$portable_name"
 portable_cversion="`cat "$portable_subdir/version.txt"`"
 portable_rversion="20.12"
-portable_version="20.12.2"
+portable_version="20.12.3"
 
 if [ "$portable_cversion" != "$portable_version" ]
 then
@@ -502,15 +502,6 @@ sudo apt install libreoffice-writer libreoffice-calc libreoffice-impress libreof
 printLine "OBS Studio"
 sudo apt install obs-studio -y
 
-printLine "Oracle VM VirtualBox"
-
-echo virtualbox-ext-pack virtualbox-ext-pack/license select true | sudo debconf-set-selections
-sudo apt install virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso virtualbox-qt -y
-
-sudo usermod -aG vboxusers $USER
-
-echo "virtualbox have been configured"
-
 printLine "Remmina"
 sudo apt install remmina remmina-plugin-rdp remmina-plugin-vnc -y
 
@@ -542,6 +533,9 @@ sudo snap install spotify
 
 printLine "Transmission"
 sudo apt install transmission -y
+
+printLine "Virt-Manager"
+sudo apt install virt-manager -y
 
 printLine "VLC"
 sudo apt install vlc -y
