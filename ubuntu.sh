@@ -52,6 +52,9 @@ menuConf() {
 
 java8_dir="/usr/lib/jvm/java-8-openjdk-amd64"
 
+root_app_dir="/root/Applications"
+sudo mkdir -pv "$root_app_dir"
+
 home_app_dir="$HOME/Applications"
 mkdir -pv "$home_app_dir"
 
@@ -210,50 +213,50 @@ sudo apt install neofetch -y
 
 printLine "4K Video Downloader"
 
-home_app_name="4kvideodownloader"
-home_app_subdir="$home_app_dir/$home_app_name"
-home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="4.15.1"
+root_app_name="4kvideodownloader"
+root_app_subdir="$root_app_dir/$root_app_name"
+root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
+root_app_version="4.15.1"
 
-if [ "$home_app_cversion" != "$home_app_version" ]
+if [ "$root_app_cversion" != "$root_app_version" ]
 then
-  rm -rf "$home_app_subdir"
+  sudo rm -rf "$root_app_subdir"
 
   sudo apt remove 4kvideodownloader -y
 fi
 
 if [ ! -f "/usr/bin/4kvideodownloader" ]
 then
-  dpkgInstall "4kvideodownloader.deb" "https://dl.4kdownload.com/app/4kvideodownloader_$home_app_version-1_amd64.deb"
+  dpkgInstall "4kvideodownloader.deb" "https://dl.4kdownload.com/app/4kvideodownloader_$root_app_version-1_amd64.deb"
 
-  mkdir -pv "$home_app_subdir"
-  echo "$home_app_version" > "$home_app_subdir/version.txt"
+  sudo mkdir -pv "$root_app_subdir"
+  echo "$root_app_version" | sudo tee "$root_app_subdir/version.txt"
 else
-  echo "4kvideodownloader is already installed"
+  echo "$root_app_name is already installed"
 fi
 
 printLine "Angry IP Scanner"
 
-home_app_name="angryipscanner"
-home_app_subdir="$home_app_dir/$home_app_name"
-home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="3.7.6"
+root_app_name="angryipscanner"
+root_app_subdir="$root_app_dir/$root_app_name"
+root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
+root_app_version="3.7.6"
 
-if [ "$home_app_cversion" != "$home_app_version" ]
+if [ "$root_app_cversion" != "$root_app_version" ]
 then
-  rm -rf "$home_app_subdir"
+  sudo rm -rf "$root_app_subdir"
 
   sudo apt remove ipscan -y
 fi
 
 if [ ! -f "/usr/bin/ipscan" ]
 then
-  dpkgInstall "angryipscanner.deb" $'https://github.com/angryip/ipscan/releases/download/'$home_app_version$'/ipscan_'$home_app_version$'_amd64.deb'
+  dpkgInstall "angryipscanner.deb" $'https://github.com/angryip/ipscan/releases/download/'$root_app_version$'/ipscan_'$root_app_version$'_amd64.deb'
 
-  mkdir -pv "$home_app_subdir"
-  echo "$home_app_version" > "$home_app_subdir/version.txt"
+  sudo mkdir -pv "$root_app_subdir"
+  echo "$root_app_version" | sudo tee "$root_app_subdir/version.txt"
 else
-  echo "angryipscanner is already installed"
+  echo "$root_app_name is already installed"
 fi
 
 printLine "Arduino"
