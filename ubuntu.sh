@@ -16,12 +16,12 @@ printLine() {
   then
     text="$text "
   fi
-  lenght=${#text}
+  length=${#text}
   sudo echo ""
   echo -n "$text"
   for i in {1..80}
   do
-    if [ $i -gt $lenght ]
+    if [ $i -gt $length ]
     then
       echo -n "="
     fi
@@ -52,17 +52,17 @@ menuConf() {
 
 java8_dir="/usr/lib/jvm/java-8-openjdk-amd64"
 
-menu_dir="$HOME/.local/share/applications"
-mkdir -pv "$menu_dir"
+home_app_dir="$HOME/Applications"
+mkdir -pv "$home_app_dir"
 
-autostart_dir="$HOME/.config/autostart"
-mkdir -pv "$autostart_dir"
+home_menu_dir="$HOME/.local/share/applications"
+mkdir -pv "$home_menu_dir"
 
-autostart_scripts_dir="$HOME/.config/autostart-scripts"
-mkdir -pv "$autostart_scripts_dir"
+home_autostart_dir="$HOME/.config/autostart"
+mkdir -pv "$home_autostart_dir"
 
-portable_dir="$HOME/Applications"
-mkdir -pv "$portable_dir"
+home_autostart_scripts_dir="$HOME/.config/autostart-scripts"
+mkdir -pv "$home_autostart_scripts_dir"
 
 printLine "Update"
 sudo apt update
@@ -138,22 +138,22 @@ printLine "Seahorse"
 
 sudo apt install seahorse -y
 
-file="$autostart_dir/gnome-keyring-pkcs11.desktop"
+file="$home_autostart_dir/gnome-keyring-pkcs11.desktop"
 if [ ! -f "$file" ]
 then
-  cp "/etc/xdg/autostart/gnome-keyring-pkcs11.desktop" "$autostart_dir"
+  cp "/etc/xdg/autostart/gnome-keyring-pkcs11.desktop" "$home_autostart_dir"
   sed -i '/^OnlyShowIn.*$/d' "$file"
 fi
-file="$autostart_dir/gnome-keyring-secrets.desktop"
+file="$home_autostart_dir/gnome-keyring-secrets.desktop"
 if [ ! -f "$file" ]
 then
-  cp "/etc/xdg/autostart/gnome-keyring-secrets.desktop" "$autostart_dir"
+  cp "/etc/xdg/autostart/gnome-keyring-secrets.desktop" "$home_autostart_dir"
   sed -i '/^OnlyShowIn.*$/d' "$file"
 fi
-file="$autostart_dir/gnome-keyring-ssh.desktop"
+file="$home_autostart_dir/gnome-keyring-ssh.desktop"
 if [ ! -f "$file" ]
 then
-  cp "/etc/xdg/autostart/gnome-keyring-ssh.desktop" "$autostart_dir"
+  cp "/etc/xdg/autostart/gnome-keyring-ssh.desktop" "$home_autostart_dir"
   sed -i '/^OnlyShowIn.*$/d' "$file"
 fi
 
@@ -163,7 +163,7 @@ printLine "Kssh Askpass"
 
 sudo apt install ksshaskpass -y
 
-file="$autostart_scripts_dir/ssh-askpass.sh"
+file="$home_autostart_scripts_dir/ssh-askpass.sh"
 if [ ! -f "$file" ]
 then
   conf=$'#!/bin/bash\n'
@@ -175,20 +175,33 @@ fi
 
 echo "ksshaskpass have been configured"
 
+printLine "NVIDIA X Server Settings"
+
+file="$home_autostart_scripts_dir/nvidia-settings.sh"
+if [ ! -f "$file" ]
+then
+  conf=$'#!/bin/bash\n'
+  conf+=$'/usr/bin/nvidia-settings -a [gpu:0]/GpuPowerMizerMode=1\n'
+  echo "$conf" | sudo tee "$file"
+  sudo chmod +x "$file"
+fi
+
+echo "nvidia-settings have been configured"
+
 printLine "Samba"
 sudo apt install samba -y
 
 printLine "OpenJDK"
 
 sudo apt install openjdk-8-jdk -y
-menuConf "$menu_dir" "openjdk-8-policytool.desktop" "NoDisplay" "true"
+menuConf "$home_menu_dir" "openjdk-8-policytool.desktop" "NoDisplay" "true"
 
 echo "openjdk have been configured"
 
 printLine "Htop"
 
 sudo apt install htop -y
-menuConf "$menu_dir" "htop.desktop" "NoDisplay" "true"
+menuConf "$home_menu_dir" "htop.desktop" "NoDisplay" "true"
 
 echo "htop have been configured"
 
@@ -197,79 +210,79 @@ sudo apt install neofetch -y
 
 printLine "4K Video Downloader"
 
-portable_name="4kvideodownloader"
-portable_subdir="$portable_dir/$portable_name"
-portable_cversion="`cat "$portable_subdir/version.txt"`"
-portable_version="4.15.1"
+home_app_name="4kvideodownloader"
+home_app_subdir="$home_app_dir/$home_app_name"
+home_app_cversion="`cat "$home_app_subdir/version.txt"`"
+home_app_version="4.15.1"
 
-if [ "$portable_cversion" != "$portable_version" ]
+if [ "$home_app_cversion" != "$home_app_version" ]
 then
-  rm -rf "$portable_subdir"
+  rm -rf "$home_app_subdir"
 
   sudo apt remove 4kvideodownloader -y
 fi
 
 if [ ! -f "/usr/bin/4kvideodownloader" ]
 then
-  dpkgInstall "4kvideodownloader.deb" "https://dl.4kdownload.com/app/4kvideodownloader_$portable_version-1_amd64.deb"
+  dpkgInstall "4kvideodownloader.deb" "https://dl.4kdownload.com/app/4kvideodownloader_$home_app_version-1_amd64.deb"
 
-  mkdir -pv "$portable_subdir"
-  echo "$portable_version" > "$portable_subdir/version.txt"
+  mkdir -pv "$home_app_subdir"
+  echo "$home_app_version" > "$home_app_subdir/version.txt"
 else
   echo "4kvideodownloader is already installed"
 fi
 
 printLine "Angry IP Scanner"
 
-portable_name="angryipscanner"
-portable_subdir="$portable_dir/$portable_name"
-portable_cversion="`cat "$portable_subdir/version.txt"`"
-portable_version="3.7.6"
+home_app_name="angryipscanner"
+home_app_subdir="$home_app_dir/$home_app_name"
+home_app_cversion="`cat "$home_app_subdir/version.txt"`"
+home_app_version="3.7.6"
 
-if [ "$portable_cversion" != "$portable_version" ]
+if [ "$home_app_cversion" != "$home_app_version" ]
 then
-  rm -rf "$portable_subdir"
+  rm -rf "$home_app_subdir"
 
   sudo apt remove ipscan -y
 fi
 
 if [ ! -f "/usr/bin/ipscan" ]
 then
-  dpkgInstall "angryipscanner.deb" $'https://github.com/angryip/ipscan/releases/download/'$portable_version$'/ipscan_'$portable_version$'_amd64.deb'
+  dpkgInstall "angryipscanner.deb" $'https://github.com/angryip/ipscan/releases/download/'$home_app_version$'/ipscan_'$home_app_version$'_amd64.deb'
 
-  mkdir -pv "$portable_subdir"
-  echo "$portable_version" > "$portable_subdir/version.txt"
+  mkdir -pv "$home_app_subdir"
+  echo "$home_app_version" > "$home_app_subdir/version.txt"
 else
   echo "angryipscanner is already installed"
 fi
 
 printLine "Arduino"
 
-portable_name="arduino"
-portable_subdir="$portable_dir/$portable_name"
-portable_cversion="`cat "$portable_subdir/version.txt"`"
-portable_version="1.8.13"
+home_app_name="arduino"
+home_app_subdir="$home_app_dir/$home_app_name"
+home_app_cversion="`cat "$home_app_subdir/version.txt"`"
+home_app_version="1.8.13"
 
-if [ "$portable_cversion" != "$portable_version" ]
+if [ "$home_app_cversion" != "$home_app_version" ]
 then
-  rm -rf "$portable_subdir"
+  rm -rf "$home_app_subdir"
 fi
 
-if [ ! -d "$portable_subdir" ]
+if [ ! -d "$home_app_subdir" ]
 then
-  file="$portable_dir/arduino.tar.xz"
-  wget -O "$file" "https://downloads.arduino.cc/arduino-$portable_version-linux64.tar.xz"
-  mkdir -pv "$portable_subdir"
-  tar -xJf "$file" -C "$portable_subdir"
+  file="$home_app_dir/arduino.tar.xz"
+  wget -O "$file" "https://downloads.arduino.cc/arduino-$home_app_version-linux64.tar.xz"
+  mkdir -pv "$home_app_subdir"
+  tar -xJf "$file" -C "$home_app_subdir"
   rm -fv "$file"
 
-  mv -fv "$portable_subdir/arduino-$portable_version" "$portable_subdir/default"
-  mkdir -pv "$portable_subdir/default/portable"
-  cp -fr "$portable_subdir/default" "$portable_subdir/esp32"
+  mv -fv "$home_app_subdir/arduino-$home_app_version" "$home_app_subdir/default"
+  mkdir -pv "$home_app_subdir/default/portable"
+  cp -fr "$home_app_subdir/default" "$home_app_subdir/esp32"
 
-  echo "$portable_version" > "$portable_subdir/version.txt"
+  echo "$home_app_version" > "$home_app_subdir/version.txt"
 else
-  echo "$portable_name is already installed"
+  echo "$home_app_name is already installed"
 fi
 
 conf=$'build.verbose=true\n'
@@ -277,13 +290,13 @@ conf+=$'compiler.warning_level=default\n'
 conf+=$'editor.code_folding=true\n'
 conf+=$'editor.linenumbers=true\n'
 conf+=$'upload.verbose=true\n'
-file="$portable_subdir/default/portable/preferences.txt"
+file="$home_app_subdir/default/portable/preferences.txt"
 if [ ! -f "$file" ]
 then
   conf_default="$conf"
   echo "$conf_default" > "$file"
 fi
-file="$portable_subdir/esp32/portable/preferences.txt"
+file="$home_app_subdir/esp32/portable/preferences.txt"
 if [ ! -f "$file" ]
 then
   conf_esp32="$conf"
@@ -291,7 +304,7 @@ then
   echo "$conf_esp32" > "$file"
 fi
 
-file="$menu_dir/arduino-arduinoide.desktop"
+file="$home_menu_dir/arduino-arduinoide.desktop"
 if [ ! -f "$file" ]
 then
   desk=$'[Desktop Entry]\n'
@@ -299,10 +312,10 @@ then
   desk+=$'GenericName=Arduino IDE\n'
   desk+=$'Comment=Open-source electronics prototyping platform\n'
   desk+=$'Comment[pt_BR]=Plataforma de prototipagem de eletrônicos de código aberto\n'
-  desk+=$'Exec='$portable_subdir$'/default/arduino\n'
+  desk+=$'Exec='$home_app_subdir$'/default/arduino\n'
   desk+=$'Terminal=false\n'
   desk+=$'Type=Application\n'
-  desk+=$'Icon='$portable_subdir$'/default/lib/arduino_icon.ico\n'
+  desk+=$'Icon='$home_app_subdir$'/default/lib/arduino_icon.ico\n'
   desk+=$'Categories=Development;IDE;Electronics;\n'
   desk+=$'MimeType=text/x-arduino;\n'
   desk+=$'Keywords=embedded electronics;electronics;avr;microcontroller;\n'
@@ -312,54 +325,54 @@ then
   desk+=$'[Desktop Action ESP32]\n'
   desk+=$'Name=ESP32\n'
   desk+=$'GenericName=ESP32\n'
-  desk+=$'Exec='$portable_subdir$'/esp32/arduino\n'
+  desk+=$'Exec='$home_app_subdir$'/esp32/arduino\n'
   echo "$desk" > "$file"
 fi
 
 sudo usermod -aG dialout $USER
 
-echo "$portable_name have been configured"
+echo "$home_app_name have been configured"
 
 printLine "Audacity"
 sudo apt install audacity -y
 
 printLine "Balena Etcher"
 
-portable_name="balena-etcher"
-portable_subdir="$portable_dir/$portable_name"
-portable_cversion="`cat "$portable_subdir/version.txt"`"
-portable_version="1.5.116"
+home_app_name="balena-etcher"
+home_app_subdir="$home_app_dir/$home_app_name"
+home_app_cversion="`cat "$home_app_subdir/version.txt"`"
+home_app_version="1.5.116"
 
-if [ "$portable_cversion" != "$portable_version" ]
+if [ "$home_app_cversion" != "$home_app_version" ]
 then
-  rm -rf "$portable_subdir"
+  rm -rf "$home_app_subdir"
 fi
 
-if [ ! -d "$portable_subdir" ]
+if [ ! -d "$home_app_subdir" ]
 then
-  file="$portable_dir/balena-etcher.zip"
-  wget -O "$file" "https://github.com/balena-io/etcher/releases/download/v$portable_version/balena-etcher-electron-$portable_version-linux-x64.zip"
-  mkdir -pv "$portable_subdir"
-  unzip -q "$file" -d "$portable_subdir"
+  file="$home_app_dir/balena-etcher.zip"
+  wget -O "$file" "https://github.com/balena-io/etcher/releases/download/v$home_app_version/balena-etcher-electron-$home_app_version-linux-x64.zip"
+  mkdir -pv "$home_app_subdir"
+  unzip -q "$file" -d "$home_app_subdir"
   rm -fv "$file"
 
-  file="$portable_subdir/balenaEtcher-$portable_version-x64.AppImage"
-  ln -sv -T "$file" "$portable_subdir/balena-etcher.AppImage"
+  file="$home_app_subdir/balenaEtcher-$home_app_version-x64.AppImage"
+  ln -sv -T "$file" "$home_app_subdir/balena-etcher.AppImage"
   chmod +x "$file"
 
   current_dir="`pwd`"
-  cd "$portable_subdir"
+  cd "$home_app_subdir"
   "$file" --appimage-extract
   cd "$current_dir"
-  cp -fv "$portable_subdir/squashfs-root/balena-etcher-electron.png" "$portable_subdir/balena-etcher.png"
-  rm -rf "$portable_subdir/squashfs-root"
+  cp -fv "$home_app_subdir/squashfs-root/balena-etcher-electron.png" "$home_app_subdir/balena-etcher.png"
+  rm -rf "$home_app_subdir/squashfs-root"
 
-  echo "$portable_version" > "$portable_subdir/version.txt"
+  echo "$home_app_version" > "$home_app_subdir/version.txt"
 else
-  echo "$portable_name is already installed"
+  echo "$home_app_name is already installed"
 fi
 
-file="$menu_dir/appimagekit-balena-etcher-electron.desktop"
+file="$home_menu_dir/appimagekit-balena-etcher-electron.desktop"
 if [ ! -f "$file" ]
 then
   desk=$'[Desktop Entry]\n'
@@ -367,16 +380,16 @@ then
   desk+=$'GenericName=balenaEtcher\n'
   desk+=$'Comment=Flash OS images to SD cards and USB drives, safely and easily.\n'
   desk+=$'Comment[pt_BR]=Gravar imagens de SO em cartões SD e drives USB, com segurança e facilidade.\n'
-  desk+=$'Exec="'$portable_subdir$'/balena-etcher.AppImage" %U\n'
+  desk+=$'Exec="'$home_app_subdir$'/balena-etcher.AppImage" %U\n'
   desk+=$'Terminal=false\n'
   desk+=$'Type=Application\n'
-  desk+=$'Icon='$portable_subdir$'/balena-etcher.png\n'
+  desk+=$'Icon='$home_app_subdir$'/balena-etcher.png\n'
   desk+=$'StartupWMClass=balenaEtcher\n'
   desk+=$'Categories=Utility;\n'
   echo "$desk" > "$file"
 fi
 
-echo "$portable_name have been configured"
+echo "$home_app_name have been configured"
 
 printLine "Dropbox"
 if [ ! -f "/usr/bin/dropbox" ]
@@ -391,32 +404,32 @@ sudo apt install flameshot -y
 
 printLine "FreeRapid Downloader"
 
-portable_name="freerapiddownloader"
-portable_subdir="$portable_dir/$portable_name"
-portable_cversion="`cat "$portable_subdir/version.txt"`"
-portable_dropbox_path="swyleflcmtqxpch"
-portable_version="0.9u4"
+home_app_name="freerapiddownloader"
+home_app_subdir="$home_app_dir/$home_app_name"
+home_app_cversion="`cat "$home_app_subdir/version.txt"`"
+home_app_dropbox_path="swyleflcmtqxpch"
+home_app_version="0.9u4"
 
-if [ "$portable_cversion" != "$portable_version" ]
+if [ "$home_app_cversion" != "$home_app_version" ]
 then
-  rm -rf "$portable_subdir"
+  rm -rf "$home_app_subdir"
 fi
 
-if [ ! -d "$portable_subdir" ]
+if [ ! -d "$home_app_subdir" ]
 then
-  file="$portable_dir/freerapiddownloader.zip"
-  wget -O "$file" "https://www.dropbox.com/s/$portable_dropbox_path/FreeRapid-$portable_version.zip"
-  unzip -q "$file" -d "$portable_dir"
+  file="$home_app_dir/freerapiddownloader.zip"
+  wget -O "$file" "https://www.dropbox.com/s/$home_app_dropbox_path/FreeRapid-$home_app_version.zip"
+  unzip -q "$file" -d "$home_app_dir"
   rm -fv "$file"
 
-  mv -fv "$portable_dir/FreeRapid-$portable_version" "$portable_subdir"
+  mv -fv "$home_app_dir/FreeRapid-$home_app_version" "$home_app_subdir"
 
-  echo "$portable_version" > "$portable_subdir/version.txt"
+  echo "$home_app_version" > "$home_app_subdir/version.txt"
 else
-  echo "$portable_name is already installed"
+  echo "$home_app_name is already installed"
 fi
 
-file="$menu_dir/$portable_name.desktop"
+file="$home_menu_dir/$home_app_name.desktop"
 if [ ! -f "$file" ]
 then
   desk=$'[Desktop Entry]\n'
@@ -424,15 +437,15 @@ then
   desk+=$'GenericName=FreeRapid Downloader\n'
   desk+=$'Comment=Download from file-sharing services\n'
   desk+=$'Comment[pt_BR]=Download de serviços de compartilhamento de arquivos\n'
-  desk+=$'Exec='$java8_dir$'/bin/java -jar '$portable_subdir$'/frd.jar\n'
+  desk+=$'Exec='$java8_dir$'/bin/java -jar '$home_app_subdir$'/frd.jar\n'
   desk+=$'Terminal=false\n'
   desk+=$'Type=Application\n'
-  desk+=$'Icon='$portable_subdir$'/frd.ico\n'
+  desk+=$'Icon='$home_app_subdir$'/frd.ico\n'
   desk+=$'Categories=Network;\n'
   echo "$desk" > "$file"
 fi
 
-echo "$portable_name have been configured"
+echo "$home_app_name have been configured"
 
 printLine "GIMP"
 sudo apt install gimp -y
@@ -464,7 +477,7 @@ printLine "Scrcpy"
 
 sudo apt install scrcpy -y
 
-file="$menu_dir/scrcpy.desktop"
+file="$home_menu_dir/scrcpy.desktop"
 if [ ! -f "$file" ]
 then
   desk=$'[Desktop Entry]\n'
