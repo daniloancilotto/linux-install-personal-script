@@ -498,10 +498,6 @@ fi
 
 echo "scrcpy have been configured"
 
-printLine "Spotify"
-echo "Running snap, please wait..."
-sudo snap install spotify
-
 printLine "Transmission"
 sudo apt install transmission -y
 

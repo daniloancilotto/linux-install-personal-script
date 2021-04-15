@@ -94,7 +94,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - Scrcpy - Latest (Repository)
   - Menu
     - ~/.local/share/applications/scrcpy.desktop
-- [Spotify - Latest (Snap)](https://snapcraft.io/spotify)
 - Transmission - Latest (Repository)
 - Virt-Manager - Latest (Repository)
 - VLC - Lastest (Repository)
