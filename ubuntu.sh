@@ -1,11 +1,12 @@
 #!/bin/bash
 system="`lsb_release -sd`"
-architecture="`uname -m`"
+system_release="`lsb_release -sr`"
+system_architecture="`uname -m`"
 
 echo "LINUX PERSONAL SCRIPT (UBUNTU)"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
-echo "Architecture: $architecture"
+echo "Architecture: $system_architecture"
 echo "Home: $HOME"
 echo "User: $USER"
 sudo echo -n ""
