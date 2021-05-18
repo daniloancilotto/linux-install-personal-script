@@ -265,7 +265,7 @@ printLine "Arduino"
 home_app_name="arduino"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="1.8.13"
+home_app_version="1.8.15"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
@@ -345,7 +345,7 @@ printLine "Balena Etcher"
 home_app_name="balena-etcher"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="1.5.116"
+home_app_version="1.5.120"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
