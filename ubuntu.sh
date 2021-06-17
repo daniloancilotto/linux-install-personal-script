@@ -62,12 +62,6 @@ mkdir -pv "$home_app_dir"
 home_menu_dir="$HOME/.local/share/applications"
 mkdir -pv "$home_menu_dir"
 
-home_autostart_dir="$HOME/.config/autostart"
-mkdir -pv "$home_autostart_dir"
-
-home_autostart_scripts_dir="$HOME/.config/autostart-scripts"
-mkdir -pv "$home_autostart_scripts_dir"
-
 printLine "Update"
 sudo apt update
 
@@ -137,60 +131,6 @@ sudo apt install crudini -y
 
 printLine "FFmpeg"
 sudo apt install ffmpeg -y
-
-printLine "Seahorse"
-
-sudo apt install seahorse -y
-
-file="$home_autostart_dir/gnome-keyring-pkcs11.desktop"
-if [ ! -f "$file" ]
-then
-  cp "/etc/xdg/autostart/gnome-keyring-pkcs11.desktop" "$home_autostart_dir"
-  sed -i '/^OnlyShowIn.*$/d' "$file"
-fi
-file="$home_autostart_dir/gnome-keyring-secrets.desktop"
-if [ ! -f "$file" ]
-then
-  cp "/etc/xdg/autostart/gnome-keyring-secrets.desktop" "$home_autostart_dir"
-  sed -i '/^OnlyShowIn.*$/d' "$file"
-fi
-file="$home_autostart_dir/gnome-keyring-ssh.desktop"
-if [ ! -f "$file" ]
-then
-  cp "/etc/xdg/autostart/gnome-keyring-ssh.desktop" "$home_autostart_dir"
-  sed -i '/^OnlyShowIn.*$/d' "$file"
-fi
-
-echo "seahorse have been configured"
-
-printLine "Kssh Askpass"
-
-sudo apt install ksshaskpass -y
-
-file="$home_autostart_scripts_dir/ssh-askpass.sh"
-if [ ! -f "$file" ]
-then
-  conf=$'#!/bin/bash\n'
-  conf+=$'export SSH_ASKPASS=/usr/bin/ksshaskpass\n'
-  conf+=$'/usr/bin/ssh-add </dev/null\n'
-  echo "$conf" | sudo tee "$file"
-  sudo chmod +x "$file"
-fi
-
-echo "ksshaskpass have been configured"
-
-printLine "NVIDIA X Server Settings"
-
-file="$home_autostart_scripts_dir/nvidia-settings.sh"
-if [ ! -f "$file" ]
-then
-  conf=$'#!/bin/bash\n'
-  conf+=$'/usr/bin/nvidia-settings -a [gpu:0]/GpuPowerMizerMode=1\n'
-  echo "$conf" | sudo tee "$file"
-  sudo chmod +x "$file"
-fi
-
-echo "nvidia-settings have been configured"
 
 printLine "Samba"
 sudo apt install samba -y
