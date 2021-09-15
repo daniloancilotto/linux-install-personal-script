@@ -157,7 +157,7 @@ printLine "4K Video Downloader"
 root_app_name="4kvideodownloader"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="4.15.1"
+root_app_version="4.18.0"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
@@ -205,7 +205,7 @@ printLine "Arduino"
 home_app_name="arduino"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="1.8.15"
+home_app_version="1.8.16"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
@@ -285,7 +285,7 @@ printLine "Balena Etcher"
 home_app_name="balena-etcher"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="1.5.120"
+home_app_version="1.5.122"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
