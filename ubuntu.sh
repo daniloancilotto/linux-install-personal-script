@@ -157,7 +157,7 @@ printLine "4K Video Downloader"
 root_app_name="4kvideodownloader"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="4.18.0"
+root_app_version="4.18.1"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
