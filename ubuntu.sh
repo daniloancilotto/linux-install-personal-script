@@ -93,9 +93,6 @@ fi
 
 echo "kernel have been configured"
 
-printLine "Language Pack Pt"
-sudo apt install language-pack-pt language-pack-gnome-pt -y
-
 printLine "Snap"
 
 sudo apt install snapd -y
@@ -447,6 +444,10 @@ sudo apt install virt-manager -y
 
 printLine "VLC"
 sudo apt install vlc -y
+
+printLine "Language Pack Pt"
+sudo apt install language-pack-pt language-pack-gnome-pt -y
+sudo apt install `check-language-support` -y
 
 printLine "Finished"
 echo "Please reboot your system."
