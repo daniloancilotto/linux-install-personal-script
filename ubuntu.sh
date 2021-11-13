@@ -465,6 +465,24 @@ else
   echo "$home_app_name is already installed"
 fi
 
+file="$home_menu_dir/ventoy.desktop"
+if [ ! -f "$file" ]
+then
+  desk=$'[Desktop Entry]\n'
+  desk+=$'Name=Ventoy\n'
+  desk+=$'GenericName=Ventoy\n'
+  desk+=$'Comment=Tool to create bootable USB drive for ISO/WIM/IMG/VHD(x)/EFI files.\n'
+  desk+=$'Comment[pt_BR]=Ferramenta para criar unidade USB inicializável para arquivos ISO/WIM/IMG/VHD(x)/EFI.\n'
+  desk+=$'Exec='$home_app_subdir$'/VentoyGUI.x86_64\n'
+  desk+=$'Terminal=false\n'
+  desk+=$'Type=Application\n'
+  desk+=$'Icon='$home_app_subdir$'/WebUI/static/img/VentoyLogo.png\n'
+  desk+=$'Categories=Utility;\n'
+  echo "$desk" > "$file"
+fi
+
+echo "$home_app_name have been configured"
+
 printLine "Virt-Manager"
 sudo apt install virt-manager -y
 
