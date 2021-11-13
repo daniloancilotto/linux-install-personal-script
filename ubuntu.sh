@@ -154,7 +154,7 @@ printLine "4K Video Downloader"
 root_app_name="4kvideodownloader"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="4.18.4"
+root_app_version="4.18.5"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
@@ -438,6 +438,31 @@ echo "scrcpy have been configured"
 
 printLine "Transmission"
 sudo apt install transmission -y
+
+printLine "Ventoy"
+
+home_app_name="ventoy"
+home_app_subdir="$home_app_dir/$home_app_name"
+home_app_cversion="`cat "$home_app_subdir/version.txt"`"
+home_app_version="1.0.60"
+
+if [ "$home_app_cversion" != "$home_app_version" ]
+then
+  rm -rf "$home_app_subdir"
+fi
+
+if [ ! -d "$home_app_subdir" ]
+then
+  file="$home_app_dir/arduino.tar.xz"
+  wget -O "$file" "https://github.com/ventoy/Ventoy/releases/download/v$home_app_version/ventoy-$home_app_version-linux.tar.gz"
+  mkdir -pv "$home_app_subdir"
+  tar -xJf "$file" -C "$home_app_subdir"
+  rm -fv "$file"
+
+  echo "$home_app_version" > "$home_app_subdir/version.txt"
+else
+  echo "$home_app_name is already installed"
+fi
 
 printLine "Virt-Manager"
 sudo apt install virt-manager -y
