@@ -456,7 +456,7 @@ then
   file="$home_app_dir/ventoy.tar.gz"
   wget -O "$file" "https://github.com/ventoy/Ventoy/releases/download/v$home_app_version/ventoy-$home_app_version-linux.tar.gz"
   mkdir -pv "$home_app_subdir"
-  tar -xJf "$file" -C "$home_app_subdir"
+  tar -xzf "$file" -C "$home_app_subdir"
   rm -fv "$file"
 
   echo "$home_app_version" > "$home_app_subdir/version.txt"
