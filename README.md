@@ -61,7 +61,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   - User Groups
     - dialout
 - Audacity - Latest (Repository)
-- [Balena Etcher - 1.7.0 (AppImage)](https://www.balena.io/etcher/)
+- [Balena Etcher - 1.7.1 (AppImage)](https://www.balena.io/etcher/)
   - Menu
     - ~/.local/share/applications/appimagekit-balena-etcher-electron.desktop
 - [Dropbox - 2020.03.04 (Dpkg)](https://www.dropbox.com/install)
@@ -83,7 +83,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   - Menu
     - ~/.local/share/applications/scrcpy.desktop
 - Transmission - Latest (Repository)
-- [Ventoy - 1.0.60 (Portable)](https://www.ventoy.net/en/download.html)
+- [Ventoy - 1.0.62 (Portable)](https://www.ventoy.net/en/download.html)
 - Virt-Manager - Latest (Repository)
 - VLC - Lastest (Repository)
 - Language Pack Pt - Latest (Repository)

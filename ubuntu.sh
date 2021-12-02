@@ -282,7 +282,7 @@ printLine "Balena Etcher"
 home_app_name="balena-etcher"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="1.7.0"
+home_app_version="1.7.1"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
@@ -444,7 +444,7 @@ printLine "Ventoy"
 home_app_name="ventoy"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="1.0.60"
+home_app_version="1.0.62"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
