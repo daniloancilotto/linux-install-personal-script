@@ -202,7 +202,7 @@ printLine "Arduino"
 home_app_name="arduino"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="1.8.16"
+home_app_version="1.8.18"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
