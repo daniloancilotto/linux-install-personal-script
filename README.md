@@ -1,7 +1,7 @@
 # Linux Personal Script
 
 ### Supported Systems
-- [Ubuntu - 20.04 ~ 21.04 (Base)](https://ubuntu.com/download)
+- [Ubuntu - 20.04 (Base)](https://ubuntu.com/download)
 
 ### Supported Architectures
 - x86_64 (amd64)
@@ -88,4 +88,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - ~/.local/share/applications/ventoy.desktop
 - Virt-Manager - Latest (Repository)
 - VLC - Lastest (Repository)
+- [Zoiper5 - 5.5.9 (Dpkg)](https://www.zoiper.com/en/voip-softphone/download/current)
+  - Autostart
+    - ~/.config/autostart/Zoiper5.desktop
 - Language Pack Pt - Latest (Repository)
