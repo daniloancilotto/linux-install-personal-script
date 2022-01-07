@@ -439,6 +439,14 @@ fi
 
 echo "scrcpy have been configured"
 
+printLine "TeamViewer"
+if [ -z "`teamviewer --version`" ]
+then
+  dpkgInstall "teamviewer.deb" "https://download.teamviewer.com/download/linux/teamviewer_amd64.deb"
+else
+  echo "teamviewer is already installed"
+fi
+
 printLine "Transmission"
 sudo apt install transmission -y
 
