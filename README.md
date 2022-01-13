@@ -84,7 +84,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - ~/.local/share/applications/scrcpy.desktop
 - [TeamViewer - Latest (Dpkg)](https://www.teamviewer.com/)
 - Transmission - Latest (Repository)
-- [Ventoy - 1.0.63 (Portable)](https://www.ventoy.net/en/download.html)
+- [Ventoy - 1.0.64 (Portable)](https://www.ventoy.net/en/download.html)
   - Menu
     - ~/.local/share/applications/ventoy.desktop
 - Virt-Manager - Latest (Repository)
