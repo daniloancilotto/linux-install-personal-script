@@ -181,7 +181,7 @@ printLine "Angry IP Scanner"
 root_app_name="angryipscanner"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="3.7.6"
+root_app_version="3.8.0"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
