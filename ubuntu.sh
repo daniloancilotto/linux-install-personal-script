@@ -181,7 +181,7 @@ printLine "Angry IP Scanner"
 root_app_name="angryipscanner"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="3.8.1"
+root_app_version="3.8.2"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
@@ -193,30 +193,6 @@ fi
 if [ ! -f "/usr/bin/ipscan" ]
 then
   dpkgInstall "angryipscanner.deb" $'https://github.com/angryip/ipscan/releases/download/'$root_app_version$'/ipscan_'$root_app_version$'_amd64.deb'
-
-  sudo mkdir -pv "$root_app_subdir"
-  echo "$root_app_version" | sudo tee "$root_app_subdir/version.txt"
-else
-  echo "$root_app_name is already installed"
-fi
-
-printLine "AnyDesk"
-
-root_app_name="anydesk"
-root_app_subdir="$root_app_dir/$root_app_name"
-root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="6.1.1"
-
-if [ "$root_app_cversion" != "$root_app_version" ]
-then
-  sudo rm -rf "$root_app_subdir"
-
-  sudo apt remove anydesk -y
-fi
-
-if [ -z "`anydesk --version`" ]
-then
-  dpkgInstall "anydesk.deb" "https://download.anydesk.com/linux/anydesk_$root_app_version-1_amd64.deb"
 
   sudo mkdir -pv "$root_app_subdir"
   echo "$root_app_version" | sudo tee "$root_app_subdir/version.txt"
@@ -464,11 +440,9 @@ fi
 echo "scrcpy have been configured"
 
 printLine "TeamViewer"
-if [[ ! "`teamviewer --version`" =~ " 11." ]]
+if [ -z "`teamviewer --version`" ]
 then
-  sudo apt remove teamviewer --purge -y
-
-  dpkgInstall "teamviewer.deb" "https://download.teamviewer.com/download/version_11x/teamviewer_amd64.deb"
+  dpkgInstall "teamviewer.deb" "https://download.teamviewer.com/download/linux/teamviewer_amd64.deb"
 else
   echo "teamviewer is already installed"
 fi
