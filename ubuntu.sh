@@ -440,9 +440,11 @@ fi
 echo "scrcpy have been configured"
 
 printLine "TeamViewer"
-if [ -z "`teamviewer --version`" ]
+if [[ ! "`teamviewer --version`" =~ " 11." ]]
 then
-  dpkgInstall "teamviewer.deb" "https://download.teamviewer.com/download/linux/teamviewer_amd64.deb"
+  sudo apt remove teamviewer --purge -y
+
+  dpkgInstall "teamviewer.deb" "https://download.teamviewer.com/download/version_11x/teamviewer_amd64.deb"
 else
   echo "teamviewer is already installed"
 fi
