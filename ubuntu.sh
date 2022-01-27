@@ -200,6 +200,30 @@ else
   echo "$root_app_name is already installed"
 fi
 
+printLine "AnyDesk"
+
+root_app_name="anydesk"
+root_app_subdir="$root_app_dir/$root_app_name"
+root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
+root_app_version="6.1.1"
+
+if [ "$root_app_cversion" != "$root_app_version" ]
+then
+  sudo rm -rf "$root_app_subdir"
+
+  sudo apt remove anydesk -y
+fi
+
+if [ -z "`anydesk --version`" ]
+then
+  dpkgInstall "anydesk.deb" "https://download.anydesk.com/linux/anydesk_$root_app_version-1_amd64.deb"
+
+  sudo mkdir -pv "$root_app_subdir"
+  echo "$root_app_version" | sudo tee "$root_app_subdir/version.txt"
+else
+  echo "$root_app_name is already installed"
+fi
+
 printLine "Arduino"
 
 home_app_name="arduino"
