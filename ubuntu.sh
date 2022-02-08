@@ -157,7 +157,7 @@ printLine "4K Video Downloader"
 root_app_name="4kvideodownloader"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="4.19.3"
+root_app_version="4.19.4"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
@@ -455,7 +455,7 @@ printLine "Ventoy"
 home_app_name="ventoy"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="1.0.64"
+home_app_version="1.0.65"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
