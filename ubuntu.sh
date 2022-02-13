@@ -455,7 +455,7 @@ printLine "Ventoy"
 home_app_name="ventoy"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="1.0.65"
+home_app_version="1.0.66"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
