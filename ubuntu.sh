@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "LINUX PERSONAL SCRIPT (UBUNTU)"
-echo "Version: 2022.2.23-2200"
+echo "Version: 2022.3.4-1420"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -158,7 +158,7 @@ printLine "4K Video Downloader"
 root_app_name="4kvideodownloader"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="4.19.4"
+root_app_version="4.20.0"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
@@ -506,8 +506,8 @@ printLine "Zoiper5"
 root_app_name="zoiper5"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_dropbox_path="1d4zji8npv1cpht"
-root_app_version="5.5.9"
+root_app_dropbox_path="zxiilfwh569xc5p"
+root_app_version="5.5.10"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
