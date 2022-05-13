@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "LINUX PERSONAL SCRIPT (UBUNTU)"
-echo "Version: 2022.4.25-1120"
+echo "Version: 2022.5.13-1830"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -418,28 +418,6 @@ sudo apt install obs-studio -y
 printLine "Remmina"
 sudo apt install remmina remmina-plugin-rdp remmina-plugin-vnc -y
 
-printLine "Scrcpy"
-
-sudo apt install scrcpy -y
-
-file="$home_menu_dir/scrcpy.desktop"
-if [ ! -f "$file" ]
-then
-  desk=$'[Desktop Entry]\n'
-  desk+=$'Name=Scrcpy\n'
-  desk+=$'GenericName=Scrcpy\n'
-  desk+=$'Comment=Display and control of Android devices connected on USB\n'
-  desk+=$'Comment[pt_BR]=Exibição e controle de dispositivos Android conectados via USB\n'
-  desk+=$'Exec=scrcpy\n'
-  desk+=$'Terminal=true\n'
-  desk+=$'Type=Application\n'
-  desk+=$'Icon=phone\n'
-  desk+=$'Categories=Utility;\n'
-  echo "$desk" > "$file"
-fi
-
-echo "scrcpy have been configured"
-
 printLine "TeamViewer"
 if [ -z "`teamviewer --version`" ]
 then
@@ -456,7 +434,7 @@ printLine "Ventoy"
 home_app_name="ventoy"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="1.0.73"
+home_app_version="1.0.74"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
