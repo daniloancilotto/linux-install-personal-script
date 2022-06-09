@@ -86,7 +86,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - ~/.local/share/applications/ventoy.desktop
 - Virt-Manager - Latest (Repository)
 - VLC - Lastest (Repository)
-- [Zoiper5 - 5.5.10 (Dpkg)](https://www.zoiper.com/en/voip-softphone/download/current)
+- [Zoiper5 - 5.5.12 (Dpkg)](https://www.zoiper.com/en/voip-softphone/download/current)
   - Autostart
     - ~/.config/autostart/Zoiper5.desktop
 - Language Pack Pt - Latest (Repository)
