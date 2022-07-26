@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "LINUX PERSONAL SCRIPT (UBUNTU)"
-echo "Version: 2022.7.26-1200"
+echo "Version: 2022.7.26-1300"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -173,7 +173,11 @@ then
   dpkgInstall "4kvideodownloader.deb" "https://dl.4kdownload.com/app/4kvideodownloader_$root_app_version-1_amd64.deb"
 
   sudo mkdir -pv "$root_app_subdir"
-  echo "$root_app_version" | sudo tee "$root_app_subdir/version.txt"
+
+  if [ -f "/usr/bin/4kvideodownloader" ]
+  then
+    echo "$root_app_version" | sudo tee "$root_app_subdir/version.txt"
+  fi
 else
   echo "$root_app_name is already installed"
 fi
@@ -197,7 +201,11 @@ then
   dpkgInstall "angryipscanner.deb" $'https://github.com/angryip/ipscan/releases/download/'$root_app_version$'/ipscan_'$root_app_version$'_amd64.deb'
 
   sudo mkdir -pv "$root_app_subdir"
-  echo "$root_app_version" | sudo tee "$root_app_subdir/version.txt"
+
+  if [ -f "/usr/bin/ipscan" ]
+  then
+    echo "$root_app_version" | sudo tee "$root_app_subdir/version.txt"
+  fi
 else
   echo "$root_app_name is already installed"
 fi
@@ -226,7 +234,10 @@ then
   mkdir -pv "$home_app_subdir/default/portable"
   cp -fr "$home_app_subdir/default" "$home_app_subdir/esp32"
 
-  echo "$home_app_version" > "$home_app_subdir/version.txt"
+  if [ -f "$home_app_subdir/default/arduino" ]
+  then
+    echo "$home_app_version" > "$home_app_subdir/version.txt"
+  fi
 else
   echo "$home_app_name is already installed"
 fi
@@ -313,7 +324,10 @@ then
   cp -fv "$home_app_subdir/squashfs-root/balena-etcher-electron.png" "$home_app_subdir/balena-etcher.png"
   rm -rf "$home_app_subdir/squashfs-root"
 
-  echo "$home_app_version" > "$home_app_subdir/version.txt"
+  if [ -f "$home_app_subdir/balena-etcher.AppImage" ]
+  then
+    echo "$home_app_version" > "$home_app_subdir/version.txt"
+  fi
 else
   echo "$home_app_name is already installed"
 fi
@@ -370,7 +384,10 @@ then
 
   mv -fv "$home_app_dir/FreeRapid-$home_app_version" "$home_app_subdir"
 
-  echo "$home_app_version" > "$home_app_subdir/version.txt"
+  if [ -f "$home_app_subdir/frd.jar" ]
+  then
+    echo "$home_app_version" > "$home_app_subdir/version.txt"
+  fi
 else
   echo "$home_app_name is already installed"
 fi
@@ -451,7 +468,10 @@ then
 
   mv -fv "$home_app_dir/ventoy-$home_app_version" "$home_app_subdir"
 
-  echo "$home_app_version" > "$home_app_subdir/version.txt"
+  if [ -f "$home_app_subdir/VentoyGUI.x86_64" ]
+  then
+    echo "$home_app_version" > "$home_app_subdir/version.txt"
+  fi
 else
   echo "$home_app_name is already installed"
 fi
@@ -500,7 +520,11 @@ then
   dpkgInstall "zoiper5.deb" $'https://www.dropbox.com/s/'$root_app_dropbox_path$'/Zoiper5_'$root_app_version$'_x86_64.deb'
 
   sudo mkdir -pv "$root_app_subdir"
-  echo "$root_app_version" | sudo tee "$root_app_subdir/version.txt"
+
+  if [ -f "/usr/local/applications/Zoiper5/zoiper" ]
+  then
+    echo "$root_app_version" | sudo tee "$root_app_subdir/version.txt"
+  fi
 else
   echo "$root_app_name is already installed"
 fi
