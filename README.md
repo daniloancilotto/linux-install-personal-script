@@ -52,7 +52,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   - Menu
     - ~/.local/share/applications/htop.desktop
 - Neofetch - Latest (Repository)
-- [4K Video Downloader - 4.21.0 (Dpkg)](https://www.4kdownload.com/downloads)
+- [4K Video Downloader - 4.21.1 (Dpkg)](https://www.4kdownload.com/downloads)
 - [Angry IP Scanner - 3.8.2 (Dpkg)](https://angryip.org/download/)
 - [Arduino - 1.8.19 (Portable)](https://www.arduino.cc/en/Main/Software)
   - Preferences
@@ -83,7 +83,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - VNC
 - [TeamViewer - Latest (Dpkg)](https://www.teamviewer.com/en-us/download/linux/)
 - Transmission - Latest (Repository)
-- [Ventoy - 1.0.78 (Portable)](https://www.ventoy.net/en/download.html)
+- [Ventoy - 1.0.79 (Portable)](https://www.ventoy.net/en/download.html)
   - Menu
     - ~/.local/share/applications/ventoy.desktop
 - Virt-Manager - Latest (Repository)
