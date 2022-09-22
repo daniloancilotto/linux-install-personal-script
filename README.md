@@ -52,18 +52,15 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   - Menu
     - ~/.local/share/applications/htop.desktop
 - Neofetch - Latest (Repository)
-- [4K Video Downloader - 4.21.3 (Dpkg)](https://www.4kdownload.com/downloads)
+- [4K Video Downloader - 4.21.4 (Dpkg)](https://www.4kdownload.com/downloads)
 - [Angry IP Scanner - 3.8.2 (Dpkg)](https://angryip.org/download/)
-- [Arduino - 1.8.19 (Portable)](https://www.arduino.cc/en/Main/Software)
-  - Preferences
-    - ~/Applications/arduino/default/portable/preferences.txt
-    - ~/Applications/arduino/esp32/portable/preferences.txt
+- [Arduino IDE - 2.0.0 (AppImage)](https://www.arduino.cc/en/Main/Software)
   - Menu
-    - ~/.local/share/applications/arduino-arduinoide.desktop
+    - ~/.local/share/applications/arduino-ide.desktop
   - User Groups
     - dialout
 - Audacity - Latest (Repository)
-- [Balena Etcher - 1.7.9 (AppImage)](https://www.balena.io/etcher/)
+- [balenaEtcher - 1.7.9 (AppImage)](https://www.balena.io/etcher/)
   - Menu
     - ~/.local/share/applications/appimagekit-balena-etcher-electron.desktop
 - [Dropbox - 2020.03.04 (Dpkg)](https://www.dropbox.com/install)
@@ -83,7 +80,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - VNC
 - [TeamViewer - Latest (Dpkg)](https://www.teamviewer.com/en-us/download/linux/)
 - Transmission - Latest (Repository)
-- [Ventoy - 1.0.79 (Portable)](https://www.ventoy.net/en/download.html)
+- [Ventoy - 1.0.80 (Portable)](https://www.ventoy.net/en/download.html)
   - Menu
     - ~/.local/share/applications/ventoy.desktop
 - Virt-Manager - Latest (Repository)

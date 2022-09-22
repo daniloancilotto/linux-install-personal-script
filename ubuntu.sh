@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "LINUX PERSONAL SCRIPT (UBUNTU)"
-echo "Version: 2022.9.5-100"
+echo "Version: 2022.9.21-2240"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -159,7 +159,7 @@ printLine "4K Video Downloader"
 root_app_name="4kvideodownloader"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="4.21.3"
+root_app_version="4.21.4"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
@@ -210,12 +210,12 @@ else
   echo "$root_app_name is already installed"
 fi
 
-printLine "Arduino"
+printLine "Arduino IDE"
 
-home_app_name="arduino"
+home_app_name="arduino-ide"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="1.8.19"
+home_app_version="2.0.0"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
@@ -224,17 +224,13 @@ fi
 
 if [ ! -d "$home_app_subdir" ]
 then
-  file="$home_app_dir/arduino.tar.xz"
-  wget -O "$file" "https://downloads.arduino.cc/arduino-$home_app_version-linux64.tar.xz"
   mkdir -pv "$home_app_subdir"
-  tar -xJf "$file" -C "$home_app_subdir"
-  rm -fv "$file"
+  file=$home_app_subdir$'/arduino-ide_'$home_app_version$'_Linux_64bit.AppImage'
+  wget -O "$file" $'https://downloads.arduino.cc/arduino-ide/arduino-ide_'$home_app_version$'_Linux_64bit.AppImage'
+  ln -sv -T "$file" "$home_app_subdir/arduino-ide.AppImage"
+  chmod +x "$file"
 
-  mv -fv "$home_app_subdir/arduino-$home_app_version" "$home_app_subdir/default"
-  mkdir -pv "$home_app_subdir/default/portable"
-  cp -fr "$home_app_subdir/default" "$home_app_subdir/esp32"
-
-  if [ -f "$home_app_subdir/default/arduino" ]
+  if [ -f "$home_app_subdir/arduino-ide.AppImage" ]
   then
     echo "$home_app_version" > "$home_app_subdir/version.txt"
   fi
@@ -242,26 +238,7 @@ else
   echo "$home_app_name is already installed"
 fi
 
-conf=$'build.verbose=true\n'
-conf+=$'compiler.warning_level=default\n'
-conf+=$'editor.code_folding=true\n'
-conf+=$'editor.linenumbers=true\n'
-conf+=$'upload.verbose=true\n'
-file="$home_app_subdir/default/portable/preferences.txt"
-if [ ! -f "$file" ]
-then
-  conf_default="$conf"
-  echo "$conf_default" > "$file"
-fi
-file="$home_app_subdir/esp32/portable/preferences.txt"
-if [ ! -f "$file" ]
-then
-  conf_esp32="$conf"
-  conf_esp32+=$'boardsmanager.additional.urls=https://dl.espressif.com/dl/package_esp32_index.json\n'
-  echo "$conf_esp32" > "$file"
-fi
-
-file="$home_menu_dir/arduino-arduinoide.desktop"
+file="$home_menu_dir/arduino-ide.desktop"
 if [ ! -f "$file" ]
 then
   desk=$'[Desktop Entry]\n'
@@ -269,20 +246,12 @@ then
   desk+=$'GenericName=Arduino IDE\n'
   desk+=$'Comment=Open-source electronics prototyping platform\n'
   desk+=$'Comment[pt_BR]=Plataforma de prototipagem de eletrônicos de código aberto\n'
-  desk+=$'Exec='$home_app_subdir$'/default/arduino\n'
+  desk+=$'Exec="'$home_app_subdir$'/arduino-ide.AppImage" %U\n'
   desk+=$'Terminal=false\n'
   desk+=$'Type=Application\n'
-  desk+=$'Icon='$home_app_subdir$'/default/lib/arduino_icon.ico\n'
+  desk+=$'Icon=arduino-ide\n'
+  desk+=$'StartupWMClass=Arduino IDE\n'
   desk+=$'Categories=Development;IDE;Electronics;\n'
-  desk+=$'MimeType=text/x-arduino;\n'
-  desk+=$'Keywords=embedded electronics;electronics;avr;microcontroller;\n'
-  desk+=$'StartupWMClass=processing-app-Base\n'
-  desk+=$'Actions=ESP32;\n'
-  desk+=$'\n'
-  desk+=$'[Desktop Action ESP32]\n'
-  desk+=$'Name=ESP32\n'
-  desk+=$'GenericName=ESP32\n'
-  desk+=$'Exec='$home_app_subdir$'/esp32/arduino\n'
   echo "$desk" > "$file"
 fi
 
@@ -293,7 +262,7 @@ echo "$home_app_name have been configured"
 printLine "Audacity"
 sudo apt install audacity -y
 
-printLine "Balena Etcher"
+printLine "balenaEtcher"
 
 home_app_name="balena-etcher"
 home_app_subdir="$home_app_dir/$home_app_name"
@@ -452,7 +421,7 @@ printLine "Ventoy"
 home_app_name="ventoy"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="1.0.79"
+home_app_version="1.0.80"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
