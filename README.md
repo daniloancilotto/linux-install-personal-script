@@ -1,7 +1,7 @@
 # Linux Personal Script
 
 ### Supported Systems
-- [Ubuntu - 20.04 (Base)](https://ubuntu.com/download)
+- [Ubuntu - 22.04 (Base)](https://ubuntu.com/download)
 
 ### Supported Architectures
 - x86_64 (amd64)
