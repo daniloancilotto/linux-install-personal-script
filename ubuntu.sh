@@ -44,7 +44,7 @@ menuConf() {
   target_file="$1/$2"
   if [ -f "$source_file" ]
   then
-    cp "$source_file" "$target_file"
+    cp -fv "$source_file" "$target_file"
   fi
   if [ -f "$target_file" ]
   then
