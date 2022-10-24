@@ -260,7 +260,9 @@ sudo usermod -aG dialout $USER
 echo "$home_app_name have been configured"
 
 printLine "Audacity"
+
 sudo apt install audacity -y
+menuConf "$home_menu_dir" "audacity.desktop" "Exec" "env GDK_BACKEND=x11 audacity %F"
 
 printLine "balenaEtcher"
 
