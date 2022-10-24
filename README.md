@@ -60,6 +60,8 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   - User Groups
     - dialout
 - Audacity - Latest (Repository)
+  - Menu
+    - ~/.local/share/applications/audacity.desktop
 - [balenaEtcher - 1.7.9 (AppImage)](https://www.balena.io/etcher/)
   - Menu
     - ~/.local/share/applications/appimagekit-balena-etcher-electron.desktop
