@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "LINUX PERSONAL SCRIPT (UBUNTU)"
-echo "Version: 2022.10.24-1730"
+echo "Version: 2022.10.25-2240"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -264,6 +264,8 @@ printLine "Audacity"
 sudo apt install audacity -y
 menuConf "$home_menu_dir" "audacity.desktop" "Exec" "env GDK_BACKEND=x11 audacity %F"
 
+echo "audacity have been configured"
+
 printLine "balenaEtcher"
 
 home_app_name="balena-etcher"
@@ -423,7 +425,7 @@ printLine "Ventoy"
 home_app_name="ventoy"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="1.0.80"
+home_app_version="1.0.81"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
