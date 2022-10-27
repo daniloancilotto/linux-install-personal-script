@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "LINUX PERSONAL SCRIPT (UBUNTU)"
-echo "Version: 2022.10.25-2240"
+echo "Version: 2022.10.27-1700"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -215,7 +215,7 @@ printLine "Arduino IDE"
 home_app_name="arduino-ide"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="2.0.0"
+home_app_version="2.0.1"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
