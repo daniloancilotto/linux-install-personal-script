@@ -280,13 +280,8 @@ fi
 
 if [ ! -d "$home_app_subdir" ]
 then
-  file="$home_app_dir/balena-etcher.zip"
-  wget -O "$file" "https://github.com/balena-io/etcher/releases/download/v$home_app_version/balena-etcher-electron-$home_app_version-linux-x64.zip"
-  mkdir -pv "$home_app_subdir"
-  unzip -q "$file" -d "$home_app_subdir"
-  rm -fv "$file"
-
   file="$home_app_subdir/balenaEtcher-$home_app_version-x64.AppImage"
+  wget -O "$file" "https://github.com/balena-io/etcher/releases/download/v$home_app_version/balenaEtcher-$home_app_version-x64.AppImage"
   ln -sv -T "$file" "$home_app_subdir/balena-etcher.AppImage"
   chmod +x "$file"
 
