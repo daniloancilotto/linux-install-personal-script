@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "LINUX PERSONAL SCRIPT (UBUNTU)"
-echo "Version: 2022.11.28-1630"
+echo "Version: 2022.11.28-1730"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -280,6 +280,7 @@ fi
 
 if [ ! -d "$home_app_subdir" ]
 then
+  mkdir -pv "$home_app_subdir"
   file="$home_app_subdir/balenaEtcher-$home_app_version-x64.AppImage"
   wget -O "$file" "https://github.com/balena-io/etcher/releases/download/v$home_app_version/balenaEtcher-$home_app_version-x64.AppImage"
   ln -sv -T "$file" "$home_app_subdir/balena-etcher.AppImage"
