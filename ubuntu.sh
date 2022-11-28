@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "LINUX PERSONAL SCRIPT (UBUNTU)"
-echo "Version: 2022.11.23-1640"
+echo "Version: 2022.11.28-1630"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -271,7 +271,7 @@ printLine "balenaEtcher"
 home_app_name="balena-etcher"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="1.7.9"
+home_app_version="1.10.2"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
