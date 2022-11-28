@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "LINUX PERSONAL SCRIPT (UBUNTU)"
-echo "Version: 2022.11.28-1730"
+echo "Version: 2022.11.28-1740"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -290,7 +290,7 @@ then
   cd "$home_app_subdir"
   "$file" --appimage-extract
   cd "$current_dir"
-  cp -fv "$home_app_subdir/squashfs-root/balena-etcher-electron.png" "$home_app_subdir/balena-etcher.png"
+  cp -fv "$home_app_subdir/squashfs-root/balena-etcher.png" "$home_app_subdir/balena-etcher.png"
   rm -rf "$home_app_subdir/squashfs-root"
 
   if [ -f "$home_app_subdir/balena-etcher.AppImage" ]
