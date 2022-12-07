@@ -90,4 +90,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - [Zoiper5 - 5.5.14 (Dpkg)](https://www.zoiper.com/en/voip-softphone/download/current)
   - Autostart
     - ~/.config/autostart/Zoiper5.desktop
-- Language Pack Pt - Latest (Repository)
+- Language Pack - Latest (Repository)
+  - Languages
+    - pt
