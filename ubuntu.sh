@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "LINUX PERSONAL SCRIPT (UBUNTU)"
-echo "Version: 2022.12.18-1650"
+echo "Version: 2022.12.27-1940"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -187,7 +187,7 @@ printLine "Angry IP Scanner"
 root_app_name="angryipscanner"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="3.8.2"
+root_app_version="3.9.0"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
@@ -421,7 +421,7 @@ printLine "Ventoy"
 home_app_name="ventoy"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="1.0.85"
+home_app_version="1.0.86"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
