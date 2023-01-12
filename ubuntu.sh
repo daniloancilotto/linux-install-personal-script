@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "LINUX PERSONAL SCRIPT (UBUNTU)"
-echo "Version: 2023.1.6-910"
+echo "Version: 2023.1.12-1610"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -328,6 +328,9 @@ else
   echo "dropbox is already installed"
 fi
 
+printLine "FileZilla"
+sudo apt install filezilla -y
+
 printLine "Flameshot"
 sudo apt install flameshot -y
 
@@ -421,7 +424,7 @@ printLine "Ventoy"
 home_app_name="ventoy"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="1.0.86"
+home_app_version="1.0.87"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then

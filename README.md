@@ -66,6 +66,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   - Menu
     - ~/.local/share/applications/appimagekit-balena-etcher-electron.desktop
 - [Dropbox - 2020.03.04 (Dpkg)](https://www.dropbox.com/install)
+- FileZilla - Latest (Repository)
 - Flameshot - Latest (Repository)
 - [FreeRapid Downloader - 0.9u4 (Portable)](http://wordrider.net/freerapid/download.htm)
   - Menu
@@ -82,7 +83,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - VNC
 - [TeamViewer - Latest (Dpkg)](https://www.teamviewer.com/en-us/download/linux/)
 - Transmission - Latest (Repository)
-- [Ventoy - 1.0.86 (Portable)](https://www.ventoy.net/en/download.html)
+- [Ventoy - 1.0.87 (Portable)](https://www.ventoy.net/en/download.html)
   - Menu
     - ~/.local/share/applications/ventoy.desktop
 - Virt-Manager - Latest (Repository)
