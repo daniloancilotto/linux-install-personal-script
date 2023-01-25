@@ -62,7 +62,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - Audacity - Latest (Repository)
   - Menu
     - ~/.local/share/applications/audacity.desktop
-- [balenaEtcher - 1.13.1 (AppImage)](https://www.balena.io/etcher/)
+- [balenaEtcher - 1.13.3 (AppImage)](https://www.balena.io/etcher/)
   - Menu
     - ~/.local/share/applications/appimagekit-balena-etcher-electron.desktop
 - [Dropbox - 2020.03.04 (Dpkg)](https://www.dropbox.com/install)
@@ -83,7 +83,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - VNC
 - [TeamViewer - Latest (Dpkg)](https://www.teamviewer.com/en-us/download/linux/)
 - Transmission - Latest (Repository)
-- [Ventoy - 1.0.87 (Portable)](https://www.ventoy.net/en/download.html)
+- [Ventoy - 1.0.88 (Portable)](https://www.ventoy.net/en/download.html)
   - Menu
     - ~/.local/share/applications/ventoy.desktop
 - Virt-Manager - Latest (Repository)

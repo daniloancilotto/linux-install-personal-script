@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "LINUX PERSONAL SCRIPT (UBUNTU)"
-echo "Version: 2023.1.12-1610"
+echo "Version: 2023.1.25-1950"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -271,7 +271,7 @@ printLine "balenaEtcher"
 home_app_name="balena-etcher"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="1.13.1"
+home_app_version="1.13.3"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
@@ -424,7 +424,7 @@ printLine "Ventoy"
 home_app_name="ventoy"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="1.0.87"
+home_app_version="1.0.88"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
