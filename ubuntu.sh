@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "LINUX PERSONAL SCRIPT (UBUNTU)"
-echo "Version: 2023.1.27-1230"
+echo "Version: 2023.2.8-1720"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -159,7 +159,7 @@ printLine "4K Video Downloader"
 root_app_name="4kvideodownloader"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="4.23.0"
+root_app_version="4.23.1"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
@@ -319,6 +319,9 @@ then
 fi
 
 echo "$home_app_name have been configured"
+
+printLine "DOSBox"
+sudo apt install dosbox -y
 
 printLine "Dropbox"
 if [ ! -f "/usr/bin/dropbox" ]
