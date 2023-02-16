@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "LINUX PERSONAL SCRIPT (UBUNTU)"
-echo "Version: 2023.2.8-1720"
+echo "Version: 2023.2.16-1440"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -187,7 +187,7 @@ printLine "Angry IP Scanner"
 root_app_name="angryipscanner"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="3.9.0"
+root_app_version="3.9.1"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
