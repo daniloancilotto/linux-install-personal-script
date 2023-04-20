@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "LINUX PERSONAL SCRIPT (UBUNTU)"
-echo "Version: 2023.4.19-1110"
+echo "Version: 2023.4.20-1130"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -218,7 +218,7 @@ printLine "Arduino IDE"
 home_app_name="arduino-ide"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="2.0.4"
+home_app_version="2.1.0"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
@@ -406,7 +406,11 @@ printLine "Kdenlive"
 sudo apt install kdenlive -y
 
 printLine "LibreOffice"
+
 sudo apt install libreoffice-writer libreoffice-calc libreoffice-impress libreoffice-help-pt-br -y
+menuConf "$home_menu_dir" "libreoffice-startcenter.desktop" "NoDisplay" "true"
+
+echo "libreoffice have been configured"
 
 printLine "OBS Studio"
 sudo apt install obs-studio -y
@@ -473,7 +477,11 @@ fi
 echo "$home_app_name have been configured"
 
 printLine "Virt-Manager"
+
 sudo apt install virt-manager -y
+menuConf "$home_menu_dir" "remote-viewer.desktop" "NoDisplay" "true"
+
+echo "virt-manager have been configured"
 
 printLine "VLC"
 sudo apt install vlc -y
