@@ -76,6 +76,8 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - GIMP - Latest (Repository)
 - GNOME Calculator - Latest (Repository)
 - [Google Chrome - Latest (Dpkg)](https://www.google.com/chrome/)
+  - Menu
+    - ~/.local/share/applications/google-chrome.desktop
 - Kdenlive - Latest (Repository)
 - LibreOffice - Latest (Repository)
   - Menu

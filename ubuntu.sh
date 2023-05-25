@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "LINUX PERSONAL SCRIPT (UBUNTU)"
-echo "Version: 2023.5.5-1610"
+echo "Version: 2023.5.25-2050"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -395,12 +395,16 @@ printLine "GNOME Calculator"
 sudo apt install gnome-calculator -y
 
 printLine "Google Chrome"
+
 if [ -z "`google-chrome --version`" ]
 then
   dpkgInstall "google-chrome.deb" "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 else
   echo "google-chrome is already installed"
 fi
+menuConf "$home_menu_dir" "google-chrome.desktop" "Exec" "/usr/bin/google-chrome-stable %U --disable-gpu-driver-bug-workarounds"
+
+echo "google-chrome have been configured"
 
 printLine "Kdenlive"
 sudo apt install kdenlive -y
