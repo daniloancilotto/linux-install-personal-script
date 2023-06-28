@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "LINUX PERSONAL SCRIPT (UBUNTU)"
-echo "Version: 2023.5.26-130"
+echo "Version: 2023.6.27-2120"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -162,7 +162,7 @@ printLine "4K Video Downloader"
 root_app_name="4kvideodownloader"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="4.24.3"
+root_app_version="4.24.4"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
@@ -274,7 +274,7 @@ printLine "balenaEtcher"
 home_app_name="balena-etcher"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="1.18.4"
+home_app_version="1.18.8"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
@@ -438,7 +438,7 @@ printLine "Ventoy"
 home_app_name="ventoy"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="1.0.91"
+home_app_version="1.0.93"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then

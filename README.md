@@ -53,7 +53,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   - Menu
     - ~/.local/share/applications/htop.desktop
 - Neofetch - Latest (Repository)
-- [4K Video Downloader - 4.24.3 (Dpkg)](https://www.4kdownload.com/downloads)
+- [4K Video Downloader - 4.24.4 (Dpkg)](https://www.4kdownload.com/downloads)
 - [Angry IP Scanner - 3.9.1 (Dpkg)](https://angryip.org/download/)
 - [Arduino IDE - 2.1.0 (AppImage)](https://www.arduino.cc/en/software)
   - Menu
@@ -63,7 +63,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - Audacity - Latest (Repository)
   - Menu
     - ~/.local/share/applications/audacity.desktop
-- [balenaEtcher - 1.18.4 (AppImage)](https://www.balena.io/etcher/)
+- [balenaEtcher - 1.18.8 (AppImage)](https://www.balena.io/etcher/)
   - Menu
     - ~/.local/share/applications/appimagekit-balena-etcher-electron.desktop
 - DOSBox - Latest (Repository)
@@ -89,7 +89,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - VNC
 - [TeamViewer - Latest (Dpkg)](https://www.teamviewer.com/en-us/download/linux/)
 - Transmission - Latest (Repository)
-- [Ventoy - 1.0.91 (Portable)](https://www.ventoy.net/en/download.html)
+- [Ventoy - 1.0.93 (Portable)](https://www.ventoy.net/en/download.html)
   - Menu
     - ~/.local/share/applications/ventoy.desktop
 - Virt-Manager - Latest (Repository)
