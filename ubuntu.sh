@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "LINUX PERSONAL SCRIPT (UBUNTU)"
-echo "Version: 2023.6.27-2120"
+echo "Version: 2023.7.11-930"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -218,7 +218,7 @@ printLine "Arduino IDE"
 home_app_name="arduino-ide"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="2.1.0"
+home_app_version="2.1.1"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
@@ -496,7 +496,7 @@ root_app_name="zoiper5"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
 root_app_dropbox_path="z4re4teq89sstnp"
-root_app_version="5.5.15"
+root_app_version="5.6.1"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
