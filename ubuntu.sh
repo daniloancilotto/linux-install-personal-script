@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "LINUX PERSONAL SCRIPT (UBUNTU)"
-echo "Version: 2023.7.11-930"
+echo "Version: 2023.7.11-940"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -495,7 +495,7 @@ printLine "Zoiper5"
 root_app_name="zoiper5"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_dropbox_path="z4re4teq89sstnp"
+root_app_dropbox_path="wpqz7bh5efnwfnk"
 root_app_version="5.6.1"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
