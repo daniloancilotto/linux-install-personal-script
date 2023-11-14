@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "LINUX PERSONAL SCRIPT (UBUNTU)"
-echo "Version: 2023.10.17-2200"
+echo "Version: 2023.11.14-1600"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -162,7 +162,7 @@ printLine "4K Video Downloader"
 root_app_name="4kvideodownloader"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="4.27.1"
+root_app_version="4.28.0"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
