@@ -3,7 +3,7 @@ system="`lsb_release -sd`"
 system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
-echo "LINUX PERSONAL SCRIPT (UBUNTU)"
+echo "INSTALL PERSONAL APPS (UBUNTU)"
 echo "Version: 2023.11.14-1600"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
