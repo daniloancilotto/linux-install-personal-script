@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "INSTALL PERSONAL APPS (UBUNTU)"
-echo "Version: 2023.11.14-1600"
+echo "Version: 2024.1.24-2310"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -162,7 +162,7 @@ printLine "4K Video Downloader"
 root_app_name="4kvideodownloader"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="4.28.0"
+root_app_version="4.29.0"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
@@ -438,7 +438,7 @@ printLine "Ventoy"
 home_app_name="ventoy"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="1.0.96"
+home_app_version="1.0.97"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
@@ -495,8 +495,9 @@ printLine "Zoiper5"
 root_app_name="zoiper5"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_dropbox_path="wpqz7bh5efnwfnk"
-root_app_version="5.6.1"
+root_app_dropbox_path="seu4zju2i2o5lxc4e1fxr"
+root_app_dropbox_key="rjgxaerlflgdfoajhtve6sflh"
+root_app_version="5.6.2"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
@@ -507,7 +508,7 @@ fi
 
 if [ ! -f "/usr/local/applications/Zoiper5/zoiper" ]
 then
-  dpkgInstall "zoiper5.deb" $'https://www.dropbox.com/s/'$root_app_dropbox_path$'/Zoiper5_'$root_app_version$'_x86_64.deb'
+  dpkgInstall "zoiper5.deb" $'https://www.dropbox.com/scl/fi/'$root_app_dropbox_path$'/Zoiper5_'$root_app_version$'_x86_64.deb?rlkey='$root_app_dropbox_key$'&dl=1'
 
   sudo mkdir -pv "$root_app_subdir"
 

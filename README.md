@@ -53,7 +53,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   - Menu
     - ~/.local/share/applications/htop.desktop
 - Neofetch - Latest (Repository)
-- [4K Video Downloader - 4.28.0 (Dpkg)](https://www.4kdownload.com/downloads)
+- [4K Video Downloader - 4.29.0 (Dpkg)](https://www.4kdownload.com/downloads)
 - [Angry IP Scanner - 3.9.1 (Dpkg)](https://angryip.org/download/)
 - [Arduino IDE - 2.2.1 (AppImage)](https://www.arduino.cc/en/software)
   - Menu
@@ -89,14 +89,14 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - VNC
 - [TeamViewer - Latest (Dpkg)](https://www.teamviewer.com/en-us/download/linux/)
 - Transmission - Latest (Repository)
-- [Ventoy - 1.0.96 (Portable)](https://www.ventoy.net/en/download.html)
+- [Ventoy - 1.0.97 (Portable)](https://www.ventoy.net/en/download.html)
   - Menu
     - ~/.local/share/applications/ventoy.desktop
 - Virt-Manager - Latest (Repository)
   - Menu
     - ~/.local/share/applications/remote-viewer.desktop
 - VLC - Lastest (Repository)
-- [Zoiper5 - 5.6.1 (Dpkg)](https://www.zoiper.com/en/voip-softphone/download/current)
+- [Zoiper5 - 5.6.2 (Dpkg)](https://www.zoiper.com/en/voip-softphone/download/current)
   - Autostart
     - ~/.config/autostart/Zoiper5.desktop
 - Language Pack - Latest (Repository)
