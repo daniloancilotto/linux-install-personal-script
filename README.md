@@ -55,7 +55,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - Neofetch - Latest (Repository)
 - [4K Video Downloader - 4.29.0 (Dpkg)](https://www.4kdownload.com/downloads)
 - [Angry IP Scanner - 3.9.1 (Dpkg)](https://angryip.org/download/)
-- [Arduino IDE - 2.2.1 (AppImage)](https://www.arduino.cc/en/software)
+- [Arduino IDE - 2.3.0 (AppImage)](https://www.arduino.cc/en/software)
   - Menu
     - ~/.local/share/applications/arduino-ide.desktop
   - User Groups
@@ -96,7 +96,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   - Menu
     - ~/.local/share/applications/remote-viewer.desktop
 - VLC - Lastest (Repository)
-- [Zoiper5 - 5.6.2 (Dpkg)](https://www.zoiper.com/en/voip-softphone/download/current)
+- [Zoiper5 - 5.6.3 (Dpkg)](https://www.zoiper.com/en/voip-softphone/download/current)
   - Autostart
     - ~/.config/autostart/Zoiper5.desktop
 - Language Pack - Latest (Repository)

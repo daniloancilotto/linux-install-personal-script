@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "INSTALL PERSONAL APPS (UBUNTU)"
-echo "Version: 2024.1.24-2310"
+echo "Version: 2024.2.15-050"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -218,7 +218,7 @@ printLine "Arduino IDE"
 home_app_name="arduino-ide"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="2.2.1"
+home_app_version="2.3.0"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
@@ -495,9 +495,9 @@ printLine "Zoiper5"
 root_app_name="zoiper5"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_dropbox_path="seu4zju2i2o5lxc4e1fxr"
-root_app_dropbox_key="rjgxaerlflgdfoajhtve6sflh"
-root_app_version="5.6.2"
+root_app_dropbox_path="4g4us88u9ruvq9jmc7joz"
+root_app_dropbox_key="j4u4om4b12qlldtomikmfv4qn"
+root_app_version="5.6.3"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
