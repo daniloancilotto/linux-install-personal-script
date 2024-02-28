@@ -495,8 +495,8 @@ printLine "Zoiper5"
 root_app_name="zoiper5"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_dropbox_path="4g4us88u9ruvq9jmc7joz"
-root_app_dropbox_key="j4u4om4b12qlldtomikmfv4qn"
+root_app_dropbox_path="ig1gvcfnv4tlry918tpxm"
+root_app_dropbox_key="zozqv9gv0hs35kahu3ozsynfp"
 root_app_version="5.6.4"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
