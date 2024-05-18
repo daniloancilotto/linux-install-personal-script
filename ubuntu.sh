@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "INSTALL PERSONAL APPS (UBUNTU)"
-echo "Version: 2024.5.16-1650"
+echo "Version: 2024.5.18-340"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -153,9 +153,6 @@ sudo apt install htop -y
 menuConf "$home_menu_dir" "htop.desktop" "NoDisplay" "true"
 
 echo "htop have been configured"
-
-printLine "Neofetch"
-sudo apt install neofetch -y
 
 printLine "4K Video Downloader"
 
@@ -342,7 +339,7 @@ sudo apt install flameshot -y
 
 printLine "FreeRapid Downloader"
 
-home_app_name="freerapiddownloader"
+home_app_name="freerapid-downloader"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
 home_app_dropbox_path="swyleflcmtqxpch"
@@ -355,7 +352,7 @@ fi
 
 if [ ! -d "$home_app_subdir" ]
 then
-  file="$home_app_dir/freerapiddownloader.zip"
+  file="$home_app_dir/freerapid-downloader.zip"
   wget -O "$file" "https://www.dropbox.com/s/$home_app_dropbox_path/FreeRapid-$home_app_version.zip"
   unzip -q "$file" -d "$home_app_dir"
   rm -fv "$file"
