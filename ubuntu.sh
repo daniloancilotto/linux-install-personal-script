@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "INSTALL PERSONAL APPS (UBUNTU)"
-echo "Version: 2024.5.30-1950"
+echo "Version: 2024.6.5-2300"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -97,21 +97,6 @@ then
 fi
 
 echo "kernel have been configured"
-
-printLine "Snap"
-
-sudo apt install snapd -y
-sudo systemctl enable --now snapd.socket
-
-sudo snap set system refresh.timer=mon,04:00
-
-snap_cronjob="@reboot /usr/bin/sudo /usr/bin/snap refresh"
-if [ -z "$(sudo crontab -l | grep -F "$snap_cronjob")" ]
-then
-  (sudo crontab -l 2>/dev/null; echo "$snap_cronjob") | sudo crontab -
-fi
-
-echo "snap have been configured"
 
 printLine "Wget"
 sudo apt install wget -y

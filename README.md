@@ -36,7 +36,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - /etc/sysctl.d/60-swappiness.conf
     - /etc/sysctl.d/60-cache-pressure.conf
     - /etc/sysctl.d/60-inotify-watches.conf
-- Snap - Latest (Repository)
 - Wget - Latest (Repository)
 - Tar - Latest (Repository)
 - Zip - Latest (Repository)
