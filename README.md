@@ -51,7 +51,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - Htop - Latest (Repository)
   - Menu
     - ~/.local/share/applications/htop.desktop
-- [4K Video Downloader - 4.31.0 (Dpkg)](https://www.4kdownload.com/downloads)
+- [4K Video Downloader - 4.31.1 (Dpkg)](https://www.4kdownload.com/downloads)
 - [Angry IP Scanner - 3.9.1 (Dpkg)](https://angryip.org/download/)
 - [Arduino IDE - 2.3.2 (AppImage)](https://www.arduino.cc/en/software)
   - Menu
@@ -65,7 +65,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   - Menu
     - ~/.local/share/applications/appimagekit-balena-etcher-electron.desktop
 - DOSBox - Latest (Repository)
-- [Dropbox - 2020.03.04 (Dpkg)](https://www.dropbox.com/install)
+- [Dropbox - 2020.03.04 (Dpkg)](https://www.dropbox.com/install-linux)
 - FileZilla - Latest (Repository)
 - Flameshot - Latest (Repository)
 - [FreeRapid Downloader - 0.9u4 (Portable)](http://wordrider.net/freerapid/download.htm)
