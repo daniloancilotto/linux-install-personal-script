@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "INSTALL PERSONAL APPS (UBUNTU)"
-echo "Version: 2024.8.6-1720"
+echo "Version: 2024.8.16-1250"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -327,7 +327,8 @@ printLine "FreeRapid Downloader"
 home_app_name="freerapid-downloader"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_dropbox_path="swyleflcmtqxpch"
+home_app_dropbox_path="dirknklztbr2et3bz1qc4"
+home_app_dropbox_key="msf4hfa7eqe22bo95p8unx0qu"
 home_app_version="0.9u4"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
@@ -338,7 +339,7 @@ fi
 if [ ! -d "$home_app_subdir" ]
 then
   file="$home_app_dir/freerapid-downloader.zip"
-  wget -O "$file" "https://www.dropbox.com/s/$home_app_dropbox_path/FreeRapid-$home_app_version.zip"
+  wget -O "$file" $'https://www.dropbox.com/scl/fi/'$home_app_dropbox_path$'/FreeRapid-'$home_app_version$'.zip?rlkey='$home_app_dropbox_key$'&dl=1'
   unzip -q "$file" -d "$home_app_dir"
   rm -fv "$file"
 
