@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "INSTALL PERSONAL APPS (UBUNTU)"
-echo "Version: 2024.8.19-2250"
+echo "Version: 2024.9.25-2330"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -200,7 +200,7 @@ printLine "Arduino IDE"
 home_app_name="arduino-ide"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="2.3.2"
+home_app_version="2.3.3"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
