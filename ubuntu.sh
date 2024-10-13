@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "INSTALL PERSONAL APPS (UBUNTU)"
-echo "Version: 2024.9.25-2330"
+echo "Version: 2024.10.13-2100"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -256,7 +256,7 @@ printLine "balenaEtcher"
 home_app_name="balena-etcher"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="1.19.21"
+home_app_version="1.19.25"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
@@ -311,7 +311,7 @@ sudo apt install dosbox -y
 printLine "Dropbox"
 if [ ! -f "/usr/bin/dropbox" ]
 then
-  dpkgInstall "dropbox.deb" "https://linux.dropbox.com/packages/ubuntu/dropbox_2020.03.04_amd64.deb"
+  dpkgInstall "dropbox.deb" "https://linux.dropbox.com/packages/ubuntu/dropbox_2024.04.17_amd64.deb"
 else
   echo "dropbox is already installed"
 fi

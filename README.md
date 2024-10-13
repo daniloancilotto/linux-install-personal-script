@@ -1,7 +1,7 @@
 # Linux Install Personal Script
 
 ### Supported Systems
-- [Ubuntu - 22.04 (Base)](https://ubuntu.com/download)
+- [Ubuntu - 24.04 (Base)](https://ubuntu.com/download)
 
 ### Supported Architectures
 - x86_64 (amd64)
@@ -61,11 +61,11 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - Audacity - Latest (Repository)
   - Menu
     - ~/.local/share/applications/audacity.desktop
-- [balenaEtcher - 1.19.21 (AppImage)](https://www.balena.io/etcher/)
+- [balenaEtcher - 1.19.25 (AppImage)](https://www.balena.io/etcher/)
   - Menu
     - ~/.local/share/applications/appimagekit-balena-etcher-electron.desktop
 - DOSBox - Latest (Repository)
-- [Dropbox - 2020.03.04 (Dpkg)](https://www.dropbox.com/install-linux)
+- [Dropbox - 2024.04.17 (Dpkg)](https://www.dropbox.com/install-linux)
 - FileZilla - Latest (Repository)
 - Flameshot - Latest (Repository)
 - [FreeRapid Downloader - 0.9u4 (Portable)](http://wordrider.net/freerapid/download.htm)
