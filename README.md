@@ -67,6 +67,8 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - DOSBox - Latest (Repository)
 - [Dropbox - 2024.04.17 (Dpkg)](https://www.dropbox.com/install-linux)
 - FileZilla - Latest (Repository)
+  - Database
+    - ~/.config/filezilla/queue.sqlite3
 - Flameshot - Latest (Repository)
 - [FreeRapid Downloader - 0.9u4 (Portable)](http://wordrider.net/freerapid/download.htm)
   - Menu

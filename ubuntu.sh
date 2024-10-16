@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "INSTALL PERSONAL APPS (UBUNTU)"
-echo "Version: 2024.10.15-2350"
+echo "Version: 2024.10.16-1650"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -62,6 +62,9 @@ mkdir -pv "$home_app_dir"
 
 home_menu_dir="$HOME/.local/share/applications"
 mkdir -pv "$home_menu_dir"
+
+home_config_dir="$HOME/.config"
+mkdir -pv "$home_config_dir"
 
 home_autostart_dir="$HOME/.config/autostart"
 mkdir -pv "$home_autostart_dir"
@@ -317,7 +320,15 @@ else
 fi
 
 printLine "FileZilla"
-sudo apt install filezilla -y
+
+if [ -z "`filezilla --version`" ]
+then
+  rm -rf "$home_config_dir/filezilla/queue.sqlite3"
+
+  sudo apt install filezilla -y
+else
+  echo "filezilla is already installed"
+fi
 
 printLine "Flameshot"
 sudo apt install flameshot -y
