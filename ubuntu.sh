@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "INSTALL PERSONAL APPS (UBUNTU)"
-echo "Version: 2024.10.16-1650"
+echo "Version: 2024.10.17-2310"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -227,21 +227,18 @@ else
 fi
 
 file="$home_menu_dir/arduino-ide.desktop"
-if [ ! -f "$file" ]
-then
-  desk=$'[Desktop Entry]\n'
-  desk+=$'Name=Arduino IDE\n'
-  desk+=$'GenericName=Arduino IDE\n'
-  desk+=$'Comment=Open-source electronics prototyping platform\n'
-  desk+=$'Comment[pt_BR]=Plataforma de prototipagem de eletrônicos de código aberto\n'
-  desk+=$'Exec="'$home_app_subdir$'/arduino-ide.AppImage" %U\n'
-  desk+=$'Terminal=false\n'
-  desk+=$'Type=Application\n'
-  desk+=$'Icon=arduino-ide\n'
-  desk+=$'StartupWMClass=Arduino IDE\n'
-  desk+=$'Categories=Development;IDE;Electronics;\n'
-  echo "$desk" > "$file"
-fi
+desk=$'[Desktop Entry]\n'
+desk+=$'Name=Arduino IDE\n'
+desk+=$'GenericName=Arduino IDE\n'
+desk+=$'Comment=Open-source electronics prototyping platform\n'
+desk+=$'Comment[pt_BR]=Plataforma de prototipagem de eletrônicos de código aberto\n'
+desk+=$'Exec="'$home_app_subdir$'/arduino-ide.AppImage" --no-sandbox %U\n'
+desk+=$'Terminal=false\n'
+desk+=$'Type=Application\n'
+desk+=$'Icon=arduino-ide\n'
+desk+=$'StartupWMClass=Arduino IDE\n'
+desk+=$'Categories=Development;IDE;Electronics;\n'
+echo "$desk" > "$file"
 
 sudo usermod -aG dialout $USER
 
@@ -290,21 +287,18 @@ else
 fi
 
 file="$home_menu_dir/appimagekit-balena-etcher-electron.desktop"
-if [ ! -f "$file" ]
-then
-  desk=$'[Desktop Entry]\n'
-  desk+=$'Name=balenaEtcher\n'
-  desk+=$'GenericName=balenaEtcher\n'
-  desk+=$'Comment=Flash OS images to SD cards and USB drives, safely and easily.\n'
-  desk+=$'Comment[pt_BR]=Gravar imagens de SO em cartões SD e drives USB, com segurança e facilidade.\n'
-  desk+=$'Exec="'$home_app_subdir$'/balena-etcher.AppImage" %U\n'
-  desk+=$'Terminal=false\n'
-  desk+=$'Type=Application\n'
-  desk+=$'Icon='$home_app_subdir$'/balena-etcher.png\n'
-  desk+=$'StartupWMClass=balenaEtcher\n'
-  desk+=$'Categories=Utility;\n'
-  echo "$desk" > "$file"
-fi
+desk=$'[Desktop Entry]\n'
+desk+=$'Name=balenaEtcher\n'
+desk+=$'GenericName=balenaEtcher\n'
+desk+=$'Comment=Flash OS images to SD cards and USB drives, safely and easily.\n'
+desk+=$'Comment[pt_BR]=Gravar imagens de SO em cartões SD e drives USB, com segurança e facilidade.\n'
+desk+=$'Exec="'$home_app_subdir$'/balena-etcher.AppImage" --no-sandbox %U\n'
+desk+=$'Terminal=false\n'
+desk+=$'Type=Application\n'
+desk+=$'Icon='$home_app_subdir$'/balena-etcher.png\n'
+desk+=$'StartupWMClass=balenaEtcher\n'
+desk+=$'Categories=Utility;\n'
+echo "$desk" > "$file"
 
 echo "$home_app_name have been configured"
 
@@ -365,20 +359,17 @@ else
 fi
 
 file="$home_menu_dir/$home_app_name.desktop"
-if [ ! -f "$file" ]
-then
-  desk=$'[Desktop Entry]\n'
-  desk+=$'Name=FreeRapid Downloader\n'
-  desk+=$'GenericName=FreeRapid Downloader\n'
-  desk+=$'Comment=Download from file-sharing services\n'
-  desk+=$'Comment[pt_BR]=Download de serviços de compartilhamento de arquivos\n'
-  desk+=$'Exec='$java8_dir$'/bin/java -jar '$home_app_subdir$'/frd.jar\n'
-  desk+=$'Terminal=false\n'
-  desk+=$'Type=Application\n'
-  desk+=$'Icon='$home_app_subdir$'/frd.ico\n'
-  desk+=$'Categories=Network;\n'
-  echo "$desk" > "$file"
-fi
+desk=$'[Desktop Entry]\n'
+desk+=$'Name=FreeRapid Downloader\n'
+desk+=$'GenericName=FreeRapid Downloader\n'
+desk+=$'Comment=Download from file-sharing services\n'
+desk+=$'Comment[pt_BR]=Download de serviços de compartilhamento de arquivos\n'
+desk+=$'Exec='$java8_dir$'/bin/java -jar '$home_app_subdir$'/frd.jar\n'
+desk+=$'Terminal=false\n'
+desk+=$'Type=Application\n'
+desk+=$'Icon='$home_app_subdir$'/frd.ico\n'
+desk+=$'Categories=Network;\n'
+echo "$desk" > "$file"
 
 echo "$home_app_name have been configured"
 
@@ -457,20 +448,17 @@ else
 fi
 
 file="$home_menu_dir/ventoy.desktop"
-if [ ! -f "$file" ]
-then
-  desk=$'[Desktop Entry]\n'
-  desk+=$'Name=Ventoy\n'
-  desk+=$'GenericName=Ventoy\n'
-  desk+=$'Comment=Tool to create bootable USB drive for ISO/WIM/IMG/VHD(x)/EFI files.\n'
-  desk+=$'Comment[pt_BR]=Ferramenta para criar unidade USB inicializável para arquivos ISO/WIM/IMG/VHD(x)/EFI.\n'
-  desk+=$'Exec='$home_app_subdir$'/VentoyGUI.x86_64\n'
-  desk+=$'Terminal=false\n'
-  desk+=$'Type=Application\n'
-  desk+=$'Icon='$home_app_subdir$'/WebUI/static/img/VentoyLogo.png\n'
-  desk+=$'Categories=Utility;\n'
-  echo "$desk" > "$file"
-fi
+desk=$'[Desktop Entry]\n'
+desk+=$'Name=Ventoy\n'
+desk+=$'GenericName=Ventoy\n'
+desk+=$'Comment=Tool to create bootable USB drive for ISO/WIM/IMG/VHD(x)/EFI files.\n'
+desk+=$'Comment[pt_BR]=Ferramenta para criar unidade USB inicializável para arquivos ISO/WIM/IMG/VHD(x)/EFI.\n'
+desk+=$'Exec='$home_app_subdir$'/VentoyGUI.x86_64\n'
+desk+=$'Terminal=false\n'
+desk+=$'Type=Application\n'
+desk+=$'Icon='$home_app_subdir$'/WebUI/static/img/VentoyLogo.png\n'
+desk+=$'Categories=Utility;\n'
+echo "$desk" > "$file"
 
 echo "$home_app_name have been configured"
 
@@ -515,20 +503,15 @@ else
 fi
 
 file="$home_autostart_dir/Zoiper5.desktop"
-if [ ! -f "$file" ]
-then
-  desk=$'[Desktop Entry]\n'
-  desk+=$'Encoding=UTF-8\n'
-  desk+=$'Name=Zoiper5\n'
-  desk+=$'Comment=VoIP Softphone\n'
-  desk+=$'Exec=/usr/local/applications/Zoiper5/zoiper\n'
-  desk+=$'Terminal=false\n'
-  desk+=$'Icon=/usr/share/pixmaps/Zoiper5.png\n'
-  desk+=$'Type=Application\n'
-  echo "$desk" > "$file"
-else
-  crudini --set "$file" "Desktop Entry" "Icon" "/usr/share/pixmaps/Zoiper5.png"
-fi
+desk=$'[Desktop Entry]\n'
+desk+=$'Encoding=UTF-8\n'
+desk+=$'Name=Zoiper5\n'
+desk+=$'Comment=VoIP Softphone\n'
+desk+=$'Exec=/usr/local/applications/Zoiper5/zoiper\n'
+desk+=$'Terminal=false\n'
+desk+=$'Icon=/usr/share/pixmaps/Zoiper5.png\n'
+desk+=$'Type=Application\n'
+echo "$desk" > "$file"
 
 echo "$root_app_name have been configured"
 
