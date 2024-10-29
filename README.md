@@ -96,7 +96,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   - Menu
     - ~/.local/share/applications/remote-viewer.desktop
 - VLC - Lastest (Repository)
-- [Zoiper5 - 5.6.4 (Dpkg)](https://www.zoiper.com/en/voip-softphone/download/current)
+- [Zoiper5 - 5.6.5 (Dpkg)](https://www.zoiper.com/en/voip-softphone/download/current)
   - Autostart
     - ~/.config/autostart/Zoiper5.desktop
 - Language Pack - Latest (Repository)

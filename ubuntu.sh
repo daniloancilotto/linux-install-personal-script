@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "INSTALL PERSONAL APPS (UBUNTU)"
-echo "Version: 2024.10.17-2310"
+echo "Version: 2024.10.29-1000"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -477,9 +477,9 @@ printLine "Zoiper5"
 root_app_name="zoiper5"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_dropbox_path="ig1gvcfnv4tlry918tpxm"
-root_app_dropbox_key="zozqv9gv0hs35kahu3ozsynfp"
-root_app_version="5.6.4"
+root_app_dropbox_path="q8meb076jl9690waffpfs"
+root_app_dropbox_key="qci6m8kxcko6ybnx1ybi0fpir"
+root_app_version="5.6.5"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
