@@ -1,4 +1,4 @@
-# Linux Install Personal Script
+# Linux Install Base Script
 
 ### Supported Systems
 - [Ubuntu - 24.04 (Base)](https://ubuntu.com/download)
@@ -21,7 +21,7 @@ sudo apt install curl -y
 
 ### Ubuntu
 ```bash
-curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/linux-install-personal-script/master/ubuntu.sh | bash
+curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/linux-install-base-script/master/ubuntu.sh | bash
 ```
 
 <br/>

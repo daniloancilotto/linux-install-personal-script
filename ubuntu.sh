@@ -3,7 +3,7 @@ system="`lsb_release -sd`"
 system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
-echo "INSTALL PERSONAL APPS (UBUNTU)"
+echo "INSTALL BASE APPS (UBUNTU)"
 echo "Version: 2024.10.29-1000"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
