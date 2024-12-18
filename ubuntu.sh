@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 
 echo "INSTALL BASE APPS (UBUNTU)"
-echo "Version: 2024.12.13-2330"
+echo "Version: 2024.12.18-1040"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -147,7 +147,7 @@ printLine "4K Video Downloader"
 root_app_name="4kvideodownloader"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="4.33.2"
+root_app_version="4.33.3"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
@@ -477,9 +477,9 @@ printLine "Zoiper5"
 root_app_name="zoiper5"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_dropbox_path="q8meb076jl9690waffpfs"
-root_app_dropbox_key="qci6m8kxcko6ybnx1ybi0fpir"
-root_app_version="5.6.5"
+root_app_dropbox_path="1qj2iq7fdxa0b87gdpilb"
+root_app_dropbox_key="45t1h22wah8u7eiqm44hyvjvd"
+root_app_version="5.6.6"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
